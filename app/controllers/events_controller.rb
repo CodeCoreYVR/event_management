@@ -1,10 +1,9 @@
 class EventsController < ApplicationController
-before_action :authenticate_user!,only: [:create,:new,:update,:edit,:destroy]
+before_action :authenticate_user!,only: [:create,:new,:update,:edit,:destroy,:adminindex]
 before_action :find_event, only: [:edit, :show, :destroy, :update]
 
   def index
     @events = Event.all
-
   end
 
   def new
@@ -13,6 +12,10 @@ before_action :find_event, only: [:edit, :show, :destroy, :update]
 
   def edit
 
+  end
+
+  def adminindex
+    @events = Event.all
   end
 
   def create
@@ -26,7 +29,7 @@ before_action :find_event, only: [:edit, :show, :destroy, :update]
 
   def update
     if @event.update_attributes(event_params)
-      rdedirect_to @event, notice: "Event updated successfully"
+      redirect_to @event, notice: "Event updated successfully"
     else
       render :edit, alert: "You suck"
     end

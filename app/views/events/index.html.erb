@@ -29,19 +29,28 @@
 
 <div class="row-fluid">
 <% @events.each do |event| %>
+
     <div class="col-sm-6 col-md-4">
       <div class="thumbnail">
         <%= link_to (image_tag event.image(:medium), class: "post-thumb"), event %>
         <div class="caption">
           <%= link_to event.title,event, class: "post-thumb" %>
           <br>
-          <p><%= event.body.truncate(100) %></p>
-          <p><%= event.date %></p>
+          <p><%= truncate_s(event.body,100) %></p>
+          <p><%=event.date.to_formatted_s(:short)%></p>
           <p><%= event.speaker %></p>
           <p><%= event.bio %></p>
-          <p><%= event.linkedin %></p>
-          <p><%= event.facebook %></p>
-          <p><%= event.twitter %></p>
+          <% if (event.linkedin && event.linkedin!='') %>
+          <p><a href="<%=event.linkedin%>">Linkedin Profile</a></p>
+          <% else %>
+          <p>&nbsp;</p>
+          <% end %>
+          <% if (event.twitter && event.twitter!='') %>
+          <p><a href="<%=event.twitter%>">Twitter Profile</a></p>
+          <% else %>
+          <p>&nbsp;</p>
+          <% end %>
+          <!-- <p><%= event.facebook %></p> -->
         </div>
       </div>
     </div>

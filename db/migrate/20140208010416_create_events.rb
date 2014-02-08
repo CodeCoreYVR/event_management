@@ -1,7 +1,7 @@
 class CreateEvents < ActiveRecord::Migration
   def change
     create_table :events do |t|
-      t.attachment :photo
+      t.attachment :image
       t.string :title
       t.datetime :date
       t.text :body

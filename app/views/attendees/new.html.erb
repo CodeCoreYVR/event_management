@@ -1,0 +1,21 @@
+<h1>Yo CodeCore peeeeeeeps!</h1>
+<%= form_for @attendee do |f| %> 
+    <%= f.label :name, "Name" %>
+    <%= f.text_field :name %>
+    <br>
+    <%= f.label :company, "Company" %>
+    <%= f.text_field :company %>
+    <br>
+    <%= f.label :email, "Email Address: " %>
+    <%= f.email_field :email %>
+    <br>
+    <ul> 
+    <% Category.all.each do |category| %>
+      <li><%= hidden_field_tag "@attendee[category_ids][]", nil %>
+          <%= check_box_tag "@attendee[category_ids][]", category.id, @attendee.categories.include?(category), id: dom_id(category) %>
+        <%= label_tag dom_id(category), category.name %>
+      </li>
+      <% end %>
+    </ul>
+    <%= f.submit "Submit" %>
+<% end %>

@@ -1,7 +1,5 @@
 class AttendeesController < ApplicationController
 
-
-
   def create
     @attendee = Attendee.new attendee_params
     if event_number_check && @attendee.save
@@ -32,6 +30,5 @@ private
   def eventids
     @event_ids ||= params[:attendee][:event_ids]
   end
-
 
 end

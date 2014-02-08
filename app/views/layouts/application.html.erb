@@ -9,12 +9,11 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<body id="parallax">
- 
-  
-  <%= render '/layouts/header'%>
-  <%= yield %>
-  <%= render '/layouts/footer' %>
-
+<body>
+  <div class="container">
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%= yield %>
+  </div>
 </body>
 </html>

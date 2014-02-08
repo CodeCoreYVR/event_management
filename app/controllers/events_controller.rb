@@ -5,5 +5,4 @@ class EventsController < ApplicationController
     @attendee = Attendee.new
   end
 
-
 end

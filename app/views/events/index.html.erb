@@ -1,1 +1,152 @@
-<h1>Yo yo!</h1>
+
+<section id="photo1">
+<div class="well">
+  <h2  id="titles">We've created a registration tool just for you, made by people just like you.</h2>
+  <div class="clear-float"></div>
+  <h1 class="center">Please join us for Tech Talks & Free Food.</h1>
+
+  <div class="clear-float"></div>
+  <% b = "Are You Ready?"%>
+  <% b.split(" ").each do |y| %>
+  <% y.split(//).each do |x| %>
+  <font class="home-words"><%=x%></font>
+  <%end%><font class="home-words">&nbsp</font><%end%>
+  <br>&nbsp
+
+  <p class="center">
+    <a id="home-button"><%= link_to 'Register', "http://www.codecore.ca", class: "btn btn-warning btn-lg home-button"%></a>
+  </p>
+  <h6 id="titles">Website is currently under development by CodeCore's 1st Cohort, please visit 
+    <a href="http://www.codecore.ca"> codecore's </a> website for updates</h6>
+    
+    <!-- <h5 id="titles" class="pull-right">Website Design by CodeCore's Cohort #1</h5> -->
+    <br>
+</section>
+
+
+<section id="about">
+  <h1>About The Event/Speakers</h1>
+
+<div class="row-fluid">
+<% @events.each do |event| %>
+
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <%= link_to (image_tag event.image(:medium), class: "post-thumb"), event %>
+        <div class="caption">
+          <%= link_to event.title,event, class: "post-thumb" %>
+          <br>
+          <p><%= truncate_s(event.body,100) %></p>
+          <p><%=event.date.to_formatted_s(:short)%></p>
+          <p><%= event.speaker %></p>
+          <p><%= event.bio %></p>
+          <% if (event.linkedin && event.linkedin!='') %>
+          <p><a href="<%=event.linkedin%>">Linkedin Profile</a></p>
+          <% else %>
+          <p>&nbsp;</p>
+          <% end %>
+          <% if (event.twitter && event.twitter!='') %>
+          <p><a href="<%=event.twitter%>">Twitter Profile</a></p>
+          <% else %>
+          <p>&nbsp;</p>
+          <% end %>
+          <!-- <p><%= event.facebook %></p> -->
+        </div>
+      </div>
+    </div>
+  
+<% end %>
+
+
+  
+</section>
+
+<section id="photo2">
+  <h1>Venue, Code Core Information</h1>
+<p>Mauris vitae tortor dolor, quis eleifend nisi. Pellentesque consequat eros id nulla gravida dictum. Sed congue mauris ac nunc egestas a tristique nisi dapibus. Etiam consectetur molestie condimentum. Duis a nibh in dui mollis laoreet. Phasellus quis tortor in velit euismod accumsan vitae ut ligula. Maecenas sit amet metus ipsum. Pellentesque suscipit ligula tellus. Praesent nec dui ac tellus bibendum faucibus. Ut tempus magna arcu, et pellentesque purus.</p>
+  <p>In rhoncus nunc a lorem vulputate sit amet dapibus metus lacinia. Suspendisse vulputate egestas fringilla. Nulla est mauris, semper quis consequat ut, vestibulum eget felis. In quis mattis odio. Mauris ultrices augue a tortor venenatis commodo. Sed at iaculis magna. Fusce mollis laoreet consequat. Aliquam lobortis turpis vitae tellus feugiat eget semper ligula consequat. Vivamus tincidunt porttitor pretium. Aenean a ante arcu. Vestibulum tincidunt fringilla tincidunt.</p>
+  <p>Proin dignissim sem varius lorem fringilla eget mollis sem porttitor. Aliquam erat volutpat. Mauris rutrum augue nec ipsum scelerisque vel condimentum mi pretium. Maecenas pharetra dolor non est hendrerit sollicitudin. Proin fringilla velit vitae eros malesuada venenatis sit amet nec velit. Proin purus lectus, cursus eu rhoncus et, convallis et mi. Aliquam quis libero velit, quis scelerisque dolor. Curabitur laoreet mollis sagittis. Maecenas vehicula, dui id elementum aliquam, lacus libero interdum urna, eget dignissim massa sem sit amet odio. Cras aliquam augue vel nibh suscipit placerat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+</section>
+
+<section id="about">
+  <h1>SIGN UP SECTION</h1>
+  <p>Mauris vitae tortor dolor, quis eleifend nisi. Pellentesque consequat eros id nulla gravida dictum. Sed congue mauris ac nunc egestas a tristique nisi dapibus. Etiam consectetur molestie condimentum. Duis a nibh in dui mollis laoreet. Phasellus quis tortor in velit euismod accumsan vitae ut ligula. Maecenas sit amet metus ipsum. Pellentesque suscipit ligula tellus. Praesent nec dui ac tellus bibendum faucibus. Ut tempus magna arcu, et pellentesque purus.</p>
+  <p>In rhoncus nunc a lorem vulputate sit amet dapibus metus lacinia. Suspendisse vulputate egestas fringilla. Nulla est mauris, semper quis consequat ut, vestibulum eget felis. In quis mattis odio. Mauris ultrices augue a tortor venenatis commodo. Sed at iaculis magna. Fusce mollis laoreet consequat. Aliquam lobortis turpis vitae tellus feugiat eget semper ligula consequat. Vivamus tincidunt porttitor pretium. Aenean a ante arcu. Vestibulum tincidunt fringilla tincidunt.</p>
+  <p>Proin dignissim sem varius lorem fringilla eget mollis sem porttitor. Aliquam erat volutpat. Mauris rutrum augue nec ipsum scelerisque vel condimentum mi pretium. Maecenas pharetra dolor non est hendrerit sollicitudin. Proin fringilla velit vitae eros malesuada venenatis sit amet nec velit. Proin purus lectus, cursus eu rhoncus et, convallis et mi. Aliquam quis libero velit, quis scelerisque dolor. Curabitur laoreet mollis sagittis. Maecenas vehicula, dui id elementum aliquam, lacus libero interdum urna, eget dignissim massa sem sit amet odio. Cras aliquam augue vel nibh suscipit placerat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+</section>
+
+<section id="photo3">
+
+<h1>Website Created by CodeCore-CohortOne</h1>
+<div class="row">
+  <div class="col-lg-3 col-md-3 col-sm-3 well">
+    <img src="http://codecore.ca/img/team/tam.jpg" alt="..." class="center img-circle img-responsive">
+    <p>Adam Tam</p>
+    <p><i class="fa fa-linkedin-square fa-1x"></i> <i class="fa fa-twitter-square fa-1x"></i></p>
+  </div>
+  <div class="col-lg-1 col-md-1 col-sm-1">
+    &nbsp
+  </div>
+  <div class="col-lg-3 col-md-3 col-sm-3 well">
+    <img src="http://codecore.ca/img/team/tam.jpg" alt="..." class="center img-circle img-responsive">
+    <p>Adam Tam</p>
+    <p><i class="fa fa-linkedin-square fa-1x"></i> <i class="fa fa-twitter-square fa-1x"></i></p>
+  </div>
+    <div class="col-lg-1 col-md-1 col-sm-1">
+    &nbsp
+  </div>
+  <div class="col-lg-3 col-md-3 col-sm-3 well">
+    <img src="http://codecore.ca/img/team/tam.jpg" alt="..." class="center img-circle img-responsive">
+    <p>Adam Tam</p>
+    <p><i class="fa fa-linkedin-square fa-1x"></i> <i class="fa fa-twitter-square fa-1x"></i></p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-3 col-md-3 col-sm-3 well">
+    <img src="http://codecore.ca/img/team/tam.jpg" alt="..." class="center img-circle img-responsive">
+    <p>Adam Tam</p>
+    <p><i class="fa fa-linkedin-square fa-1x"></i> <i class="fa fa-twitter-square fa-1x"></i></p>
+  </div>
+  <div class="col-lg-1 col-md-1 col-sm-1">
+    &nbsp
+  </div>
+  <div class="col-lg-3 col-md-3 col-sm-3 well">
+    <img src="http://codecore.ca/img/team/tam.jpg" alt="..." class="center img-circle img-responsive">
+    <p>Adam Tam</p>
+    <p><i class="fa fa-linkedin-square fa-1x"></i> <i class="fa fa-twitter-square fa-1x"></i></p>
+  </div>
+    <div class="col-lg-1 col-md-1 col-sm-1">
+    &nbsp
+  </div>
+  <div class="col-lg-3 col-md-3 col-sm-3 well">
+    <img src="http://codecore.ca/img/team/tam.jpg" alt="..." class="center img-circle img-responsive">
+    <p>Adam Tam</p>
+    <p><i class="fa fa-linkedin-square fa-1x"></i> <i class="fa fa-twitter-square fa-1x"></i></p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-3 col-md-3 col-sm-3 well">
+    <img src="http://codecore.ca/img/team/tam.jpg" alt="..." class="center img-circle img-responsive">
+    <p>Adam Tam</p>
+    <p><i class="fa fa-linkedin-square fa-1x"></i> <i class="fa fa-twitter-square fa-1x"></i></p>
+  </div>
+  <div class="col-lg-1 col-md-1 col-sm-1">
+    &nbsp
+  </div>
+  <div class="col-lg-3 col-md-3 col-sm-3 well">
+    <img src="http://codecore.ca/img/team/tam.jpg" alt="..." class="center img-circle img-responsive">
+    <p>Adam Tam</p>
+    <p><i class="fa fa-linkedin-square fa-1x"></i> <i class="fa fa-twitter-square fa-1x"></i></p>
+  </div>
+    <div class="col-lg-1 col-md-1 col-sm-1">
+    &nbsp
+  </div>
+  <div class="col-lg-3 col-md-3 col-sm-3 well">
+    <img src="http://codecore.ca/img/team/tam.jpg" alt="..." class="center img-circle img-responsive">
+    <p>Tam Tam</p>
+    <p><i class="fa fa-linkedin-square fa-1x"></i> <i class="fa fa-twitter-square fa-1x"></i></p>
+  </div>
+</div>
+
+</section>

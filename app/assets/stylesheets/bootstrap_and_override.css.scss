@@ -1,0 +1,123 @@
+@import 'reset.css';
+@import 'bootstrap';
+@import 'codecore-fonts.css';
+
+html { height:100%; /* Required to get min height 100% to work */ }
+body { height:100%; padding: 0px; margin: 0px auto; }
+
+.navbar { height: 60px;}
+
+#titles {
+  margin-right: 10px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding-top: 0px;
+  font-weight: normal;
+  line-height: 1;
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+}
+#parallax { margin:0px auto;}
+#parallax h1 { line-height:1; margin-bottom: 1em; }
+#parallax p { line-height: 1.5; margin-bottom:1em;}
+#parallax section { border-bottom: 4px solid #fff; padding: 50px 75px; min-height: 100%; width: 100%; border:none;/*parent height needs to be 100% */ }
+
+#parallax #header { background: #39f; color: #fff; }
+#parallax #about { background: #CB0D0F; color: #fff; }
+
+#parallax #photo1 { color: white; background: url(http://upload.wikimedia.org/wikipedia/commons/b/ba/Downtown_Vancouver_Sunset.jpg)
+  // background: url(http://farm4.staticflickr.com/3297/3652525431_fff9a0309c_o.jpg)
+no-repeat center center fixed; 
+/*background size*/
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+}
+#parallax #photo2 { color: white; background: url(http://petejones.files.wordpress.com/2013/02/untitled_panorama3b.jpg)
+no-repeat center center fixed; 
+/*background size*/
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+}
+#parallax #photo3 { color: white; background: url(http://www.codecore.ca/wp-content/themes/CodeCore/img/front2.jpg)
+no-repeat center center fixed; 
+/*background size*/
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+}
+
+
+#parallax #contact { background: #fff; color: #39f; }
+#parallax #footer { background: gray; color: #fff; }
+
+
+// #photo1 .box { background-color: rgba(11,11,11,0.5); padding:20px; width: 600px; border: 1px solid rgb(11,11,11)}
+#photo1 .well { background-color: rgba(11,11,11,0.5); border: 1px solid rgb(11,11,11) }
+#photo1 .well a { font-color:red; }
+// #photo2 .box { background-color: rgba(11,11,11,0.5); padding:20px; width: 600px; border: 1px solid rgb(11,11,11)}
+// #photo2 .well { background-color: rgba(11,11,11,0.5); border: 1px solid rgb(11,11,11) }
+
+// #photo3 .box { background-color: rgba(11,11,11,0.5); padding:20px; width: 600px; border: 1px solid rgb(11,11,11)}
+// #photo3 .well { background-color: rgba(11,11,11,0.5); border: 1px solid rgb(11,11,11) }
+
+// #footer .well { background-color: rgba(11,11,11,0.5); border: 1px solid rgb(11,11,11) }
+
+.row .well { background-color: rgba(11,11,11,0.5); border: 1px solid rgb(11,11,11) }
+
+@media (min-width: 980px) {#wrapper {background: red;}}
+@media (min-width: 481px)  and (max-width: 767px) { #wrapper {background: yellow; }}
+@media (min-width: 480px) {#wrapper {background: blue; }}
+
+.home-button{
+  width: 150px;
+  text-color: white;
+}
+
+.home-button:hover {
+-webkit-box-shadow: 1px -10px 84px 0px rgba(255,255,255,0.75);
+-moz-box-shadow: 1px -10px 84px 0px rgba(255,255,255,0.75);
+box-shadow: 1px -10px 84px 0px rgba(255,255,255,0.75);
+}
+
+.home-words{
+  text-color: white;
+
+  font-size: 4em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+}
+
+.home-words:hover {
+text-color: red;
+-webkit-box-shadow: 1px -10px 84px 0px rgba(255,255,255,0.75);
+-moz-box-shadow: 1px -10px 84px 0px rgba(255,255,255,0.75);
+box-shadow: 1px -10px 84px 0px rgba(255,255,255,0.75);
+}
+
+.center {
+  text-align: center;
+}
+
+footer {
+  li {
+    display: inline-block;
+  }
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: gray;
+  a {
+    color: silver;
+    &:hover {
+      color: gray;
+    }
+  }
+}

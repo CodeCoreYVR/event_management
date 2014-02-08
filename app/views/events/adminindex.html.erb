@@ -15,9 +15,9 @@
     <tr>
       <td><%= event.title %></td>
       <td><%= event.date.to_formatted_s(:short)%></td>
-      <td><%= truncate_s(event.body,10) %></td>
+      <td><%= event.body.truncate(10) %></td>
       <td><%= event.speaker %></td>
-      <td><%= truncate_s(event.bio,50) %></td>
+      <td><%= event.bio.truncate(50) %></td>
       <% if (event.linkedin && event.linkedin!='') %>
       <td><a href="<%=event.linkedin%>">Profile</a></td>
       <% else %>

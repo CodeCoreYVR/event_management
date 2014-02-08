@@ -36,7 +36,7 @@
         <div class="caption">
           <%= link_to event.title,event, class: "post-thumb" %>
           <br>
-          <p><%= truncate_s(event.body,100) %></p>
+          <p><%= event.body.truncate(100) %></p>
           <p><%=event.date.to_formatted_s(:short)%></p>
           <p><%= event.speaker %></p>
           <p><%= event.bio %></p>

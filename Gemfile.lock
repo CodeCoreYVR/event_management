@@ -131,7 +131,11 @@ DEPENDENCIES
   devise
   jbuilder (~> 1.2)
   jquery-rails
+<<<<<<< HEAD
   paperclip
+=======
+  paperclip (~> 3.0)
+>>>>>>> 19d4baff84293ee59ba82fddbc7c90e5a6caf88d
   rails (= 4.0.2)
   sass-rails (~> 4.0.0)
   sdoc

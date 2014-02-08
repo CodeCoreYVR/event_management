@@ -1,4 +1,4 @@
 class Attendance < ActiveRecord::Base
-  belongs_to :event
-  belongs_to :attendee
+  has_many :attendees
+  has_many :events
 end

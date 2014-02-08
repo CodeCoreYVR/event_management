@@ -26,7 +26,7 @@ before_action :find_event, only: [:edit, :show, :destroy, :update]
 
   def update
     if @event.update_attributes(event_params)
-      redirect_to @event, notice: "Event updated successfully"
+      rdedirect_to @event, notice: "Event updated successfully"
     else
       render :edit, alert: "You suck"
     end

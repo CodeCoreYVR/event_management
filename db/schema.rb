@@ -51,11 +51,10 @@ ActiveRecord::Schema.define(version: 20140208013320) do
   add_index "categorizations", ["category_id"], name: "index_categorizations_on_category_id"
 
   create_table "events", force: true do |t|
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
- 
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
     t.string   "title"
     t.datetime "date"
     t.text     "body"
@@ -63,7 +62,6 @@ ActiveRecord::Schema.define(version: 20140208013320) do
     t.text     "bio"
     t.datetime "created_at"
     t.datetime "updated_at"
-
     t.string   "linkedin"
     t.string   "facebook"
     t.string   "twitter"

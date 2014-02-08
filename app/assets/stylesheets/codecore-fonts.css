@@ -1,0 +1,7 @@
+/* Converts Bootstrap Fonts to CodeCore's font choices */
+
+body {font-family: 'Open Sans', sans-serif;}
+p, a {font-family: 'Open Sans', sans-serif;}
+h1,h2,h3,h4,h5,h6 {font-family: 'Open Sans', sans-serif; font-weight:700;}
+h1 {font-weight:800; font-variant: small-caps;}
+.btn {font-weight:100; text-transform: uppercase; border:1px solid #fff;}

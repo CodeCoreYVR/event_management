@@ -7,7 +7,24 @@
  *
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
- *
+ *= require reset.css 
+ *= require bootstrap_and_override
+ *= require codecore-fonts
  *= require_self
  *= require_tree .
  */
+
+
+#titles {
+  margin-right: 10px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding-top: 0px;
+  font-weight: normal;
+  line-height: 1;
+  &:hover {
+    color: gray;
+    text-decoration: none;
+  }
+}

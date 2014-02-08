@@ -33,12 +33,11 @@
       <div class="thumbnail">
         <%= link_to (image_tag event.image(:medium), class: "post-thumb"), event %>
         <div class="caption">
-          <%= link_to event.title, post, class: "post-thumb" %>
+          <%= link_to event.title,event, class: "post-thumb" %>
           <br>
           <p><%= event.body.truncate(100) %></p>
           <p><%= event.date %></p>
           <p><%= event.speaker %></p>
-          <p><%= event.address %></p>
           <p><%= event.bio %></p>
           <p><%= event.linkedin %></p>
           <p><%= event.facebook %></p>

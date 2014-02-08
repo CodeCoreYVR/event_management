@@ -18,25 +18,25 @@ before_action :find_event, only: [:edit, :show, :destroy, :update]
   def create
     @event = Event.new event_params
     if @event.save
-      redirect_to @event , "Event created successfully"
+      redirect_to @event , notice: "Event created successfully"
     else
-      render :new, "You suck"
+      render :new, alert: "You suck"
     end
   end
 
   def update
     if @event.update_attributes(event_params)
-      redirect_to @event, "Event updated successfully"
+      rdedirect_to @event, notice: "Event updated successfully"
     else
-      render :edit, "You suck"
+      render :edit, alert: "You suck"
     end
   end
 
   def destroy
     if @event.destroy
-      redirect_to events_path, "Event deleted successfully"
+      redirect_to events_path, notice: "Event deleted successfully"
     else
-      redirect_to events_path, "Problem mang"
+      redirect_to events_path, alert: "Problem mang"
     end
   end
 

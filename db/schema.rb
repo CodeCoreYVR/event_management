@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20140208013320) do
-=======
-ActiveRecord::Schema.define(version: 20140208010540) do
->>>>>>> 19d4baff84293ee59ba82fddbc7c90e5a6caf88d
 
   create_table "attendances", force: true do |t|
     t.integer  "event_id"
@@ -55,17 +51,11 @@ ActiveRecord::Schema.define(version: 20140208010540) do
   add_index "categorizations", ["category_id"], name: "index_categorizations_on_category_id"
 
   create_table "events", force: true do |t|
-<<<<<<< HEAD
-    t.string   "photo_file_name"
-    t.string   "photo_content_type"
-    t.integer  "photo_file_size"
-    t.datetime "photo_updated_at"
-=======
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
->>>>>>> 19d4baff84293ee59ba82fddbc7c90e5a6caf88d
+ 
     t.string   "title"
     t.datetime "date"
     t.text     "body"
@@ -73,12 +63,10 @@ ActiveRecord::Schema.define(version: 20140208010540) do
     t.text     "bio"
     t.datetime "created_at"
     t.datetime "updated_at"
-<<<<<<< HEAD
+
     t.string   "linkedin"
     t.string   "facebook"
     t.string   "twitter"
-=======
->>>>>>> 19d4baff84293ee59ba82fddbc7c90e5a6caf88d
   end
 
   create_table "users", force: true do |t|

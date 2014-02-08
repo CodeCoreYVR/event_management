@@ -1,1 +1,9 @@
-_form.html.erb
+<h1>Yo yo!</h1>
+<%= semantic_form_for @attendee do |f| %>
+	<%= f.input :name %>
+	<%= f.input :email %>
+	<%= f.input :company %>
+	<p>Are you interested to join the mailing list?: <%= f.input :mail_list, :as => :boolean %></p>
+	<%= f.submit %>
+	<% end %>
+	

@@ -4,7 +4,7 @@ before_action :find_event, only: [:edit, :show, :destroy, :update]
 
   def index
     @events = Event.all
-
+    @attendee = Attendee.new
   end
 
   def new

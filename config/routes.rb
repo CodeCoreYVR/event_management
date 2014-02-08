@@ -1,3 +1,4 @@
+
 EventManagement::Application.routes.draw do
 
 
@@ -5,7 +6,7 @@ EventManagement::Application.routes.draw do
   root "events#index"
 
   resources :events
-
+  resources :attendees, only: [:new,:create]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,8 +1,10 @@
 class EventsController < ApplicationController
+before_action :authenticate_user!,only: [:create,:new,:update,:edit,:destroy]
 before_action :find_event, only: [:edit, :show, :destroy, :update]
 
   def index
     @events = Event.all
+
   end
 
   def new
@@ -44,7 +46,7 @@ before_action :find_event, only: [:edit, :show, :destroy, :update]
   private
 
   def event_params
-    params.require(:event).permit([:title, :body, :date, :speaker, :address, :bio, :linkedin, :facebook, :twitter])
+    params.require(:event).permit([:image,:title, :body, :date, :speaker, :address, :bio, :linkedin, :facebook, :twitter])
   end
 
   def find_event

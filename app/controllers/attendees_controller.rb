@@ -6,9 +6,9 @@ class AttendeesController < ApplicationController
     @attendee = Attendee.new attendee_params
     if event_number_check && @attendee.save
     else
-    @events = Event.all
-    flash.now[:alert]=@message
-    render "/events/index"
+      @events = Event.all
+      flash.now[:alert] = @message
+      render "/events/index"
     end
   end
 
@@ -20,12 +20,9 @@ class AttendeesController < ApplicationController
 
 private
   def event_number_check
-    @message="Unknown issue."
-    if (!eventids)
-      @message="You have to choose 1 or 2 events."
-      false
-    elsif eventids.length>2
-      @events = Event.all
+    @message = "Unknown issue."
+    if (!@eventids || @eventids.length > 2)
+      @message = "You have to choose 1 or 2 events."
       false
     else
       true
@@ -33,7 +30,7 @@ private
   end
 
   def eventids
-    params[:attendee][:event_ids]
+    @event_ids ||= params[:attendee][:event_ids]
   end
 
 

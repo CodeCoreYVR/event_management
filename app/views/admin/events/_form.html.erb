@@ -1,3 +1,4 @@
+<div class="container">
 <%= form_for [:admin, @event],:html => { :multipart => true } do |f| %>
   <% if @event.errors.any? %>
     <ul>
@@ -6,6 +7,7 @@
       <% end %>
     </ul>
   <% end %>
+  
   <div><%= f.label :image %>
     <br>
     <%= f.file_field :image %>
@@ -14,37 +16,45 @@
   <div>
     <%= f.label :title %>
     <br>
-    <%= f.text_field :title  %>
-  </div>
-  <div>
-    <%= f.label :body %>
-    <br>
-    <%= f.text_area :body  %>
+    <%= f.text_field :title,  class: "form-control" %>
   </div>
   <div>
     <%= f.label :date %>
     <br>
-    <%= f.datetime_local_field :date  %>
+    <%= f.datetime_local_field :date,  class: "form-control"  %>
+  </div>
+  <div>
+    <%= f.label "Total Seats" %>
+    <br>
+
+    <%= f.text_field :seats,  class: "form-control"   %>
+
+  </div>
+  <div>
+    <%= f.label :body %>
+    <br>
+    <%= f.text_area :body,  class: "form-control", rows: 10   %>
   </div>
   <div>
     <%= f.label :speaker %>
     <br>
-    <%= f.text_field :speaker  %>
+    <%= f.text_field :speaker,  class: "form-control"   %>
   </div>
   <div>
     <%= f.label :bio %>
     <br>
-    <%= f.text_area :bio  %>
+    <%= f.text_area :bio,  class: "form-control"   %>
   </div>
   <div>
     <%= f.label :linkedin %>
     <br>
-    <%= f.url_field :linkedin  %>
+    <%= f.url_field :linkedin,  class: "form-control"   %>
   </div>
   <div>
     <%= f.label :twitter %>
     <br>
-    <%= f.url_field :twitter  %>
+    <%= f.url_field :twitter,  class: "form-control"   %>
   </div>
-  <%= f.submit "Save" %>
+  <%= f.submit "Save", class: "btn btn-primary" %>
 <% end %>
+</div>

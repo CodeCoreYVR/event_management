@@ -33,19 +33,20 @@ class Admin::EventsController < ApplicationController
 
   def destroy
     if @event.destroy
-      redirect_to events_path, notice: "Event deleted successfully"
+      redirect_to admin_events_path, notice: "Event deleted successfully"
     else
-      redirect_to events_path, alert: "Problem mang"
+      redirect_to admin_events_path, alert: "Problem mang"
     end
   end
 
   def show
+    @event = Event.find params[:id]
   end
 
   private
 
   def event_params
-    params.require(:event).permit([:image,:title, :body, :date, :speaker, :address, :bio, :linkedin, :facebook, :twitter])
+    params.require(:event).permit([:image,:title, :body, :seats, :date, :speaker, :address, :bio, :linkedin, :facebook, :twitter])
   end
 
   def find_event

@@ -9,6 +9,7 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *= require reset.css 
  *= require bootstrap_and_override
+ 
  *= require codecore-fonts
  *= require_self
  *= require bootstrap_and_override

@@ -6,6 +6,7 @@ EventManagement::Application.routes.draw do
 
   namespace :admin do
     resources :events
+    resources :attendees, only:[:index,:edit,:update,:destroy]
   end
  
   resources :attendees#, only: [:create]

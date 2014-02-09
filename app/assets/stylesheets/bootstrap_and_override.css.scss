@@ -89,8 +89,8 @@ box-shadow: 1px -10px 84px 0px rgba(255,255,255,0.75);
 .row {color: black;width: 100%; background-color: white; padding: 10px; margin-bottom: 20px; border: 1px solid #c2bbae}
 .row p {font-weight: 300;}
 .speaker { text-align: center;}
-.thumbnail {width: 200px; height: 100%; border-radius: 0; padding: 0; margin-right: 10px; background: none; border: 3px solid black;}
-.caption {background-color: #E9E6E1; border: 3px solid black;}
+.thumbnail {width: 200px; height: 100%; border-radius: 0; padding: 0; margin-right: 10px; background: none;}
+.caption {background-color: #E9E6E1; padding-left: 10px; padding-top: 10px;}
 .caption h4 {font-weight: 300;}
 .row h5 {line-height: 10px;}
 .right {margin: 0 auto;}
@@ -140,7 +140,9 @@ input[type='checkbox']:after {
     cursor: pointer;
     height: 100px;
     width: 100px;
-    
+    content:'\2714';
+    color: #86090b;
+
     font-size:98px;
 
     -webkit-box-shadow: inset 5px 5px 5px rgba(0,0,0,0.5), 0px 2px 0px #444;
@@ -148,10 +150,17 @@ input[type='checkbox']:after {
     box-shadow: inset 5px 5px 5px rgba(0,0,0,0.5), 0px 0px 2px #444;
     background: #86090b;
 }
-input[type='checkbox']:hover:after, input[type='checkbox']:checked:hover:after {
+
+input[type='checkbox']:hover:after {
     background: #86090b;
-    content:'\2714';
+    
+
     color: #888;
+}
+input[type='checkbox']:checked:hover:after {
+    background: #CB0D0F;
+    content:'\2714';
+    color: #fff;
 }
 input[type='checkbox']:checked:after {
     background: #CB0D0F;

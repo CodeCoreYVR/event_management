@@ -3,12 +3,18 @@ EventManagement::Application.routes.draw do
 
   devise_for :users
   root "events#index"
-  get "admin"=>"events#adminindex"
+
+  namespace :admin do
+    resources :events
+  end
+ 
 
   resources :events
   devise_scope :user do 
     get "users/sign_out"=>"devise/sessions#destroy"
   end
+
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.

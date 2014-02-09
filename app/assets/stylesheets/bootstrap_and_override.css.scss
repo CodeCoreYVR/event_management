@@ -5,7 +5,7 @@
 html { height:100%; /* Required to get min height 100% to work */ }
 body { height:100%; padding: 0px; margin: 0px auto; }
 
-.navbar { height: 60px;}
+.navbar { height: 60px;background-color: #CB0D0F;}
 
 #titles {
   margin-right: 10px;
@@ -23,7 +23,7 @@ body { height:100%; padding: 0px; margin: 0px auto; }
 #parallax { margin:0px auto;}
 #parallax h1 { line-height:1; margin-bottom: 1em; }
 #parallax p { line-height: 1.5; margin-bottom:1em;}
-#parallax section { border-bottom: 4px solid #fff; padding: 50px 75px; min-height: 100%; width: 100%; border:none;/*parent height needs to be 100% */ }
+#parallax section { border-bottom: 4px solid #fff; padding: 50px 75px; min-height: 50%; width: 100%; border:none;/*parent height needs to be 100% */ }
 
 #parallax #header { background: #39f; color: #fff; }
 #parallax #about { background: #CB0D0F; color: #fff; }
@@ -60,7 +60,7 @@ background-size: cover;
 
 
 // #photo1 .box { background-color: rgba(11,11,11,0.5); padding:20px; width: 600px; border: 1px solid rgb(11,11,11)}
-#photo1 .well { background-color: rgba(11,11,11,0.5); border: 1px solid rgb(11,11,11) }
+#photo1 .well { background-color: rgba(203,13,15,0.8); border: 1px solid rgb(11,11,11) }
 #photo1 .well a { font-color:red; }
 // #photo2 .box { background-color: rgba(11,11,11,0.5); padding:20px; width: 600px; border: 1px solid rgb(11,11,11)}
 // #photo2 .well { background-color: rgba(11,11,11,0.5); border: 1px solid rgb(11,11,11) }

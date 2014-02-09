@@ -8,7 +8,7 @@ class Event < ActiveRecord::Base
   validate :date_checker
   
   def date_checker
-    if !date.present? || date < Date.today
+    if date.blank? || date < Date.today
       errors.add(:date, " should be filled and should be in the future.")
     end
   end

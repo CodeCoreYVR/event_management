@@ -30,9 +30,7 @@
       <% end %>
       <% if attendee.categories %>
       <td>
-      <% attendee.categories.each do |category|  %>
-          <%= category.name+ ',' %>
-      <% end %>
+      <%= attendee.categories.pluck('name').join(", ") %>
       </td>
       <% else %>
       <td>&nbsp;</td>

@@ -6,7 +6,7 @@
   <div class="clear-float"></div>
 
  
-  <br>&nbsp
+  <br>&nbsp;
 
   <p class="center">
     <a id="home-button"><%= link_to 'Register', "http://www.codecore.ca", class: "btn btn-warning btn-lg home-button"%></a>
@@ -24,7 +24,7 @@
   </div>
 </section>
 
-
+<%= semantic_form_for @attendee do |f| %>
 <section id="about">
   <h1>About The Event/Speakers</h1>
 
@@ -51,7 +51,8 @@
           <% else %>
           <p>&nbsp;</p>
           <% end %>
-          <!-- <p><%= event.facebook %></p> -->
+          <%= label_tag("attendee[event_ids][]", "I want to attend #{event.speaker}'s session") %>
+          <%=  check_box_tag "attendee[event_ids][]",event.id %>
         </div>
       </div>
     </div>
@@ -79,6 +80,17 @@
 </div>
 
 <section id="about">
+<%= f.input  :name, input_html: {class: "attendee-form"} %>
+<%= f.input  :email, input_html: {class: "attendee-form"} %>
+<%= f.input  :company, input_html: {class: "attendee-form"} %>
+ <%=  f.input :categories, :as => :check_boxes,:label => "Topics I am interested in:"%>
+<p>Are you interested in joining our mailing list? <%= f.input :mail_list, :as => :boolean%></p>
+<%= f.submit "FEWFEW"%>
+<% end %>
+
+
+
+<section id="photo3">
 
 <h1>Website Created by CodeCore-CohortOne</h1>
 

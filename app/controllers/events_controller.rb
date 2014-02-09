@@ -4,6 +4,6 @@ class EventsController < ApplicationController
     @events = Event.all
     @attendee = Attendee.new
   end
-  
+
 
 end

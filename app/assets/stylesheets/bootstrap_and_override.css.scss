@@ -11,7 +11,7 @@ body { height:100%; padding: 0px; margin: 0px auto; }
 #parallax section { border-bottom: 4px solid #fff; padding: 10px 40px; width: 100%; border:none;/*parent height needs to be 100% */ }
 #parallax h2 {font-weight: 300;}
 
-.q {border-bottom: 1px white solid; margin-bottom: 10px; font-weight: 500;}
+.q {border-bottom: 1px black solid; margin-bottom: 10px; font-weight: 500;}
 #parallax a {color: white; font-weight: 600;}
 .navbar { height: 60px;background: black; border-bottom: #CB0D0F 2px solid ; border-radius: none; }
 
@@ -19,10 +19,10 @@ body { height:100%; padding: 0px; margin: 0px auto; }
 #photo1 .well { background-color: rgba(233,230,225,0.9); border-radius: 0; margin-top: 30px;}
 #photo1 .well a { text-decoration: none; }
 .link {display: inline; }
-.link a{color: white; }
+.link a{color: black; }
 .link a:hover{color: #f0ad4e; }
 
-#parallax #week {font-weight: 300;padding-top: 0; width: 100%; background-color: #CB0D0F; color: white; padding-bottom: 20px;padding-top: 20px;}
+#parallax #week {font-weight: 300;padding-top: 0; width: 100%; color: black; padding-bottom: 20px;padding-top: 20px;}
 
 
 #titles {
@@ -88,6 +88,8 @@ box-shadow: 1px -10px 84px 0px rgba(255,255,255,0.75);
 .schedule {background-color: black; margin-left: -15px; padding: 0 0 0 10px; width: inherit;}
 .row {color: black;width: 100%; background-color: white; padding: 10px; margin-bottom: 20px; border: 1px solid #c2bbae}
 .row p {font-weight: 300;}
+.row a {color: black;}
+.row a:hover {color: #CB0D0F;}
 .speaker { text-align: center;}
 .thumbnail {width: 200px; height: 100%; border-radius: 0; padding: 0; margin-right: 10px; background: none;}
 .caption {background-color: #E9E6E1; padding-left: 10px; padding-top: 10px;}

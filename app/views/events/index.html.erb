@@ -3,6 +3,32 @@
   <div class="well">
     <h2  id="titles">Introducing a new series of lunch and learn events for Vancouver's tech community.</h2> 
     <br>
+    <section id="week">
+      <div class="col-md-2">
+        <div class="q center">When</div>
+        <% @events.each do |event| %>
+          <strong><%=event.date.strftime("%A, %B %C")%></strong>
+          <br>
+        <% end %>
+      </div>
+      <div class="col-md-1">
+        <div class="q">What</div>
+        <% @events.each do |event| %>
+          <%=event.title%>
+          <br>
+        <% end %>
+      </div>
+      <div class="col-md-1">
+        <div class="q">Who</div>
+        <% @events.each do |event| %>
+          <a href="<%=event.linkedin%>"><%= event.speaker %></a>
+          <br>
+        <% end %>
+      </div>
+        <br>
+      <div class="clearfix"></div>
+  
+    </section>
     <p class="center">
       <a id="home-button"><%= link_to 'Register', "http://www.codecore.ca", class: "btn btn-warning btn-lg home-button"%></a>
     </p>
@@ -16,32 +42,7 @@
     </div>
 </section>
 
-<section id="week">
-  <div class="col-md-3">
-    <div class="q">When</div>
-    <% @events.each do |event| %>
-      <strong><%=event.date.strftime("%A, %B %C")%></strong>
-      <br>
-    <% end %>
-  </div>
-  <div class="col-md-4">
-    <div class="q">What</div>
-    <% @events.each do |event| %>
-      <%=event.title%>
-      <br>
-    <% end %>
-  </div>
-  <div class="col-md-5">
-    <div class="q">Who</div>
-    <% @events.each do |event| %>
-      <a href="<%=event.linkedin%>"><%= event.speaker %></a>
-      <br>
-    <% end %>
-  </div>
-    <br>
-  <div class="clearfix"></div>
-  
-</section>
+
 
 <%= semantic_form_for @attendee do |f| %>
 <section id="about">
@@ -56,26 +57,23 @@
         <div class="thumbnail">
           <%= image_tag event.image(:medium), class: "post-thumb"%>        
         </div>
-          <h3><%= event.speaker %></h3>
+          <h3><% if (event.linkedin && event.linkedin!='') %>
+            <a href="<%=event.linkedin%>"><i class="fa fa-linkedin-square"></i></a>          
+          <% end %>          
+          <%= event.speaker %>
+          <% if (event.twitter && event.twitter!='') %>
+            <a href="<%=event.twitter%>"><i class="fa fa-twitter-square"></i></a>          
+          <% end %></h3>
       </div>
     </div>
     <div class="col-md-6">
       <div class="caption">
           <h4>Topic: <strong><%= event.title %></strong></h4>
           
-          <p><%= event.body.truncate(200) %></p>      
+          <p>Description: <%= event.body.truncate(200) %></p>      
           
           <p><%= event.bio %></p>
-          <% if (event.linkedin && event.linkedin!='') %>
-          <p><a href="<%=event.linkedin%>">Linkedin Profile</a></p>
-          <% else %>
-          <p>&nbsp;</p>
-          <% end %>
-          <% if (event.twitter && event.twitter!='') %>
-          <p><a href="<%=event.twitter%>">Twitter Profile</a></p>
-          <% else %>
-          <p>&nbsp;</p>
-          <% end %>
+          
       </div>
     </div>
     <div class="col-md-4">
@@ -96,6 +94,32 @@
 </section>
 
 <section id="photo3">
+  <section id="week">
+    <div class="col-md-3">
+      <div class="q">When</div>
+      <% @events.each do |event| %>
+        <strong><%=event.date.strftime("%A, %B %C")%></strong>
+        <br>
+      <% end %>
+    </div>
+    <div class="col-md-4">
+      <div class="q">What</div>
+      <% @events.each do |event| %>
+        <%=event.title%>
+        <br>
+      <% end %>
+    </div>
+    <div class="col-md-5">
+      <div class="q">Who</div>
+      <% @events.each do |event| %>
+        <a href="<%=event.linkedin%>"><%= event.speaker %></a>
+        <br>
+      <% end %>
+    </div>
+      <br>
+    <div class="clearfix"></div>
+  
+  </section>
   <div class="form">
     <%= f.input :name, input_html: {class: "attendee-form"} %>
     <%= f.input :email, input_html: {class: "attendee-form"} %>

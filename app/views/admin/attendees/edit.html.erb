@@ -1,0 +1,9 @@
+<%= semantic_form_for [:admin,@attendee] do |f| %>
+  <%= f.input  :name, input_html: {class: "attendee-form"} %>
+  <%= f.input  :email, input_html: {class: "attendee-form"} %>
+  <%= f.input  :company, input_html: {class: "attendee-form"} %>
+  <%= f.input :categories, :as => :check_boxes,:label => "Topics chosen by attendee:"%>
+  <%= f.input :events, :as => :check_boxes,:label => "Events chosen by attendee:"%>
+  <%= f.input :mail_list, :as => :boolean%>
+  <%= f.submit "Submit changes"%>
+<% end %>

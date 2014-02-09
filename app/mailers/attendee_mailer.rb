@@ -7,5 +7,4 @@ class AttendeeMailer < ActionMailer::Base
     @events = @attendee.events
     mail(to:@email, subject: "Congrats! You've signed up!")
   end
-  
 end

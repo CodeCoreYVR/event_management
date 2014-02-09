@@ -3,6 +3,7 @@ class AttendeesController < ApplicationController
   def create
     @attendee = Attendee.new attendee_params
     if event_number_check && @attendee.save
+      AttendeeMailer.delay.notify_attendee(@attendee)
     else
       @events = Event.all
       flash.now[:alert] = @message

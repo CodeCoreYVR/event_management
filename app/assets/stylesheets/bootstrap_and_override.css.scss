@@ -8,12 +8,12 @@ body { height:100%; padding: 0px; margin: 0px auto; }
 .navbar { height: 60px;background-color: #CB0D0F;}
 
 #titles {
+  font-weight: 300;
   margin-right: 10px;
-  color: #fff;
-  text-transform: uppercase;
+  color: black;
   letter-spacing: 2px;
   padding-top: 0px;
-  font-weight: normal;
+  text-align: center;
   line-height: 1;
   &:hover {
     color: white;
@@ -37,7 +37,7 @@ no-repeat center center fixed;
 -o-background-size: cover;
 background-size: cover;
 }
-#parallax #photo2 { color: white; background: url(http://petejones.files.wordpress.com/2013/02/untitled_panorama3b.jpg)
+#parallax #photo2 { clear: all; color: white; background: url(http://petejones.files.wordpress.com/2013/02/untitled_panorama3b.jpg)
 no-repeat center center fixed; 
 /*background size*/
 -webkit-background-size: cover;
@@ -60,7 +60,7 @@ background-size: cover;
 
 
 // #photo1 .box { background-color: rgba(11,11,11,0.5); padding:20px; width: 600px; border: 1px solid rgb(11,11,11)}
-#photo1 .well { background-color: rgba(203,13,15,0.8); border: 1px solid rgb(11,11,11) }
+#photo1 .well { background-color: rgba(233,230,225,0.8); border: 1px solid rgb(11,11,11) }
 #photo1 .well a { font-color:red; }
 // #photo2 .box { background-color: rgba(11,11,11,0.5); padding:20px; width: 600px; border: 1px solid rgb(11,11,11)}
 // #photo2 .well { background-color: rgba(11,11,11,0.5); border: 1px solid rgb(11,11,11) }
@@ -77,14 +77,22 @@ background-size: cover;
 @media (min-width: 480px) {#wrapper {background: blue; }}
 
 .home-button{
+  -o-transition:.3s;
+  -ms-transition:.3s;
+  -moz-transition:.3s;
+  -webkit-transition:.3s;
   width: 150px;
   text-color: white;
 }
 
 .home-button:hover {
--webkit-box-shadow: 1px -10px 84px 0px rgba(255,255,255,0.75);
--moz-box-shadow: 1px -10px 84px 0px rgba(255,255,255,0.75);
-box-shadow: 1px -10px 84px 0px rgba(255,255,255,0.75);
+  -o-transition:.3s;
+  -ms-transition:.3s;
+  -moz-transition:.3s;
+  -webkit-transition:.3s;
+  -webkit-box-shadow: 1px -10px 84px 0px rgba(255,255,255,0.75);
+  -moz-box-shadow: 1px -10px 84px 0px rgba(255,255,255,0.75);
+  box-shadow: 1px -10px 84px 0px rgba(255,255,255,0.75);
 }
 
 .home-words{

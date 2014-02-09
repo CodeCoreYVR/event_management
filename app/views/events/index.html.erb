@@ -1,16 +1,10 @@
 
 <section id="photo1">
 <div class="well">
-  <h2  id="titles">We've created a registration tool just for you, made by people just like you.</h2>
+  <h2  id="titles">Introducing a new series of lunch and learn events for Vancouver's tech community.</h2>
   <div class="clear-float"></div>
-  <h1 class="center">Please join us for Tech Talks & Free Food.</h1>
 
-  <div class="clear-float"></div>
-  <% b = "Are You Ready?"%>
-  <% b.split(" ").each do |y| %>
-  <% y.split(//).each do |x| %>
-  <font class="home-words"><%=x%></font>
-  <%end%><font class="home-words">&nbsp</font><%end%>
+ 
   <br>&nbsp
 
   <p class="center">
@@ -30,7 +24,7 @@
 <div class="row-fluid">
 <% @events.each do |event| %>
 
-    <div class="col-sm-6 col-md-4">
+    <div class="col-sm-6 col-md-12">
       <div class="thumbnail">
         <%= link_to (image_tag event.image(:medium), class: "post-thumb"), event %>
         <div class="caption">
@@ -56,7 +50,7 @@
     </div>
   
 <% end %>
-
+<div class="clearfix"></div>
 
   
 </section>

@@ -2,7 +2,7 @@ class Event < ActiveRecord::Base
   belongs_to :user
   belongs_to :attendance
   has_many :attendees, through: :attendance
-  has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
+  has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "post_missing.jpg"
   validates_attachment_size :image, less_than: 10.megabytes
 
   validate :date_checker

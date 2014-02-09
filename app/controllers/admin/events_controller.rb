@@ -17,7 +17,7 @@ class Admin::EventsController < ApplicationController
   def create
     @event = Event.new event_params
     if @event.save
-      redirect_to [:admin, @event] , notice: "Event created successfully"
+      redirect_to [:admin, :events] , notice: "Event created successfully"
     else
       render :new, alert: "You suck"
     end

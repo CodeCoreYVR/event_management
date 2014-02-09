@@ -84,7 +84,7 @@
 <%= f.input  :email, input_html: {class: "attendee-form"} %>
 <%= f.input  :company, input_html: {class: "attendee-form"} %>
 <%=  f.input :categories, :as => :check_boxes,:label => "Topics I am interested in:"%>
-<p>Are you interested in joining our mailing list? <%= f.input :mail_list,as: :boolean %></p>
+<p>Are you interested in joining our mailing list? <%= f.input :mail_list, as: :boolean %></p>
 <%= f.submit "Submit"%>
 <% end %>
 

@@ -8,6 +8,7 @@ EventManagement::Application.routes.draw do
     resources :events
   end
  
+  resources :attendees#, only: [:create]
 
   resources :events
   devise_scope :user do 

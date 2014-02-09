@@ -1,6 +1,11 @@
 class Attendee < ActiveRecord::Base
-  belongs_to :categorization
-  belongs_to :atendance
-  has_many :events, through: :attendance
-  has_many :categories, through: :categorization
+  has_many :categorizations
+  has_many :attendances
+  has_many :events, through: :attendances
+  has_many :categories, through: :categorizations
+
+  
+  validates :name, presence: true
+  validates :email, presence: true
+
 end

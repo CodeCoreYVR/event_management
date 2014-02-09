@@ -1,0 +1,123 @@
+
+<section id="photo1">
+
+<div class="well">
+  <h2  id="titles">Introducing a week lunch and learn events for Vancouver's tech community.</h2>
+  <div class="clear-float"></div>
+
+ 
+  <br>&nbsp;
+
+  <p class="center">
+    <a id="home-button"><%= link_to 'Register', "http://www.codecore.ca", class: "btn btn-warning btn-lg home-button"%></a>
+  </p>
+  <h6 id="titles">Website developed by CodeCore's 1st Cohort - week 4, please follow us at 
+    <a href="http://www.codecore.ca"> codecore's </a></h6>
+    
+    <!-- <h5 id="titles" class="pull-right">Website Design by CodeCore's Cohort #1</h5> -->
+
+    <br>
+  </div>
+  <div id="titles" class="pull-right">
+    <h6><a id="http://www.flickr.com/photos/magnusl3d/6044910841/" class="cc_ref">Photo</a> by Larsson <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.en" id="cc_ref">CC BYSA3.0</a></h6>
+      <div class="clear-float"></div>
+  </div>
+</section>
+
+<%= semantic_form_for @attendee do |f| %>
+<section id="about">
+  <h1>About The Event/Speakers</h1>
+
+<div class="row-fluid">
+<% @events.each do |event| %>
+
+    <div class="col-sm-6 col-md-12">
+      <div class="thumbnail">
+        <%= link_to (image_tag event.image(:medium), class: "post-thumb"), event %>
+        <div class="caption">
+          <%= link_to event.title,event, class: "post-thumb" %>
+          <br>
+          <p><%= event.body.truncate(100) %></p>
+          <p><%=event.date.to_formatted_s(:short)%></p>
+          <p><%= event.speaker %></p>
+          <p><%= event.bio %></p>
+          <% if (event.linkedin && event.linkedin!='') %>
+          <p><a href="<%=event.linkedin%>">Linkedin Profile</a></p>
+          <% else %>
+          <p>&nbsp;</p>
+          <% end %>
+          <% if (event.twitter && event.twitter!='') %>
+          <p><a href="<%=event.twitter%>">Twitter Profile</a></p>
+          <% else %>
+          <p>&nbsp;</p>
+          <% end %>
+          <%= label_tag("attendee[event_ids][]", "I want to attend #{event.speaker}'s session") %>
+          <%=  check_box_tag "attendee[event_ids][]",event.id %>
+        </div>
+      </div>
+    </div>
+  
+<% end %>
+<div class="clearfix"></div>
+
+  
+</section>
+
+
+<div class="row">
+<section id="photo3">
+<div class="col-md-6">
+
+</div>
+<div class="col-md-3">
+</div>
+<div class="col-md-3">
+<iframe width='100%' height='500px' frameBorder='0' src='http://a.tiles.mapbox.com/v3/abrarmusa.h7khefgh/mm/zoompan,zoomwheel,geocoder,share.html'></iframe>
+</div>
+<div class="clearfix"></div>
+</section>
+
+</div>
+
+<section id="about">
+<%= f.input  :name, input_html: {class: "attendee-form"} %>
+<%= f.input  :email, input_html: {class: "attendee-form"} %>
+<%= f.input  :company, input_html: {class: "attendee-form"} %>
+ <%=  f.input :categories, :as => :check_boxes,:label => "Topics I am interested in:"%>
+<p>Are you interested in joining our mailing list? <%= f.input :mail_list, :as => :boolean%></p>
+<%= f.submit "Submit"%>
+<% end %>
+
+
+
+<section id="photo3">
+
+<h1>Website Created by CodeCore-CohortOne</h1>
+
+<div class="row">
+  <div class="col-lg-3 col-md-3 col-sm-3 well">
+    <img src="http://codecore.ca/img/team/tam.jpg" alt="..." class="center img-circle img-responsive">
+    <p>Adam Tam</p>
+    <p><i class="fa fa-linkedin-square fa-1x"></i> <i class="fa fa-twitter-square fa-1x"></i></p>
+  </div>
+  <div class="col-lg-1 col-md-1 col-sm-1">
+    &nbsp
+  </div>
+  <div class="col-lg-3 col-md-3 col-sm-3 well">
+    <img src="http://codecore.ca/img/team/tam.jpg" alt="..." class="center img-circle img-responsive">
+    <p>Adam Tam</p>
+    <p><i class="fa fa-linkedin-square fa-1x"></i> <i class="fa fa-twitter-square fa-1x"></i></p>
+  </div>
+    <div class="col-lg-1 col-md-1 col-sm-1">
+    &nbsp
+  </div>
+  <div class="col-lg-3 col-md-3 col-sm-3 well">
+    <img src="http://codecore.ca/img/team/tam.jpg" alt="..." class="center img-circle img-responsive">
+    <p>Tam Tam</p>
+    <p><i class="fa fa-linkedin-square fa-1x"></i> <i class="fa fa-twitter-square fa-1x"></i></p>
+  </div>
+</div>
+
+</section>
+
+

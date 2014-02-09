@@ -12,6 +12,9 @@ class AttendeesController < ApplicationController
     end
   end
 
+def new
+  @attendee = Attendee.new
+end
   
 
   def attendee_params

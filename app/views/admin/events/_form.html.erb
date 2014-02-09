@@ -6,6 +6,7 @@
       <% end %>
     </ul>
   <% end %>
+  
   <div><%= f.label :image %>
     <br>
     <%= f.file_field :image %>
@@ -14,7 +15,7 @@
   <div>
     <%= f.label :title %>
     <br>
-    <%= f.text_field :title  %>
+    <%= f.text_field :title, button_html: { class: "form-group" } %>
   </div>
   <div>
     <%= f.label :date %>

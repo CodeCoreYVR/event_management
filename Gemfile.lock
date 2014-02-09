@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/mjbellantoni/formtastic-bootstrap.git
+  revision: 5a264146c03a93800f157d136d2a62cdf2e2196f
+  specs:
+    formtastic-bootstrap (3.0.0.rc.2)
+      formtastic (>= 2.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -137,7 +144,7 @@ DEPENDENCIES
   bootstrap-sass (>= 3.0.0)
   coffee-rails (~> 4.0.0)
   devise
-  formtastic
+  formtastic-bootstrap!
   jbuilder (~> 1.2)
   jquery-rails
   paperclip (~> 3.0)

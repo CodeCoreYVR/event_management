@@ -1,59 +1,63 @@
+<div class = "container">
+<h2>THE REPOSITORY OF EVENTS
+  <%= link_to 'CREATE NEW REPO', new_event_path, class: "btn btn-primary back-lit-btn pull-right" %>
+</h2>
 
-<%= link_to "Create new Event", new_event_path %>
-<table width="900px">
-  <tr>
-    <th>Row</th>
-    <th>Title</th>
-    <th>Date</th>
-    <th>Total Seats</th>
-    <th>Seats Taken</th>
-    <th>Seats Remaining</th>
-    <th>Body</th>
-    <th>Speaker</th>
-    <th>Biography</th>
-    <th>Linkedin</th>
-    <th>Twitter</th>
-    <th>&nbsp;</th>
-    <th>&nbsp;</th>
-    <th>&nbsp;</th>
-  </tr>
-  <% rownumber=0 %>
-  <% @events.each do |event| %>
-  <div>
+  <table width="900px">
     <tr>
-      <td><%= rownumber+=1 %></td>
-      <td><%= event.title %></td>
-      <td><%= event.date.to_formatted_s(:short)%></td>
-      <td><%= event.seats %></td>
-      <% if event.attendees && event.seats %>
-      <td><%= event.attendees.length %></td>
-      <td><%= event.seats - event.attendees.length%></td>
-      <% else %>
+      <th>Row</th>
+      <th>Title</th>
+      <th>Date</th>
+      <th>Total Seats</th>
+      <th>Seats Taken</th>
+      <th>Seats Remaining</th>
+      <th>Body</th>
+      <th>Speaker</th>
+      <th>Biography</th>
+      <th>Linkedin</th>
+      <th>Twitter</th>
       <th>&nbsp;</th>
       <th>&nbsp;</th>
-      <% end %>
-      <td><%= event.body.truncate(10) %></td>
-      <td><%= event.speaker %></td>
-      <td><%= event.bio.truncate(50) %></td>
+      <th>&nbsp;</th>
+    </tr>
+    <% rownumber=0 %>
+    <% @events.each do |event| %>
+    <div>
+      <tr>
+        <td><%= rownumber+=1 %></td>
+        <td><%= event.title %></td>
+        <td><%= event.date.to_formatted_s(:short)%></td>
+        <td><%= event.seats %></td>
+        <% if event.attendees && event.seats %>
+        <td><%= event.attendees.length %></td>
+        <td><%= event.seats - event.attendees.length%></td>
+        <% else %>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+        <% end %>
+        <td><%= event.body.truncate(10) %></td>
+        <td><%= event.speaker %></td>
+        <td><%= event.bio.truncate(50) %></td>
 
-      <% if (!event.linkedin.blank?) %>
-        <td><a href="<%=event.linkedin%>">Profile</a></td>
-      <% else %>
-        <td>&nbsp;</td>
-      <% end %>
+        <% if (!event.linkedin.blank?) %>
+          <td><a href="<%=event.linkedin%>">Profile</a></td>
+        <% else %>
+          <td>&nbsp;</td>
+        <% end %>
 
-      <% if (!event.twitter.blank?) %>
-        <td><a href="<%=event.twitter%>">Profile</a></td>
-      <% else %>
-        <td>&nbsp;</td>
-      <% end %>
+        <% if (!event.twitter.blank?) %>
+          <td><a href="<%=event.twitter%>">Profile</a></td>
+        <% else %>
+          <td>&nbsp;</td>
+        <% end %>
 
-        <td><%= link_to "Show Event", event_path(event) %></td>
-        <td><%= link_to "Modify Event", edit_event_path(event) %></td>
-        <td><%= button_to("Delete Event",event_path(event),method: :delete, data: {confirm: "Are you sure you want to delete this event?"})%></td>
-        
-      </tr>
-    </div>
-    <% end %>
-  </table>
+          <td><%= link_to "Show Event", event_path(event) %></td>
+          <td><%= link_to "Modify Event", edit_admin_event_path(event) %></td>
+          <td><%= button_to("Delete Event",event_path(event),method: :delete, data: {confirm: "Are you sure you want to delete this event?"})%></td>
+          
+        </tr>
+      </div>
+      <% end %>
+    </table>
+  </div>
 </div>

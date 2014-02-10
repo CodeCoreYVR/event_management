@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20140209081804) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "attendances", force: true do |t|
     t.integer  "event_id"
     t.integer  "attendee_id"
@@ -20,8 +23,8 @@ ActiveRecord::Schema.define(version: 20140209081804) do
     t.datetime "updated_at"
   end
 
-  add_index "attendances", ["attendee_id"], name: "index_attendances_on_attendee_id"
-  add_index "attendances", ["event_id"], name: "index_attendances_on_event_id"
+  add_index "attendances", ["attendee_id"], name: "index_attendances_on_attendee_id", using: :btree
+  add_index "attendances", ["event_id"], name: "index_attendances_on_event_id", using: :btree
 
   create_table "attendees", force: true do |t|
     t.string   "email"
@@ -47,8 +50,8 @@ ActiveRecord::Schema.define(version: 20140209081804) do
     t.datetime "updated_at"
   end
 
-  add_index "categorizations", ["attendee_id"], name: "index_categorizations_on_attendee_id"
-  add_index "categorizations", ["category_id"], name: "index_categorizations_on_category_id"
+  add_index "categorizations", ["attendee_id"], name: "index_categorizations_on_attendee_id", using: :btree
+  add_index "categorizations", ["category_id"], name: "index_categorizations_on_category_id", using: :btree
 
   create_table "delayed_jobs", force: true do |t|
     t.integer  "priority",   default: 0, null: false
@@ -64,7 +67,7 @@ ActiveRecord::Schema.define(version: 20140209081804) do
     t.datetime "updated_at"
   end
 
-  add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority"
+  add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
 
   create_table "events", force: true do |t|
     t.string   "image_file_name"
@@ -99,7 +102,7 @@ ActiveRecord::Schema.define(version: 20140209081804) do
     t.datetime "updated_at"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end

@@ -19,4 +19,5 @@ class Event < ActiveRecord::Base
       errors.add(:date, " should be filled and should be in the future.")
     end
   end
+
 end

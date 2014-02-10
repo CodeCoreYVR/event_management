@@ -3,6 +3,10 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 
+# Use for the mailer
+gem 'delayed_job_active_record'
+gem 'delayed_job_web'
+
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 
@@ -11,6 +15,9 @@ gem 'sass-rails', '~> 4.0.0'
 gem 'bootstrap-sass', '>= 3.0.0'
 gem 'bootstrap-datepicker-rails'
 gem 'formtastic'
+gem 'quiet_assets'
+
+gem "letter_opener", :group => :development
 
 
 gem "paperclip", "~> 3.0"

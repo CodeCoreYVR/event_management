@@ -16,3 +16,5 @@
 /tmp
 /config/database.yml
 /public/system
+
+/config/initializers/email_vars.rb

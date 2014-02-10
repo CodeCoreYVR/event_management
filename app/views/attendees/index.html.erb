@@ -1,0 +1,26 @@
+
+<table class="table">
+
+  <th>List of all attendees.</th>
+  <tbody>
+  <% @attendees.each do |attendee| %>
+    <tr class=".table-hover">
+      <td>
+        <%= attendee.name %>
+      </td>
+      <td>
+        <%= attendee.email %>
+      </td>
+      <td>
+        <%= attendee.company %>
+      </td>
+      <td>
+        <%= attendee.confirm_at %>
+      </td>
+      <td>
+        <%= attendee.mail_list %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

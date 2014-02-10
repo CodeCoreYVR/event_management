@@ -1,0 +1,16 @@
+<p>Hello <%= @attendee.name%>,</p>
+<br>
+<p>You've signed up to the following events at the CodeCore lunch and learns!</p>
+<% @events.each do |event| %>
+  <p>Event: <%= event.title %> featuring <%= event.speaker %></p>
+  <p>Date: <%= formatted_date(event.date)%> </p>
+  <br>  
+<% end %>
+<p>Thanks for signing up. Lunch and beverages will be provided of course!</p>
+<p>Any questions or concerns feel free to email us:</p>
+<a href="mailto:aswin@codecore.ca?Subject=CodeCore%20Events" target="_top">aswin@codecore.ca</a>
+<br>
+<p><a href="http://www.codecore.ca">CodeCore.ca</a></p>
+<br>
+<p>Best regards,</p>
+<p>inaugural CodeCore students!</p>

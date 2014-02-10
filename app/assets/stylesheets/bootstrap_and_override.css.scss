@@ -26,7 +26,6 @@ body { height:100%; padding: 0px; margin: 0px auto; }
 
 a:hover {
   font-weight:bold;
-  //background-color: white;
 }
 
 
@@ -95,7 +94,7 @@ box-shadow: 1px -10px 84px 0px rgba(255,255,255,0.75);
   background-size: cover;
 }
 .schedule {background-color: black; margin-left: -15px; padding: 0 0 0 10px; width: inherit;}
-.row {color: black;width: 100%; background-color: white; padding: 10px; margin-bottom: 20px; border: 1px solid #c2bbae}
+.row {color: black;  width: 100%; background-color: rgba(233,230,225,0.9); padding: 45px 10px 10px 10px; margin-bottom: 20px; border: 1px solid #c2bbae}
 .row p {font-weight: 300;}
 .row a {color: black;}
 .row a:hover {color: #CB0D0F;}
@@ -113,8 +112,18 @@ box-shadow: 1px -10px 84px 0px rgba(255,255,255,0.75);
   -o-background-size: cover;
   background-size: cover;
 }
-.map {float:right; width: 30%;}
 
+#photo3 .row { background-color: rgba(40,40,40,0.9); padding-right: 90px;}
+.map {float:right; width: 30%; }
+
+#photo3 h1 {text-shadow: -1px 1px #444;}
+
+#photo3 .row .well {
+
+  background-color: rgba(255,255,255,0.6)
+}
+
+#photo3 .row .well p { color: #444; font-weight: bold; text-shadow: -1px 1px #eee;}
 .map iframe {
   width:'100%'; 
   height:'500px';  
@@ -213,8 +222,8 @@ footer {
   }
 }
 
-.profile-links a{
-  color: #eee;
+.profile-links i {
+  color: #e00;
 }
 
 .linkedin-social:hover {

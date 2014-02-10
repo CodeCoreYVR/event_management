@@ -11,23 +11,25 @@
               <div class="center">
                 <div class="thumbnail">
                   <%= image_tag event.image(:medium), class: "post-thumb"%></div>
-                          <h3><% if (event.linkedin && event.linkedin!='') %>
-                                    <a class="profile-links" href="<%=event.linkedin%>"><i class="fa fa-linkedin-square linkedin-social profile-links"></i></a>          
+                          <h3 id="upcase"><%= event.speaker %></h3>
+                          <% if (event.linkedin && event.linkedin!='') %>
+                                    <a class="profile-links" href="<%=event.linkedin%>"><i class="fa fa-linkedin-square fa-2x linkedin-social profile-links"></i></a>          
                                 <% end %>          
                        
                               <% if (event.twitter && event.twitter!='') %>
-                                    <a class="profile-links" href="<%=event.twitter%>"><i class="fa fa-twitter-square twitter-social profile-links"></i></a>          
+                                    <a class="profile-links" href="<%=event.twitter%>"><i class="fa fa-twitter-square fa-2x twitter-social profile-links"></i></a>          
                                 <% end %>
 
-                          <h3 id="upcase"><%= event.speaker %></h3>
-                         </h3>
+                          
+                          <h5 id="upcase"><%= event.seats %> Spots Remaining</h5>
+                         
               </div>
             </div>
             <div class="col-md-6">
               <div class="caption">
                   <h4>Topic: <strong id="titles"><%= event.title %></strong></h4>
                   
-                  <p id="titles">Description: <%= event.body.truncate(200) %></p>      
+                  <p id="titles">Description: <%= event.body %></p>      
                   
                   <p id="titles"><%= event.bio %></p>
                   
@@ -36,7 +38,7 @@
 
             <div class="col-md-3">
               <div class="center">
-                  <p id="titles"><%= label_tag("attendee[event_ids][]", "I want to attend #{event.speaker}'s session:")%></p>
+                  <p id="upcase"><%= label_tag("attendee[event_ids][]", "I want to attend #{event.speaker}'s session:")%></p>
                   <br><br>
                   <%= check_box_tag "attendee[event_ids][]",event.id, false, data: { "class" => "custom_check" } %>
                   <br>

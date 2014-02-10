@@ -86,35 +86,44 @@ color: #333; padding: 0px; margin: 0px auto; }
 #parallax #photo1 { color: #fff; background: url(http://upload.wikimedia.org/wikipedia/commons/b/ba/Downtown_Vancouver_Sunset.jpg)
 no-repeat center center fixed; 
 
-border-bottom:50px solid black;
+/*border-bottom:50px solid black;*/
 /*background size*/
 -webkit-background-size: cover;
 -moz-background-size: cover;
 -o-background-size: cover;
 background-size: cover;
+
+  box-shadow: 0 0 250px rgba(0,0,0,1.0);
+  -webkit-box-shadow: 0 0 250px rgba(0,0,0,1.0);
+  -moz-box-shadow: 0 0 250px rgba(0,0,0,1.0);
+  -o-box-shadow: 0 0 250px rgba(0,0,0,1.0);
 }
 #parallax #photo2 { color: white; background: url(http://www.codecore.ca/wp-content/themes/CodeCore/img/front2.jpg)
   no-repeat center center fixed; 
-
-  border-bottom:50px solid black;
   /*background size*/
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  box-shadow: 0 0 250px rgba(0,0,0,1.0);
+  -webkit-box-shadow: 0 0 250px rgba(0,0,0,1.0);
+  -moz-box-shadow: 0 0 250px rgba(0,0,0,1.0);
+  -o-box-shadow: 0 0 250px rgba(0,0,0,1.0);
 }
 
 #parallax #photo2 #titles {text-shadow: -1px 1px #444;}
 .post-thumb {}
 #parallax #photo3 { color: white; opacity:.9; background: url(https://dl.dropboxusercontent.com/u/525680/ruby_code.jpg)
   no-repeat center center fixed; 
-
-  border-bottom:50px solid black;
   /*background size*/
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  box-shadow: 0 0 250px rgba(0,0,0,1.0);
+  -webkit-box-shadow: 0 0 250px rgba(0,0,0,1.0);
+  -moz-box-shadow: 0 0 250px rgba(0,0,0,1.0);
+  -o-box-shadow: 0 0 250px rgba(0,0,0,1.0);
 }
 
 

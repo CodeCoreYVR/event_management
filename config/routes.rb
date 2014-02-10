@@ -1,6 +1,5 @@
 EventManagement::Application.routes.draw do
 
-  resources :attendees
   devise_for :users
   root "events#index"
 
@@ -12,7 +11,7 @@ EventManagement::Application.routes.draw do
  
   resources :attendees, only: [:create]
   resources :admin, only: [:index]
-  resources :events
+  resources :events, only: [:create]
  
 
 

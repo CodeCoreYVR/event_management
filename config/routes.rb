@@ -7,10 +7,11 @@ EventManagement::Application.routes.draw do
   namespace :admin do
     resources :events
     resources :attendees, only:[:index,:edit,:update,:destroy]
+    resources :categories
   end
  
   resources :attendees#, only: [:create]
-
+  resources :admin, only: [:index]
   resources :events
   devise_scope :user do 
     get "users/sign_out"=>"devise/sessions#destroy"

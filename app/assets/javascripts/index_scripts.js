@@ -31,13 +31,13 @@ $(function(){
     var nameMissing=false;
     if($('#attendee_name').val()===''){
         e.preventDefault();
-        $('#attendee_name').addClass("inputMissing");
+        $('#attendee_name').addClass("inputError");
         $('#attendee_name').prop('placeholder',"Input required");
         $('#attendee_name').focus();
         nameMissing=true;
     }
     if($('#attendee_email').val()===''){
-      $('#attendee_email').addClass("inputMissing");
+      $('#attendee_email').addClass("inputError");
       $('#attendee_email').prop('placeholder',"Input required");
       if (!nameMissing){
         e.preventDefault();
@@ -47,7 +47,7 @@ $(function(){
     else{
       var email_pat = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,6}$/i;
       if (email_pat.exec($('#attendee_email').val())===null){
-        $('#attendee_email').addClass("inputMissing");
+        $('#attendee_email').addClass("inputError");
         $('#attendee_email').val(null);
         $('#attendee_email').prop('placeholder',"Email is wrong");
         if (!nameMissing){
@@ -61,14 +61,14 @@ $(function(){
 $(function(){
   $('#attendee_name').on('keyup',function(e){
     if($('#attendee_name').val()!=''){
-        $('#attendee_name').removeClass("inputMissing");
+        $('#attendee_name').removeClass("inputError");
     }
   });
 });
 $(function(){
   $('#attendee_email').on('keyup',function(e){
     if($('#attendee_email').val()!=''){
-        $('#attendee_email').removeClass("inputMissing");
+        $('#attendee_email').removeClass("inputError");
     }
   });
 });

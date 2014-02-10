@@ -5,7 +5,7 @@ class Attendee < ActiveRecord::Base
   has_many :categories, through: :categorizations
 
   
-  validates :name, presence: true
+  validates :name, presence: true 
   validates :email, presence: true
 
 end

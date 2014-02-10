@@ -1,16 +1,22 @@
-<%= link_to "Create New Category",new_admin_category_path %>
-<table>
-  <tr>
-    <th>Category</th>
-    <th>Number of votes</th>
-    <th>&nbsp;</th>
-    <th>&nbsp;</th>
-  </tr>
-<% @categories.each do |category| %>
-  <tr>
-    <td><%=category.name%></td>
-    <td><%= @category_counts[category.id] || 0 %></td>
-    <td><%= link_to "Edit",edit_admin_category_path(category) %></td>
-    <td><%= link_to "Delete",admin_category_path(category), method: :delete %></td>
-  </tr>
-<% end %>
+<div class = "container">
+<h2>CATEGORIES/TOPICS
+  <%= link_to 'ADMIN INDEX', admin_index_path, class: "btn btn-primary back-lit-btn pull-right" %>
+  <%= link_to "Create New Category",new_admin_category_path, class: "btn btn-primary back-lit-btn pull-right" %>
+</h2>
+
+  <table class="table table-striped">
+    <tr>
+      <th>Category</th>
+      <th>Number of votes</th>
+      <th>&nbsp;</th>
+      <th>&nbsp;</th>
+    </tr>
+  <% @categories.each do |category| %>
+    <tr>
+      <td><%=category.name%></td>
+      <td><%= @category_counts[category.id] || 0 %></td>
+      <td><%= link_to "Edit",edit_admin_category_path(category) %></td>
+      <td><%= link_to "Delete",admin_category_path(category), method: :delete %></td>
+    </tr>
+  <% end %>
+</div>

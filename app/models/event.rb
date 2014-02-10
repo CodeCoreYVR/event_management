@@ -8,11 +8,6 @@ class Event < ActiveRecord::Base
 
   validate :date_checker
 
-  # validates :event, presence: true {maximum}
-
- 
-
-
 
   def date_checker
     if date.blank? || date < Date.today

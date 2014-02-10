@@ -20,10 +20,10 @@ color: #333; padding: 0px; margin: 0px auto; }
   line-height: 1;
 }
 
-.iputMissing {   
+.inputError {   
   font-weight: 300;
   margin-right: 10px;
-  color: red;
+  background-color: red;
   letter-spacing: 2px;
   padding-top: 0px;
   line-height: 1; 

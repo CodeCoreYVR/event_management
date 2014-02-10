@@ -1,6 +1,6 @@
 class Admin::AttendeesController < ApplicationController
   before_action :find_attendee, except: :index
-  
+  before_action :authenticate_user!
   def edit
   end
 

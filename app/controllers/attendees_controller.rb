@@ -20,7 +20,6 @@ class AttendeesController < ApplicationController
 
   def event_number_check
     eventids
-
     if (!@event_ids || @event_ids.length > 2)
       @message = "You have to choose 1 or 2 events."
       false

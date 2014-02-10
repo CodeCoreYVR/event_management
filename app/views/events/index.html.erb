@@ -217,17 +217,16 @@
 
 <!-- week section (Other form section) -->
   
-  <section>
+<section>
   <div class="form">
-    <%= f.input :name, input_html: {class: "attendee-form"} %>
-    <%= f.input :email, input_html: {class: "attendee-form"} %>
-    <%= f.input :company, input_html: {class: "attendee-form"} %>
+    <%#= f.input :name, input_html: {class: "attendee-form"} %>
+    <%#= f.input :email, input_html: {class: "attendee-form"} %>
+    <%#= f.input :company, input_html: {class: "attendee-form"} %>
     
-    <%= f.input :categories, :as => :check_boxes,:label => "Topics I am interested in:"%>
-    <p>Are you interested in joining our mailing list? <%= f.input :mail_list, :as => :boolean%></p>
-    <%= f.submit "Register"%>
+    <%#= f.input :categories, :as => :check_boxes,:label => "Topics I am interested in:"%>
+    <!-- <p>Are you interested in joining our mailing list? <%#= f.input :mail_list, :as => :boolean%></p> -->
+    <%#= f.submit "Register"%>
 
-    <% end %>
   </div>
 
 
@@ -238,149 +237,15 @@
 </section>
 
 
-
-
 <section id="photo3">
-
   <h1>Website Created by CodeCore-CohortOne</h1>
-
   <div class="row">
     <div class="col-lg-1 col-md-1 col-sm-1">
        &nbsp;
     </div>
-
-    <div class="col-lg-3 col-md-3 col-sm-3 well">
-      <img src="http://codecore.ca/img/team/tam.jpg" alt="..." class="center img-circle img-responsive">
-      <p>Salman Alam</p>
-      <p class="profile-links">
-        <a href="http://www.linkedin.com/profile/view?id=316501614&trk=nav_responsive_tab_profile_pic" target="_blank"><i class="fa fa-linkedin-square fa-2x linkedin-social"></i></a> 
-        <a href="https://github.com/ogryzek" target="_blank"><i class="fa fa-github-square fa-2x github-social"></i></a> 
-        <a href="http://www.twitter.com/drew_bro" target="_blank"><i class="fa fa-twitter-square fa-2x twitter-social"></i></a>
-      </p>
-    </div>
-
-    <div class="col-lg-1 col-md-1 col-sm-1">
-       &nbsp;
-    </div>
-    
-    <div class="col-lg-3 col-md-3 col-sm-3 well">
-      <img src="http://codecore.ca/img/team/tam.jpg" alt="..." class="center img-circle img-responsive">
-      <p>Jef Curtis</p>
-      <p class="profile-links">
-        <a href="http://www.linkedin.com/profile/view?id=316501614&trk=nav_responsive_tab_profile_pic" target="_blank"><i class="fa fa-linkedin-square fa-2x linkedin-social"></i></a> 
-        <a href="https://github.com/ogryzek" target="_blank"><i class="fa fa-github-square fa-2x github-social"></i></a> 
-        <a href="http://www.twitter.com/drew_bro" target="_blank"><i class="fa fa-twitter-square fa-2x twitter-social"></i></a>
-      </p>
-    </div>
-    
-
-    <div class="col-lg-1 col-md-1 col-sm-1">
-      &nbsp;
-    </div>
-    
-    <div class="col-lg-3 col-md-3 col-sm-3 well">
-      <img src="https://lh4.googleusercontent.com/-NcMEylWHa40/AAAAAAAAAAI/AAAAAAAAAGw/FqjxH2pI84s/s120-c/photo.jpg" alt="DrewBro Profile Picture" class="center img-circle img-responsive">
-      <p>Abrar Musa</p>
-      <p class="profile-links">
-        <a href="http://www.linkedin.com/profile/view?id=316501614&trk=nav_responsive_tab_profile_pic" target="_blank"><i class="fa fa-linkedin-square fa-2x linkedin-social"></i></a> 
-        <a href="https://github.com/ogryzek" target="_blank"><i class="fa fa-github-square fa-2x github-social"></i></a> 
-        <a href="http://www.twitter.com/drew_bro" target="_blank"><i class="fa fa-twitter-square fa-2x twitter-social"></i></a>
-      </p>
-    </div>
-
-
-    <div class="col-lg-1 col-md-1 col-sm-1">
-       &nbsp;
-    </div>
-
+    <% team_members.each do |member_hash| %>
+      <%= render "team_member", member_hash: member_hash %>
+    <% end %>
   </div>
-
-  <div class="row">
-    <div class="col-lg-1 col-md-1 col-sm-1">
-       &nbsp;
-    </div>
-
-    <div class="col-lg-3 col-md-3 col-sm-3 well">
-     <img src="https://lh5.googleusercontent.com/-Q5KW5u0k_jw/UgBAzjf9kiI/AAAAAAAAAO8/lLRdbGuy6tM/s612-no/DrewGrey.png" alt="DrewBro Profile Picture" class="center img-circle img-responsive">
-      <p>Drew Ogryzek</p>
-      <p class="profile-links">
-        <a href="http://www.linkedin.com/profile/view?id=316501614&trk=nav_responsive_tab_profile_pic" target="_blank"><i class="fa fa-linkedin-square fa-2x linkedin-social"></i></a> 
-        <a href="https://github.com/ogryzek" target="_blank"><i class="fa fa-github-square fa-2x github-social"></i></a> 
-        <a href="http://www.twitter.com/drew_bro" target="_blank"><i class="fa fa-twitter-square fa-2x twitter-social"></i></a>
-      </p>
-    </div>
-
-    <div class="col-lg-1 col-md-1 col-sm-1">
-       &nbsp;
-    </div>
-
-    
-    <div class="col-lg-3 col-md-3 col-sm-3 well">
-      <img src="http://codecore.ca/img/team/tam.jpg" alt="..." class="center img-circle img-responsive">
-      <p>Arash Ouji</p>
-      <p class="profile-links">
-        <a href="http://www.linkedin.com/profile/view?id=316501614&trk=nav_responsive_tab_profile_pic" target="_blank"><i class="fa fa-linkedin-square fa-2x linkedin-social"></i></a> 
-        <a href="https://github.com/ogryzek" target="_blank"><i class="fa fa-github-square fa-2x github-social"></i></a> 
-        <a href="http://www.twitter.com/drew_bro" target="_blank"><i class="fa fa-twitter-square fa-2x twitter-social"></i></a>
-      </p>
-    </div>
-    
-
-    <div class="col-lg-1 col-md-1 col-sm-1">
-      &nbsp;
-    </div>
-    
-    <div class="col-lg-3 col-md-3 col-sm-3 well">
-      <img src="http://codecore.ca/img/team/tam.jpg" alt="DrewBro Profile Picture" class="center img-circle img-responsive">
-      <p>Brandon Ricci</p>
-      <p class="profile-links">
-        <a href="http://www.linkedin.com/profile/view?id=316501614&trk=nav_responsive_tab_profile_pic" target="_blank"><i class="fa fa-linkedin-square fa-2x linkedin-social"></i></a> 
-        <a href="https://github.com/ogryzek" target="_blank"><i class="fa fa-github-square fa-2x github-social"></i></a> 
-        <a href="http://www.twitter.com/drew_bro" target="_blank"><i class="fa fa-twitter-square fa-2x twitter-social"></i></a>
-      </p>
-    </div>
-
-    <div class="col-lg-1 col-md-1 col-sm-1">
-       &nbsp;
-    </div>
-
-  </div>
-
-  <div class="row">
-    <div class="col-lg-1 col-md-1 col-sm-1">
-       &nbsp;
-    </div>
-
-    <div class="col-lg-3 col-md-3 col-sm-3 well">
-      <img src="https://lh6.googleusercontent.com/-yWgh3chRzjQ/TjM16BwMovI/AAAAAAAAAEY/90hSzlC_Sdc/w481-h480-no/Photo+on+2011-07-29+at+15.35.jpg" alt="..." class="center img-circle img-responsive">
-      <p>Kelly Waters</p>
-      <p class="profile-links">
-        <a href="http://www.linkedin.com/profile/view?id=46306336&locale=en_US&trk=tyah&trkInfo=tas%3Akelly%20%2Cidx%3A2-1-2" target="_blank"><i class="fa fa-linkedin-square fa-2x linkedin-social"></i></a> 
-        <a href="https://github.com/kwaters12" target="_blank"><i class="fa fa-github-square fa-2x github-social"></i></a> 
-        <a href="https://twitter.com/kellyminjaro" target="_blank"><i class="fa fa-twitter-square fa-2x twitter-social"></i></a>
-      </p>
-    </div>
-
-    <div class="col-lg-1 col-md-1 col-sm-1">
-       &nbsp;
-    </div>
-
-    <div class="col-lg-3 col-md-3 col-sm-3 well">
-      <img src="http://codecore.ca/img/team/tam.jpg" alt="..." class="center img-circle img-responsive">
-      <p>Don Wong</p>
-      <p class="profile-links">
-        <a href="http://www.linkedin.com/profile/view?id=316501614&trk=nav_responsive_tab_profile_pic" target="_blank"><i class="fa fa-linkedin-square fa-2x linkedin-social"></i></a> 
-        <a href="https://github.com/ogryzek" target="_blank"><i class="fa fa-github-square fa-2x github-social"></i></a> 
-        <a href="http://www.twitter.com/drew_bro" target="_blank"><i class="fa fa-twitter-square fa-2x twitter-social"></i></a>
-      </p>
-    </div>
-
-    <div class="col-lg-1 col-md-1 col-sm-1">
-       &nbsp;
-    </div>
-
-  </div>
-
-
-
 </section>
+

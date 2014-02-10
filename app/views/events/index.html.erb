@@ -4,6 +4,10 @@
     <h2  id="titles">Introducing a new series of lunch and learn events for Vancouver's tech community.</h2> 
     <br>
     <section id="week">
+    <div class="col-md-2">
+    </div>
+        <div class="col-md-2">
+    </div>
       <div class="col-md-2">
         <div class="q center">When</div>
         <% @events.each do |event| %>
@@ -25,7 +29,12 @@
           <br>
         <% end %>
       </div>
+          <div class="col-md-2">
+    </div>
         <br>
+        <br>
+        <br>
+
       <div class="clearfix"></div>
   
     </section>
@@ -40,6 +49,8 @@
     <div id="photo-credit" class="pull-right">
       <h6><a href="http://www.flickr.com/photos/magnusl3d/6044910841/" class="cc_ref">Photo</a> by Larsson <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.en" id="cc_ref">CC BYSA3.0</a></h6>      
     </div>
+    <br>
+    <br>
 </section>
 
 
@@ -52,11 +63,8 @@
 
 <% @events.each do |event| %>
   <div class="row">
-    <div class="col-md-2">
-      <div class="speaker">
-        <div class="thumbnail">
+    <div class="col-md-2 speaker thumbnail">
           <%= image_tag event.image(:medium), class: "post-thumb"%>        
-        </div>
           <h3><% if (event.linkedin && event.linkedin!='') %>
             <a href="<%=event.linkedin%>"><i class="fa fa-linkedin-square"></i></a>          
           <% end %>          
@@ -64,33 +72,27 @@
           <% if (event.twitter && event.twitter!='') %>
             <a href="<%=event.twitter%>"><i class="fa fa-twitter-square"></i></a>          
           <% end %></h3>
-      </div>
     </div>
-    <div class="col-md-6">
-      <div class="caption">
-          <h4>Topic: <strong><%= event.title %></strong></h4>
-          
-          <p>Description: <%= event.body.truncate(200) %></p>      
-          
-          <p><%= event.bio %></p>
-          
-      </div>
+
+    <div class="col-md-7 caption">
+        <h4>Topic: <strong><%= event.title %></strong></h4>
+        <p><%= event.body.truncate(200) %></p>      
+        <p><%= event.bio %></p> 
     </div>
-    <div class="col-md-4">
-      <div class="center">
-          <%= label_tag("attendee[event_ids][]", "I want to attend #{event.speaker}'s session:")%> 
-          <br><br>
-          <%= check_box_tag "attendee[event_ids][]",event.id, data: { "class" => "custom_check" } %>
-          <br>
-          <p><%=event.date.strftime("%A, %B %C")%></p>
-          <h5><%=event.date.strftime("%I:%M %p")%></h5>  
-          <div class="clearfix"></div>
-      </div>  
+
+    <div class="col-md-3 center">
+      <%= label_tag("attendee[event_ids][]", "I want to attend #{event.speaker}'s session:")%> 
+      <br><br>
+      <%= check_box_tag "attendee[event_ids][]",event.id, data: { "class" => "custom_check" } %>
+      <br>
+      <p><%=event.date.strftime("%A, %B %C")%></p>
+      <h5><%=event.date.strftime("%I:%M %p")%></h5>  
+      <div class="clearfix"></div>
     </div>                
   </div> 
 <% end %>
 
-<div class="clearfix"></div>  
+<!-- <div class="clearfix"></div>   -->
 </section>
 
 <section id="photo3">
@@ -120,20 +122,40 @@
     <div class="clearfix"></div>
   
   </section>
-  <div class="form">
-    <%= f.input :name, input_html: {class: "attendee-form"} %>
-    <%= f.input :email, input_html: {class: "attendee-form"} %>
-    <%= f.input :company, input_html: {class: "attendee-form"} %>
-    
-    <%= f.input :categories, :as => :check_boxes,:label => "Topics I am interested in:"%>
-    <p>Are you interested in joining our mailing list? <%= f.input :mail_list, :as => :boolean%></p>
-    <%= f.submit "Register"%>
+  <div class="col-md-9 form">
+  <div class="form-horizontal form-group">
+    <br>
+    <%= f.input :name, input_html: {class: "attendee-form form-control"} %>
+    <br>
+    <%= f.input :email, input_html: {class: "attendee-form form-control"} %>
+    <br>
+    <%= f.input :company, input_html: {class: "attendee-form form-control"} %>
+    <br>
+    <ul> 
+    <% Category.all.each do |category| %>
+      <li class="custom_check col-xs-6 col-sm-6 col-lg-6 col-md-6"><%= hidden_field_tag "@attendee[category_ids][]", nil %>
+          <%= check_box_tag "@attendee[category_ids][]", category.id, @attendee.categories.include?(category), id: dom_id(category) %>
+        <%= label_tag dom_id(category), category.name %>
+      </li>
+      <% end %>
+    </ul>
+    <br>
+    <br>
+    <p class="col-xs-6 col-sm-6 col-lg-6 col-md-6">Are you interested in joining our mailing list? 
+    <br>
+    <ul class="custom_check"><%= f.input :mail_list, :as => :boolean, :label => "Check to Join"%></ul></p>
+    <div class="center">
+    <%= f.submit "Register", class: "btn btn-warning btn-lg home-button"%>
+    </div>
+    <br>
+     <br>
+  <% end %>
+  </div>
+  </div>
 
-<% end %>
-
-<div class="map">
-  <iframe width='100%' height='500px' frameBorder='0' src='http://a.tiles.mapbox.com/v3/abrarmusa.h7khefgh/mm/zoompan,zoomwheel,geocoder,share.html'></iframe>
-</div>
-<div class="clearfix"><div>
-</section>
+  <div class="col-md-3">
+    <iframe width='100%' height='500px' frameBorder='0' src='http://a.tiles.mapbox.com/v3/abrarmusa.h7khefgh/mm/zoompan,zoomwheel,geocoder,share.html'></iframe>
+  </div>
+  <div class="clearfix"><div>
+  </section>
 

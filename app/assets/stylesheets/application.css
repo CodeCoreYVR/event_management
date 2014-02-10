@@ -12,8 +12,9 @@
  
  *= require codecore-fonts
  *= require_self
- *= require bootstrap_and_override
  *= require_tree .
+ *= require bootstrap_and_override
+
  */
 
 

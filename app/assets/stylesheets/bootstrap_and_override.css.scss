@@ -86,7 +86,7 @@ box-shadow: 1px -10px 84px 0px rgba(255,255,255,0.75);
   background-size: cover;
 }
 .schedule {background-color: black; margin-left: -15px; padding: 0 0 0 10px; width: inherit;}
-.row {color: black;width: 100%; background-color: white; padding: 10px; margin-bottom: 20px; border: 1px solid #c2bbae}
+.row {color: black;width: 100%; background-color: rgba(255,255,255, 0.9); padding: 10px; margin-bottom: 20px; border: 1px solid #c2bbae}
 .row p {font-weight: 300;}
 .row a {color: black;}
 .row a:hover {color: #CB0D0F;}
@@ -132,6 +132,12 @@ input[type='checkbox'] {
     
     position: relative;
     cursor:pointer;
+    .checkbox-small{
+    height: 10px;
+    width: 10px;
+    line-height: 10px;
+  }
+
 }
 input[type='checkbox']:after {
     content:"";
@@ -170,6 +176,68 @@ input[type='checkbox']:checked:after {
     color: #fff;
 }
 
+.custom_check {
+  input[type='checkbox'] {
+      margin-top: -30px;
+  }
+  input[type='checkbox'] {
+
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeSpeed;
+      width: 20px;
+      height: 20px;
+      margin: 0 auto;
+
+      display: block;
+      
+      position: relative;
+      cursor:pointer;
+      .checkbox-small{
+
+      line-height: 20px;
+    }
+
+  }
+  input[type='checkbox']:after {
+      content:"";
+      vertical-align: middle;
+      text-align: center;
+      line-height: 20px;
+      position: absolute;
+      cursor: pointer;
+      height: 20px;
+      width: 20px;
+      content:'\2714';
+      color: #86090b;
+
+      font-size:18px;
+
+      -webkit-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.5), 0px 2px 0px #444;
+      -moz-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.5), 0px 2px 0px #444;
+      box-shadow: inset 1px 1px 1px rgba(0,0,0,0.5), 0px 0px 2px #444;
+      background: #86090b;
+  }
+
+  input[type='checkbox']:hover:after {
+      background: #86090b;
+      
+
+      color: #888;
+  }
+  input[type='checkbox']:checked:hover:after {
+      background: #CB0D0F;
+      content:'\2714';
+      color: #fff;
+  }
+  input[type='checkbox']:checked:after {
+      background: #CB0D0F;
+      content:'\2714';
+      color: #fff;
+  }
+
+
+}
+
 
 .center {
   text-align: center;
@@ -191,3 +259,5 @@ footer {
     }
   }
 }
+
+

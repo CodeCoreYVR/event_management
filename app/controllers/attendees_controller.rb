@@ -6,21 +6,21 @@ class AttendeesController < ApplicationController
       AttendeeMailer.delay.notify_attendee(@attendee)
     else
       @events = Event.all
-      flash.now[:alert] = @message
-      render "/events/index"
+      redirect_to root_path, alert: @message
     end
   end
 
   
+  private
 
   def attendee_params
     params.require(:attendee).permit([:name, :company, :mail_list, :email, {event_ids: []}, {category_ids: []}])
   end
 
-private
   def event_number_check
+    eventids
     @message = "Unknown issue."
-    if (!@eventids || @eventids.length > 2)
+    if (!@event_ids || @event_ids.length > 2)
       @message = "You have to choose 1 or 2 events."
       false
     else

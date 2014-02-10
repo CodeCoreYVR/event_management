@@ -2,52 +2,54 @@
   <div class="schedule">
     <div class="row"><h2 id="upcase-blk">Event Details and Schedule:</h2></div>
   </div>
+  <div id="eventslist">
     <% @events.each do |event| %>
-<div class="hero-unit">
-      <div class="row" id="<%=event.id%>" >
-        
-        <div class="col-md-2">
-          <div class="center">
-            <div class="thumbnail">
-              <%= image_tag event.image(:medium), class: "post-thumb"%></div>
-                      <h3><% if (event.linkedin && event.linkedin!='') %>
-                                <a href="<%=event.linkedin%>"><i class="fa fa-linkedin-square"></i></a>          
-                            <% end %>          
-                   
-                          <% if (event.twitter && event.twitter!='') %>
-                                <a href="<%=event.twitter%>"><i class="fa fa-twitter-square"></i></a>          
-                            <% end %>
+    <div class="hero-unit">
+          <div class="row" id="<%=event.id%>" >
+            
+            <div class="col-md-2">
+              <div class="center">
+                <div class="thumbnail">
+                  <%= image_tag event.image(:medium), class: "post-thumb"%></div>
+                          <h3><% if (event.linkedin && event.linkedin!='') %>
+                                    <a href="<%=event.linkedin%>"><i class="fa fa-linkedin-square"></i></a>          
+                                <% end %>          
+                       
+                              <% if (event.twitter && event.twitter!='') %>
+                                    <a href="<%=event.twitter%>"><i class="fa fa-twitter-square"></i></a>          
+                                <% end %>
 
-                      <h3 id="upcase"><%= event.speaker %></h3>
-                     </h3>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="caption">
-              <h4>Topic: <strong id="titles"><%= event.title %></strong></h4>
-              
-              <p id="titles">Description: <%= event.body.truncate(200) %></p>      
-              
-              <p id="titles"><%= event.bio %></p>
-              
-          </div>
-        </div>
+                          <h3 id="upcase"><%= event.speaker %></h3>
+                         </h3>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="caption">
+                  <h4>Topic: <strong id="titles"><%= event.title %></strong></h4>
+                  
+                  <p id="titles">Description: <%= event.body.truncate(200) %></p>      
+                  
+                  <p id="titles"><%= event.bio %></p>
+                  
+              </div>
+            </div>
 
-        <div class="col-md-4">
-          <div class="center">
-              <p id="titles"><%= label_tag("attendee[event_ids][]", "I want to attend #{event.speaker}'s session:")%></p>
-              <br><br>
-              <%= check_box_tag "attendee[event_ids][]",event.id, false, data: { "class" => "custom_check" } %>
-              <br>
-              <p id="titles"><%=event.date.strftime("%A, %B %C")%></p>
-              <h5><%=event.date.strftime("%I:%M %p")%></h5>  
-              <div class="clearfix"></div>
-          </div>  
-        </div>                
+            <div class="col-md-4">
+              <div class="center">
+                  <p id="titles"><%= label_tag("attendee[event_ids][]", "I want to attend #{event.speaker}'s session:")%></p>
+                  <br><br>
+                  <%= check_box_tag "attendee[event_ids][]",event.id, false, data: { "class" => "custom_check" } %>
+                  <br>
+                  <p id="titles"><%=event.date.strftime("%A, %B %C")%></p>
+                  <h5><%=event.date.strftime("%I:%M %p")%></h5>  
+                  <div class="clearfix"></div>
+              </div>  
+            </div>                
+        </div>
     </div>
-</div>
-<div class="row">&nbsp;</div><!--  This row is to put a default distance between events -->
+    <div class="row">&nbsp;</div><!--  This row is to put a default distance between events -->
     <% end %>
+  </div>
 
 <div class="clearfix"></div>  
 </section>

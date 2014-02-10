@@ -10,7 +10,7 @@ EventManagement::Application.routes.draw do
     resources :categories
   end
  
-  resources :attendees#, only: [:create]
+  resources :attendees, only: [:create]
   resources :admin, only: [:index]
   resources :events
   devise_scope :user do 

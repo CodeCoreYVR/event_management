@@ -492,47 +492,51 @@ footer {
 //   }
 // }
 
-// .profile-links i {
-//   color: #e00;
-// }
 
-// .linkedin-social:hover {
-//   color: #007bb6;
-//   -o-transition:.3s;
-//   -ms-transition:.3s;
-//   -moz-transition:.3s;
-//   -webkit-transition:.3s;
-//   transition:.3s;
-//   -webkit-box-shadow: 1px -10px 84px 0px rgba(255,255,255,0.75);
-//   -moz-box-shadow: 1px -10px 84px 0px rgba(255,255,255,0.75);
-//   box-shadow: 1px -10px 84px 0px rgba(255,255,255,0.75);
-// }
+/* styles for team_photos partial */
+ //#team_photos .row { background-color: rgba(40,40,40,0.9); padding-right: 90px;}
+ #parallax #team-photos { background: url(http://upload.wikimedia.org/wikipedia/commons/9/9b/GrouseMountain.jpg)
+  no-repeat center center fixed; 
+  /*background size*/
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+  #parallax h2 {color: #eee; text-shadow: -1px 1px #444;}
+ #team-photos .row { color: #444; font-weight: bold; text-shadow: -1px 1px #eee; background-color: rgba(0,0,0,0.5); padding: 25px 35px; border: 1px solid rgb(0,0,0)}
+ #team-photos .well {background-color: rgba(255,255,255,0.7);}
+ .profile-links i {color: #e00;}
 
-// .github-social:hover {
-//   color: #000;
-//   -o-transition:.3s;
-//   -ms-transition:.3s;
-//   -moz-transition:.3s;
-//   -webkit-transition:.3s;
-//   transition:.3s;
-//   -webkit-box-shadow: 1px -10px 84px 0px rgba(255,255,255,0.75);
-//   -moz-box-shadow: 1px -10px 84px 0px rgba(255,255,255,0.75);
-//   box-shadow: 1px -10px 84px 0px rgba(255,255,255,0.75);
-// }
+ .social-base {
+  -o-transition:.3s;
+  -ms-transition:.3s;
+  -moz-transition:.3s;
+  -webkit-transition:.3s;
+  transition:.3s;
+  -webkit-box-shadow: 1px -10px 84px 0px rgba(255,255,255,0.75);
+  -moz-box-shadow: 1px -10px 84px 0px rgba(255,255,255,0.75);
+  box-shadow: 1px -10px 84px 0px rgba(255,255,255,0.75);
+}
 
-// .twitter-social:hover {
-//   color: #00aced;
-//   -o-transition:.3s;
-//   -ms-transition:.3s;
-//   -moz-transition:.3s;
-//   -webkit-transition:.3s;
-//   transition:.3s;
-//   -webkit-box-shadow: 1px -10px 84px 0px rgba(255,255,255,0.75);
-//   -moz-box-shadow: 1px -10px 84px 0px rgba(255,255,255,0.75);
-//   box-shadow: 1px -10px 84px 0px rgba(255,255,255,0.75);
-// }
+ .linkedin-social:hover {
+  @extend .social-base;
+  color: #007bb6;
+ }
 
-// .img-circle {
-//   height: 150px;
-// }
+ .github-social:hover {
+  @extend .social-base;
+  color: #000;
+ }
+
+ .twitter-social:hover {
+  @extend .social-base;
+  color: #00aced;
+ }
+
+ .img-circle {
+   height: 125px;
+ }
+
+ /* end styles for team_photos partial */
 

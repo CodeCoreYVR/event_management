@@ -8,19 +8,7 @@
 <%= render 'events/blk_section3' %>
 
 
-
-
-<section id="photo3">
-  <h1 id="titles">Website Created by CodeCore-CohortOne</h1>
-  <div class="row">
-    <div class="col-lg-1 col-md-1 col-sm-1">
-       &nbsp;
-    </div>
-    <% team_members.each do |member_hash| %>
-      <%= render "events/team_member", member_hash: member_hash %>
-    <% end %>
-  </div>
-</section>
+<%= render 'team_photos' %>
 
 <script>
 $('a').click(function(){

@@ -1,0 +1,19 @@
+<section id="team-photos">
+  <h2 class="titles">Website Created by CodeCore-CohortOne</h2>
+  <div class="row">
+    
+    <% member_count = 0 %>
+    <% team_members.each do |member_hash| %>
+    <% member_count += 1 %>
+      <%= render "team_member", member_hash: member_hash %>
+        <% if (member_count % 4 == 0) %>
+      </div>
+      <br>
+    <div class="row">
+    
+
+         
+        <% end %>
+    <% end %>
+ </div>
+</section>

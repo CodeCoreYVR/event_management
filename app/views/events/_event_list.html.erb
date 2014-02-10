@@ -2,7 +2,7 @@
         <% @events.each do |event| %>
         <tr>
           
-          <td><%=event.date.strftime("%A, %B %C")%></td>
+          <td><a href="#<%=event.id%>"><p><%=event.date.strftime("%A, %B %C")%></p></a></td>
           <td><a href="#<%=event.id%>"><%=event.title%></a></td>
         </tr>
         <% end %>

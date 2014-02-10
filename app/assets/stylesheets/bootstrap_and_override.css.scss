@@ -20,6 +20,16 @@ color: #333; padding: 0px; margin: 0px auto; }
   line-height: 1;
 }
 
+.iputMissing {   
+  font-weight: 300;
+  margin-right: 10px;
+  color: red;
+  letter-spacing: 2px;
+  padding-top: 0px;
+  line-height: 1; 
+  text-shadow: -1px 1px #444;
+}
+
 #titles a {color: white;}
 
 #upcase {
@@ -32,6 +42,7 @@ color: #333; padding: 0px; margin: 0px auto; }
   line-height: 1;
 }
 
+.text-shadow {text-shadow: -1px 1px #444;}
 #upcase-blk {
   font-weight: 300;
   margin-right: 10px;
@@ -74,6 +85,8 @@ color: #333; padding: 0px; margin: 0px auto; }
 #parallax #about { background: url(../assets/backgrounds/dark_stripes.png) repeat; color: #fff; }
 #parallax #photo1 { color: #fff; background: url(http://upload.wikimedia.org/wikipedia/commons/b/ba/Downtown_Vancouver_Sunset.jpg)
 no-repeat center center fixed; 
+
+border-bottom:50px solid black;
 /*background size*/
 -webkit-background-size: cover;
 -moz-background-size: cover;
@@ -82,6 +95,8 @@ background-size: cover;
 }
 #parallax #photo2 { color: white; background: url(http://www.codecore.ca/wp-content/themes/CodeCore/img/front2.jpg)
   no-repeat center center fixed; 
+
+  border-bottom:50px solid black;
   /*background size*/
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -89,8 +104,12 @@ background-size: cover;
   background-size: cover;
 }
 
+#parallax #photo2 #titles {text-shadow: -1px 1px #444;}
+.post-thumb {}
 #parallax #photo3 { color: white; opacity:.9; background: url(https://dl.dropboxusercontent.com/u/525680/ruby_code.jpg)
   no-repeat center center fixed; 
+
+  border-bottom:50px solid black;
   /*background size*/
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -175,7 +194,7 @@ footer {
   li {
     display: inline-block;
   }
-  margin-top: 45px;
+  margin-top: 0px;
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
   color: gray;
@@ -503,9 +522,20 @@ footer {
   -o-background-size: cover;
   background-size: cover;
 }
-  #parallax h2 {color: #eee; text-shadow: -1px 1px #444;}
+  #parallax h2 { text-shadow: -1px 1px #444;
+
+  font-weight: 300;
+  margin-right: 10px;
+  color: white;
+  text-transform: uppercase;;
+  letter-spacing: 2px;
+  padding-top: 0px;
+  line-height: 1;
+
+  }
  #team-photos .row { color: #444; font-weight: bold; text-shadow: -1px 1px #eee; background-color: rgba(0,0,0,0.5); padding: 25px 35px; border: 1px solid rgb(0,0,0)}
  #team-photos .well {background-color: rgba(255,255,255,0.7);}
+
  .profile-links i {color: #e00;}
 
  .social-base {
@@ -535,7 +565,7 @@ footer {
  }
 
  .img-circle {
-   height: 125px;
+   height: 100px;
  }
 
  /* end styles for team_photos partial */

@@ -1,22 +1,22 @@
 <section id="photo3">
   <div class="schedule">
-    <div class="row"><h2 id="upcase-blk">Event Details and Schedule:</h2></div>
+    <div class="row text-shadow"><h2 id="upcase-blk">Event Details and Schedule:</h2></div>
   </div>
   <div id="eventslist">
     <% @events.each do |event| %>
     <div class="hero-unit">
           <div class="row" id="<%=event.id%>" >
             
-            <div class="col-md-2">
+            <div class="col-md-3">
               <div class="center">
                 <div class="thumbnail">
                   <%= image_tag event.image(:medium), class: "post-thumb"%></div>
                           <h3><% if (event.linkedin && event.linkedin!='') %>
-                                    <a href="<%=event.linkedin%>"><i class="fa fa-linkedin-square"></i></a>          
+                                    <a class="profile-links" href="<%=event.linkedin%>"><i class="fa fa-linkedin-square linkedin-social profile-links"></i></a>          
                                 <% end %>          
                        
                               <% if (event.twitter && event.twitter!='') %>
-                                    <a href="<%=event.twitter%>"><i class="fa fa-twitter-square"></i></a>          
+                                    <a class="profile-links" href="<%=event.twitter%>"><i class="fa fa-twitter-square twitter-social profile-links"></i></a>          
                                 <% end %>
 
                           <h3 id="upcase"><%= event.speaker %></h3>
@@ -34,7 +34,7 @@
               </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-3">
               <div class="center">
                   <p id="titles"><%= label_tag("attendee[event_ids][]", "I want to attend #{event.speaker}'s session:")%></p>
                   <br><br>
@@ -50,6 +50,10 @@
     <div class="row">&nbsp;</div><!--  This row is to put a default distance between events -->
     <% end %>
   </div>
+        <div id="titles" class="pull-right">
+          <h6><a id="http://www.flickr.com/photos/magnusl3d/6044910841/" class="cc_ref">Photo</a> by Larsson <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.en" id="cc_ref">CC BYSA3.0</a></h6>
+            <div class="clear-float"></div>
+
 
 <div class="clearfix"></div>  
 </section>

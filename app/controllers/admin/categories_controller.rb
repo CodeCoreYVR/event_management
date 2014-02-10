@@ -1,6 +1,7 @@
 class Admin::CategoriesController < ApplicationController
   before_action :find_categories, only: [:destroy,:edit,:update]
-  
+  before_action :authenticate_user!
+
   def index
     @category_counts=Categorization.group(:category_id).count
     @categories=Category.all

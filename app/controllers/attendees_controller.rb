@@ -6,17 +6,24 @@ class AttendeesController < ApplicationController
       AttendeeMailer.delay.notify_attendee(@attendee)
     else
       @events = Event.all
-      @message||=''
-      if @attendee.errors.any?
-        @errs=@attendee.errors.full_messages.join(" and ")
-      end
-      @errs||= ''
+      @message ||= ''
+      model_validation_messages
       redirect_to root_path + '#photo2', alert: @message+@errs
     end
   end
 
   
   private
+
+  def model_validation_messages
+    if @attendee.errors.any?
+      @attendee.errors.delete(:attendances)
+      @errs = @attendee.errors.full_messages.join(" and ")
+      @errs+=" and " unless @errs.blank?
+      @errs += (@attendee.attendances.map{ |x| x.errors.full_messages.join(" and ") }).join(" and ")
+    end
+    @errs||= ''
+  end
 
   def attendee_params
     params.require(:attendee).permit([:name, :company, :mail_list, :email, {event_ids: []}, {category_ids: []}])

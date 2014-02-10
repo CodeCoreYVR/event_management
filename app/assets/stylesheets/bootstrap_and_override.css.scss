@@ -8,7 +8,7 @@ body { height:100%; padding: 0px; margin: 0px auto; }
 #parallax { padding-top: -30px; margin:0px auto;}
 #parallax h1 { line-height:1; margin-bottom: 1em; }
 #parallax p { line-height: 1.5; margin-bottom:1em;}
-#parallax section { border-bottom: 4px solid #fff; padding: 10px 40px; width: 100%; border:none;/*parent height needs to be 100% */ }
+#parallax section { border-bottom: 4px solid #fff; padding: 10px 40px; width: 100%; border:none; min-height: 100%;/*parent height needs to be 100% */ }
 #parallax h2 {font-weight: 300;}
 
 .q {border-bottom: 1px black solid; margin-bottom: 10px; font-weight: 500;}
@@ -22,10 +22,18 @@ body { height:100%; padding: 0px; margin: 0px auto; }
 .link a{color: black; }
 .link a:hover{color: #f0ad4e; }
 
-#parallax #week {font-weight: 300;padding-top: 0; width: 100%; color: black; padding-bottom: 20px;padding-top: 20px;}
+#parallax .week {font-weight: 300;padding-top: 0; width: 100%; color: black; padding-bottom: 20px;padding-top: 20px;}
+
+a:hover {
+  font-weight:bold;
+}
 
 
-#titles {
+.navbar { height: 60px;background: #000; border:none; }
+
+
+
+.titles {
   font-weight: 300;
   margin-right: 10px;
   color: black;
@@ -35,7 +43,7 @@ body { height:100%; padding: 0px; margin: 0px auto; }
   line-height: 1;
 
 }
-#titles a {color: white;}
+.titles a {color: white;}
 
 
 #photo-credit { color: white; }
@@ -86,7 +94,7 @@ box-shadow: 1px -10px 84px 0px rgba(255,255,255,0.75);
   background-size: cover;
 }
 .schedule {background-color: black; margin-left: -15px; padding: 0 0 0 10px; width: inherit;}
-.row {color: black;width: 100%; background-color: white; padding: 10px; margin-bottom: 20px; border: 1px solid #c2bbae}
+.row {color: black;  width: 100%; background-color: rgba(233,230,225,0.9); padding: 45px 10px 10px 10px; margin-bottom: 20px; border: 1px solid #c2bbae}
 .row p {font-weight: 300;}
 .row a {color: black;}
 .row a:hover {color: #CB0D0F;}
@@ -104,7 +112,29 @@ box-shadow: 1px -10px 84px 0px rgba(255,255,255,0.75);
   -o-background-size: cover;
   background-size: cover;
 }
-.map {float:right; width: 30%;}
+
+#photo3 .row { background-color: rgba(40,40,40,0.9); padding-right: 90px;}
+.map {float:right; width: 30%; }
+
+#photo3 h1 {text-shadow: -1px 1px #444;}
+
+#photo3 .row .well {
+
+  background-color: rgba(255,255,255,0.6)
+}
+
+#photo3 .row .well p { color: #444; font-weight: bold; text-shadow: -1px 1px #eee;}
+.map iframe {
+  width:'100%'; 
+  height:'500px';  
+}
+
+iframe[seamless]{
+    background-color: transparent;
+    border: 0px none transparent;
+    padding: 0px;
+    overflow: hidden;
+}
 .attendee_form {
   color: #000; width: 70%; float: left;
 }
@@ -190,4 +220,48 @@ footer {
       color: gray;
     }
   }
+}
+
+.profile-links i {
+  color: #e00;
+}
+
+.linkedin-social:hover {
+  color: #007bb6;
+  -o-transition:.3s;
+  -ms-transition:.3s;
+  -moz-transition:.3s;
+  -webkit-transition:.3s;
+  transition:.3s;
+  -webkit-box-shadow: 1px -10px 84px 0px rgba(255,255,255,0.75);
+  -moz-box-shadow: 1px -10px 84px 0px rgba(255,255,255,0.75);
+  box-shadow: 1px -10px 84px 0px rgba(255,255,255,0.75);
+}
+
+.github-social:hover {
+  color: #000;
+  -o-transition:.3s;
+  -ms-transition:.3s;
+  -moz-transition:.3s;
+  -webkit-transition:.3s;
+  transition:.3s;
+  -webkit-box-shadow: 1px -10px 84px 0px rgba(255,255,255,0.75);
+  -moz-box-shadow: 1px -10px 84px 0px rgba(255,255,255,0.75);
+  box-shadow: 1px -10px 84px 0px rgba(255,255,255,0.75);
+}
+
+.twitter-social:hover {
+  color: #00aced;
+  -o-transition:.3s;
+  -ms-transition:.3s;
+  -moz-transition:.3s;
+  -webkit-transition:.3s;
+  transition:.3s;
+  -webkit-box-shadow: 1px -10px 84px 0px rgba(255,255,255,0.75);
+  -moz-box-shadow: 1px -10px 84px 0px rgba(255,255,255,0.75);
+  box-shadow: 1px -10px 84px 0px rgba(255,255,255,0.75);
+}
+
+.img-circle {
+  height: 150px;
 }

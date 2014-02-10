@@ -1,9 +1,11 @@
-<table class="table">
- <% @events.each do |event| %>
-<tr>
-    <td><%=event.date.strftime("%A, %B %C")%></td>
-    <td><%=event.title%></td>
-    <td><%= check_box_tag "attendee[event_ids][]",event.id %></td>
-</tr>
-  <% end %>
-</table>
+<div id ="eventslist2">">
+  <table class="table">
+   <% @events.each do |event| %>
+  <tr>
+      <td><%=event.date.strftime("%A, %B %C")%></td>
+      <td><%=event.title%></td>
+      <td><%= check_box_tag "attendee[event_ids][]",event.id,false%></td>
+  </tr>
+    <% end %>
+  </table>
+</div>

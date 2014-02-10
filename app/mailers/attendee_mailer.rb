@@ -1,5 +1,6 @@
 class AttendeeMailer < ActionMailer::Base
-  default from: "codecoreevents@gmail.com"
+  default from: "events@codecore.ca"
+  add_template_helper(ApplicationHelper)
 
   def notify_attendee (attendee)
     @attendee = attendee

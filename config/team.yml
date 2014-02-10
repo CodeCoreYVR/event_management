@@ -39,9 +39,11 @@
 
 8:
   name: "Don Wong"
-  linkedin: "http://www.linkedin.com/profile/view?id=316501614&trk=nav_responsive_tab_profile_pic"
-  github: "https://github.com/ogryzek"
-  twitter: "http://www.twitter.com/drew_bro"
+  image: "https://fbcdn-sphotos-c-a.akamaihd.net/hphotos-ak-frc3/t31/1890466_10150360844189981_70242708_o.jpg"
+  linkedin: "http://www.linkedin.com/pub/d-wong/36/213/173"
+  github: "https://github.com/donwon"
+  twitter: "#"
+
 
 9: 
   name: "Jef Curtis"

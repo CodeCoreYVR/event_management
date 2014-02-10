@@ -4,6 +4,7 @@
 <%= link_to "Manage Categories",admin_categories_path, class: "btn btn-primary" %>
 <%= link_to "Manage Events",admin_events_path, class: "btn btn-primary" %>
 <%= link_to "Manage Attendees",admin_attendees_path, class: "btn btn-primary" %>
+<%= link_to "Log-Out", destroy_user_session_path, method: :delete, class: "btn btn-primary" %>
 </table>
 
 </div>

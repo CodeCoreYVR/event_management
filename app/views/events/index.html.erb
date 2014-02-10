@@ -4,6 +4,7 @@
 <%= render 'events/blk_section2' %>
 
 <%= render 'events/blk_section3' %>
+
 <% if alert || @attendee.errors.any? %>
 <% errs='' %>
   <% @attendee.errors.full_messages.each do |msg| %>

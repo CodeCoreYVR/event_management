@@ -1,7 +1,7 @@
 <h2>Here are the details about this event</h2>
 <div class = "container">
   <div class="well">
-        <p><%= @event.image %></p>
+        <p><%= image_tag @event.image(:medium), class: "post-thumb"%></p>
         <h3><%= @event.title %></h3>
         <p><strong>Event Date & Time: </strong><%= @event.date %></p>
         <p><strong>Total Capacity: </strong><%= @event.seats %></p>
@@ -20,18 +20,28 @@
         
         <p><strong>Linked-in Url:</strong>
             <% if (!@event.linkedin.blank?) %>
-              <a href="<%=event.linkedin%>">Profile</a>
+              <a href="<%=@event.linkedin%>">Profile</a>
             <% else %>
               &nbsp;
             <% end %>
         <p><strong>Twitter Url:</strong>
         <% if (!@event.twitter.blank?) %>
-          <a href="<%=event.twitter%>">Profile</a>
+          <a href="<%=@event.twitter%>">Profile</a>
         <% else %>
           <td>&nbsp;</td>
         <% end %>
 
   </div>
+<div class="well">
+  <h2> List of Attendees for this Event </h2>
+  <div class="row center">
+    <p><% @event.attendees.each do |attendee| %></p>
+    <p>| <%= attendee.name %> | <%= attendee.email %> |
+    <% end %>
+  </div>
+
+
+
 </div>
 
 <div class="center">

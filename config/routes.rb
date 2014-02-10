@@ -4,7 +4,7 @@ EventManagement::Application.routes.draw do
   devise_for :users
   root "events#index"
 
-  get "black" => "events#index"
+  get "black" => "events#black"
 
   namespace :admin do
     resources :events

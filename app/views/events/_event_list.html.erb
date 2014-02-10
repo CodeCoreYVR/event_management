@@ -1,0 +1,9 @@
+      <table class="table">
+        <% @events.each do |event| %>
+        <tr>
+          <td><%=event.date.strftime("%A, %B %C")%></td>
+          <td><%=event.title%></td>
+        </tr>
+        <% end %>
+
+      </table>

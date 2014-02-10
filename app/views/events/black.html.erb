@@ -1,121 +1,164 @@
+<body id="parallax">
+  <section id="photo1">
+      <div class="hero-unit">
+        <h3  id="titles" class="center">Introducing a new series of lunch and learn events for Vancouver's tech community.</h3>  
+        <h2 id="upcase" class="center">Join us of tech talks and free food</h2>
+        
 
-<section id="photo1">
+        <div class="row">
+          <div class="col-lg-3 col-md-3 col-sm-3">
+          </div>
 
-<div class="well">
-  <h2  id="titles">Introducing a week lunch and learn events for Vancouver's tech community.</h2>
-  <div class="clear-float"></div>
-
- 
-  <br>&nbsp;
-
-  <p class="center">
-    <a id="home-button"><%= link_to 'Register', "http://www.codecore.ca", class: "btn btn-warning btn-lg home-button"%></a>
-  </p>
-  <h6 id="titles">Website developed by CodeCore's 1st Cohort - week 4, please follow us at 
-    <a href="http://www.codecore.ca"> codecore's </a></h6>
-    
-    <!-- <h5 id="titles" class="pull-right">Website Design by CodeCore's Cohort #1</h5> -->
-
-    <br>
-  </div>
-  <div id="titles" class="pull-right">
-    <h6><a id="http://www.flickr.com/photos/magnusl3d/6044910841/" class="cc_ref">Photo</a> by Larsson <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.en" id="cc_ref">CC BYSA3.0</a></h6>
-      <div class="clear-float"></div>
-  </div>
-</section>
-
-<%= semantic_form_for @attendee do |f| %>
-<section id="about">
-  <h1>About The Event/Speakers</h1>
-
-<div class="row-fluid">
-<% @events.each do |event| %>
-
-    <div class="col-sm-6 col-md-12">
-      <div class="thumbnail">
-        <%= link_to (image_tag event.image(:medium), class: "post-thumb"), event %>
-        <div class="caption">
-          <%= link_to event.title,event, class: "post-thumb" %>
-          <br>
-          <p><%= event.body.truncate(100) %></p>
-          <p><%=event.date.to_formatted_s(:short)%></p>
-          <p><%= event.speaker %></p>
-          <p><%= event.bio %></p>
-          <% if (event.linkedin && event.linkedin!='') %>
-          <p><a href="<%=event.linkedin%>">Linkedin Profile</a></p>
-          <% else %>
-          <p>&nbsp;</p>
-          <% end %>
-          <% if (event.twitter && event.twitter!='') %>
-          <p><a href="<%=event.twitter%>">Twitter Profile</a></p>
-          <% else %>
-          <p>&nbsp;</p>
-          <% end %>
-          <%= label_tag("attendee[event_ids][]", "I want to attend #{event.speaker}'s session") %>
-          <%=  check_box_tag "attendee[event_ids][]",event.id %>
+          <div class="col-lg-6 col-md-6 col-sm-6 box">
+            <div id="upcase"><%= render "event_list" %></div>
+          </div>
+          
+          <div class="col-lg-3 col-md-3 col-sm-3">
+          </div>
         </div>
-      </div>
-    </div>
-  
-<% end %>
-<div class="clearfix"></div>
 
-  
-</section>
+        <br>
+        <p class="center">
+          <a id="home-button"><%= link_to 'Register', "http://www.codecore.ca", class: "btn btn-warning btn-lg home-button"%></a>
+        </p>
+        <h6 class="center" id="titles">Website developed by CodeCore's 1st Cohort - week 4, please visit
+          <a href="http://www.codecore.ca"> codecore's website</a> for more information</h6>  
+          <!-- <h5 id="titles" class="pull-right">Website Design by CodeCore's Cohort #1</h5> -->
+          <br>
+        </div>
+        <div id="titles" class="pull-right">
+          <h6><a id="http://www.flickr.com/photos/magnusl3d/6044910841/" class="cc_ref">Photo</a> by Larsson <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.en" id="cc_ref">CC BYSA3.0</a></h6>
+            <div class="clear-float"></div>
+        </div>
+  </section>
 
 
-<div class="row">
+
 <section id="photo3">
-<div class="col-md-6">
+  <div class="schedule">
+    <h2 class="titles">Lunch and Learn Speaker Schedule:</h2>
+  </div>
 
+
+    <% @events.each do |event| %>
+<div class="hero-unit">
+      <div class="row">
+        
+        <div class="col-md-2">
+          <div class="center">
+            <div class="thumbnail">
+              <%= image_tag event.image(:medium), class: "post-thumb"%></div>
+                      <h3><% if (event.linkedin && event.linkedin!='') %>
+                                <a href="<%=event.linkedin%>"><i class="fa fa-linkedin-square"></i></a>          
+                            <% end %>          
+                   
+                          <% if (event.twitter && event.twitter!='') %>
+                                <a href="<%=event.twitter%>"><i class="fa fa-twitter-square"></i></a>          
+                            <% end %>
+
+                      <%= event.speaker %>
+                     </h3>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="caption">
+              <h4>Topic: <strong><%= event.title %></strong></h4>
+              
+              <p>Description: <%= event.body.truncate(200) %></p>      
+              
+              <p><%= event.bio %></p>
+              
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="center">
+              <%= label_tag("attendee[event_ids][]", "I want to attend #{event.speaker}'s session:")%> 
+              <br><br>
+              <%= check_box_tag "attendee[event_ids][]",event.id, data: { "class" => "custom_check" } %>
+              <br>
+              <p><%=event.date.strftime("%A, %B %C")%></p>
+              <h5><%=event.date.strftime("%I:%M %p")%></h5>  
+              <div class="clearfix"></div>
+          </div>  
+        </div>                
+    </div>
 </div>
-<div class="col-md-3">
-</div>
-<div class="col-md-3">
-<iframe width='100%' height='500px' frameBorder='0' src='http://a.tiles.mapbox.com/v3/abrarmusa.h7khefgh/mm/zoompan,zoomwheel,geocoder,share.html'></iframe>
-</div>
-<div class="clearfix"></div>
+<div class="row">&nbsp;</div><!--  This row is to put a default distance between events -->
+    <% end %>
+
+<div class="clearfix"></div>  
 </section>
 
-</div>
+<section id="photo2">
 
-<section id="about">
-<%= f.input  :name, input_html: {class: "attendee-form"} %>
-<%= f.input  :email, input_html: {class: "attendee-form"} %>
-<%= f.input  :company, input_html: {class: "attendee-form"} %>
- <%=  f.input :categories, :as => :check_boxes,:label => "Topics I am interested in:"%>
-<p>Are you interested in joining our mailing list? <%= f.input :mail_list, :as => :boolean%></p>
-<%= f.submit "Submit"%>
-<% end %>
+        <div class="row span2">
+
+          <div class="col-lg-6 col-md-6 col-sm-6 box">
+            <h3 id="upcase">Please select up to 2 events that you would like to attend:</h3>
+            <%= form_for @attendee do |f| %>
+              <div id="titles"><%= render "event_list_form" %></div>
+              <%= f.label :name %>
+              <%= f.text_field :name,  class: "form-control" %>
+              <%= f.label :email %>
+              <%= f.text_field :email,  class: "form-control" %>
+              <%= f.label :company %>
+              <%= f.text_field :company,  class: "form-control" %>
+
+              <%#= f.input :name, input_html: {class: "attendee-form form-group"} %>
+              <%#= f.input :email, input_html: {class: "attendee-form"} %>
+              <%#= f.input :company, input_html: {class: "attendee-form"} %>
+
+              <p id="titles"><%= f.check_box :mail_list %>Check this box if you like us to keep you up to date on future news and events? </p>
+              <p id="titles">Tell us about future topics you would like to learn about:</p>
+              <% Category.all.each do |c| %>
+              <%= check_box_tag(c) %>
+              <%= label_tag(c) %>
+              <% end %>
+
+              <div class="center"><%= f.submit "Submit Form", class: "home-button btn btn-warning"%></div>
+
+              <% end %>
 
 
+          </div>
+          
+          <div class="col-lg-6 col-md-6 col-sm-6">
+            <div class="row">
+                <div class="map center">
+                          <h3 id="upcase">Venue @CodeCore's head office:</h3>
+                          <h5 id="upcase">88 West Pender Street
+                          <h5 id="upcase">Vancouver Canada
+                          <h5 id="upcase">V6B 6N9
+                          <h5 id="upcase">(on top of the Starbucks at International Village Mall)</h5>
+                </div>
+            </div>
+            <div class="row">
+                <div class="map">
+                    <iframe width='100%' height='250px' frameBorder='0' src='http://a.tiles.mapbox.com/v3/abrarmusa.h7khefgh/mm/zoompan,zoomwheel,geocoder,share.html'></iframe>
+                </div>
+            </div>
+              <div class="clearfix"><div>
+
+          </div>
+        </div>
+
+
+
+</section>
 
 <section id="photo3">
 
 <h1>Website Created by CodeCore-CohortOne</h1>
 
 <div class="row">
-  <div class="col-lg-3 col-md-3 col-sm-3 well">
+  <div class="hero-unit">
     <img src="http://codecore.ca/img/team/tam.jpg" alt="..." class="center img-circle img-responsive">
     <p>Adam Tam</p>
     <p><i class="fa fa-linkedin-square fa-1x"></i> <i class="fa fa-twitter-square fa-1x"></i></p>
   </div>
-  <div class="col-lg-1 col-md-1 col-sm-1">
-    &nbsp
-  </div>
-  <div class="col-lg-3 col-md-3 col-sm-3 well">
-    <img src="http://codecore.ca/img/team/tam.jpg" alt="..." class="center img-circle img-responsive">
-    <p>Adam Tam</p>
-    <p><i class="fa fa-linkedin-square fa-1x"></i> <i class="fa fa-twitter-square fa-1x"></i></p>
-  </div>
-    <div class="col-lg-1 col-md-1 col-sm-1">
-    &nbsp
-  </div>
-  <div class="col-lg-3 col-md-3 col-sm-3 well">
-    <img src="http://codecore.ca/img/team/tam.jpg" alt="..." class="center img-circle img-responsive">
-    <p>Tam Tam</p>
-    <p><i class="fa fa-linkedin-square fa-1x"></i> <i class="fa fa-twitter-square fa-1x"></i></p>
-  </div>
+
+
 </div>
 
 </section>

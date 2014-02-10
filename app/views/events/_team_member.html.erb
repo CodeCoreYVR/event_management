@@ -1,12 +1,13 @@
-<div class="col-lg-2 col-md-2 col-sm-2 well">
+<div class="col-lg-2 col-md-2 col-sm-2 well center-block">
   
   <p><%= member_hash["name"] %></p>
   <% if member_hash["image"] %>
-  <img src="<%= member_hash["image"] %>" class="center img-circle img-responsive">
+  <img src="<%= member_hash["image"] %>" class="center-block img-circle img-responsive">
   <% else %>
-  <img src="http://codecore.ca/img/team/tam.jpg" alt="..." class="center img-circle img-responsive">
+  <img src="http://codecore.ca/img/team/tam.jpg" alt="..." class="center-block img-circle img-responsive">
   <% end %>
-  <p class="profile-links">
+  <br>
+  <p class="profile-links center">
     <a href="<%= member_hash["linkedin"] %>" target="_blank"><i class="fa fa-linkedin-square fa-2x linkedin-social"></i></a> 
     <a href="<%= member_hash["github"] %>" target="_blank"><i class="fa fa-github-square fa-2x github-social"></i></a> 
     <a href="<%= member_hash["twitter"] %>" target="_blank"><i class="fa fa-twitter-square fa-2x twitter-social"></i></a>

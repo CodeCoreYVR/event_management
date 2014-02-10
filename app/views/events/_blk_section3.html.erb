@@ -1,5 +1,11 @@
 <section id="photo2">
-
+  <% if flash[:alert] %> 
+  <div class="alert alert-danger"><%=flash[:alert]%></div>
+  <% elsif flash[:notice]  %>
+  <div class="alert alert-success"><%=flash[:notice]%></div>
+  <% elsif flash[:message] %>
+  <div class="alert alert-info"><%= flash[:message]%></div>
+  <% end %>
         <div class="row span2">
 
           <div class="col-lg-6 col-md-6 col-sm-6 box">

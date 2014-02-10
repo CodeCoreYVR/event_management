@@ -6,8 +6,14 @@ class AttendeesController < ApplicationController
       AttendeeMailer.delay.notify_attendee(@attendee)
     else
       @events = Event.all
-      flash.now[:alert]=@message || ''
-      render 'events/index'
+      # flash.now[:alert]=@message || ''
+      # render 'events/index'
+      @message||=''
+      if @attendee.errors.any?
+        @errs=@attendee.errors.full_messages.join(" and ")
+      end
+      @errs||= ''
+      redirect_to root_path + '#photo2', alert: @message+@errs
     end
   end
 

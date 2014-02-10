@@ -1,48 +1,48 @@
 <section id="photo1">
-<div class="well">
-  <h2 class="titles">Introducing a new series of lunch and learn events for Vancouver's tech community.</h2> 
-  <br>
-  <p class="center">
-    <a id="home-button"><%= link_to 'Register', "http://www.codecore.ca", class: "btn btn-warning btn-lg home-button"%></a>
-  </p>
-  <h6 class="titles">Website is currently under development by CodeCore's 1st Cohort, please visit 
-    <span class="link"><a href="http://www.codecore.ca"> codecore's </a></span> website for updates</h6>      
-    <!-- <h5 class="titles" class="pull-right">Website Design by CodeCore's Cohort #1</h5> -->
-    <br>
-  </div>
-  <div id="photo-credit" class="pull-right">
-    <h6><a href="http://www.flickr.com/photos/magnusl3d/6044910841/" class="cc_ref">Photo</a> by Larsson <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.en" id="cc_ref">CC BYSA3.0</a></h6>      
-  </div>
-</div> 
-</section>
 
-<!-- week of events -->
-<section class="week">
-  <div class="col-md-2">
-    <div class="q center">When</div>
-    <% @events.each do |event| %>
-      <strong><%=event.date.strftime("%A, %B %C")%></strong>
-      <br>
-    <% end %>
-  </div>
-  <div class="col-md-1">
-    <div class="q">What</div>
-    <% @events.each do |event| %>
-      <%=event.title%>
-      <br>
-    <% end %>
-  </div>
-  <div class="col-md-1">
-    <div class="q">Who</div>
-    <% @events.each do |event| %>
-      <a href="<%=event.linkedin%>"><%= event.speaker %></a>
-      <br>
-    <% end %>
-  </div>
-    <br>
-  <div class="clearfix"></div>
-</section>
 
+  <div class="well">
+    <h2 class="titles">Introducing a new series of lunch and learn events for Vancouver's tech community.</h2> 
+    <br>
+    <section class="week">
+      <div class="col-md-2">
+        <div class="q center">When</div>
+        <% @events.each do |event| %>
+          <strong><%=event.date.strftime("%A, %B %C")%></strong>
+          <br>
+        <% end %>
+      </div>
+      <div class="col-md-1">
+        <div class="q">What</div>
+        <% @events.each do |event| %>
+          <%=event.title%>
+          <br>
+        <% end %>
+      </div>
+      <div class="col-md-1">
+        <div class="q">Who</div>
+        <% @events.each do |event| %>
+          <a href="<%=event.linkedin%>"><%= event.speaker %></a>
+          <br>
+        <% end %>
+      </div>
+        <br>
+      <div class="clearfix"></div>
+  
+    </section>
+    <p class="center">
+      <a id="home-button"><%= link_to 'Register', "http://www.codecore.ca", class: "btn btn-warning btn-lg home-button"%></a>
+    </p>
+    <h6 class="titles">Website is currently under development by CodeCore's 1st Cohort, please visit 
+      <span class="link"><a href="http://www.codecore.ca"> codecore's </a></span> website for updates</h6>      
+      <!-- <h5 class="titles" class="pull-right">Website Design by CodeCore's Cohort #1</h5> -->
+      <br>
+    </div>
+    <div id="photo-credit" class="pull-right">
+      <h6><a href="http://www.flickr.com/photos/magnusl3d/6044910841/" class="cc_ref">Photo</a> by Larsson <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.en" id="cc_ref">CC BYSA3.0</a></h6>      
+    </div>
+
+</section>
 
 <!-- Form Section -->
 <section id="about">

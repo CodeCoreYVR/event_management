@@ -5,25 +5,9 @@
 
 <%= render 'events/blk_section3' %>
 
-<% if alert || @attendee.errors.any? %>
-<% errs='' %>
-  <% @attendee.errors.full_messages.each do |msg| %>
-  <% errs+='\n'+msg %>
-  <% end %>
-  <script language="JavaScript">
-   alert("<%= alert + errs%>");
-  </script>
-<% end %>
+
 
 
 
 <%= render 'events/team_photos' %>
 
-<script>
-$('a').click(function(){
-    $('html, body').animate({
-        scrollTop: $( $(this).attr('href') ).offset().top
-    }, 800);
-    return false;
-});
-</script>

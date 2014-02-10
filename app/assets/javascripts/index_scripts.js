@@ -1,8 +1,10 @@
-$('a').click(function(){
+$(function(){
+  $('a').click(function(){
     $('html, body').animate({
         scrollTop: $( $(this).attr('href') ).offset().top
     }, 800);
     return false;
+  });
 });
 $(function(){
   $("#eventslist2").on('click','input[type=checkbox]',function(e){

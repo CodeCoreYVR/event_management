@@ -10,6 +10,7 @@ gem 'delayed_job_web'
 # Use sqlite3 as the database for Active Record
 
 gem 'pg'
+gem 'rails_12factor', group: :production
 gem 'social-share-button'
 
 # Use SCSS for stylesheets

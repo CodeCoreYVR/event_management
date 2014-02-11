@@ -20,8 +20,9 @@
                                     <a class="profile-links" href="<%=event.twitter%>"><i class="fa fa-twitter-square fa-2x twitter-social profile-links"></i></a>          
                                 <% end %>
 
-                          
-                         
+                <% if event.seats %>
+                  <h5 id="upcase"><%= event.seats - event.attendees.length %> Spots Remaining</h5>
+                <% end %>         
               </div>
             </div>
             <div class="col-md-6">

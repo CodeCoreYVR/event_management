@@ -98,13 +98,18 @@ background-size: cover;
   -moz-box-shadow: 0 0 250px rgba(0,0,0,1.0);
   -o-box-shadow: 0 0 250px rgba(0,0,0,1.0);
 }
-#parallax #photo2 { color: white; background: url(http://www.codecore.ca/wp-content/themes/CodeCore/img/front2.jpg)
-  no-repeat center center fixed; 
-  /*background size*/
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+#parallax #photo2 { 
+  // color: white; 
+  background: url(https://dl.dropboxusercontent.com/u/525680/linen_texture_2.jpg);
+  background-repeat: repeat;
+background-attachment: fixed;
+
+  //  background-repeat: repeat;
+  // /*background size*/
+  // -webkit-background-size: cover;
+  // -moz-background-size: cover;
+  // -o-background-size: cover;
+  // background-size: cover;
   box-shadow: 0 0 250px rgba(0,0,0,1.0);
   -webkit-box-shadow: 0 0 250px rgba(0,0,0,1.0);
   -moz-box-shadow: 0 0 250px rgba(0,0,0,1.0);
@@ -231,7 +236,7 @@ footer {
 
 /* styles for team_photos partial */
  //#team_photos .row { background-color: rgba(40,40,40,0.9); padding-right: 90px;}
- #parallax #team-photos { background: url(http://upload.wikimedia.org/wikipedia/commons/9/9b/GrouseMountain.jpg)
+ #parallax #team-photos { background: url(http://www.codecore.ca/wp-content/themes/CodeCore/img/front2.jpg)
   no-repeat center center fixed; 
   /*background size*/
   -webkit-background-size: cover;

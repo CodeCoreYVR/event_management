@@ -26,11 +26,11 @@
             </div>
             <div class="col-md-6">
               <div class="caption">
-                  <h4>Topic: <strong id="titles"><%= event.title %></strong></h4>
+                  <h4>Topic: <strong class="titles"><%= event.title %></strong></h4>
                   <p>Share Event <%= social_share_button_tag(event.title) %></p>
-                  <p id="titles">Description: <%= event.body %></p>      
+                  <p class="titles">Description: <%= event.body %></p>      
                   
-                  <p id="titles"><%= event.bio %></p>
+                  <p class="titles"><%= event.bio %></p>
                   
               </div>
             </div>
@@ -41,7 +41,7 @@
                   <br><br>
                   <%= check_box_tag "attendee[event_ids][]",event.id, false, data: { "class" => "custom_check" } %>
                   <br>
-                  <p id="titles"><%=event.date.strftime("%A, %B %C")%></p>
+                  <p class="titles"><%=event.date.strftime("%A, %B %C")%></p>
                   <h5><%=event.date.strftime("%I:%M %p")%></h5>  
                   <div class="clearfix"></div>
               </div>  
@@ -51,9 +51,6 @@
     <div class="row">&nbsp;</div><!--  This row is to put a default distance between events -->
     <% end %>
   </div>
-        <div id="titles" class="pull-right">
-          <h6><a id="http://www.flickr.com/photos/magnusl3d/6044910841/" class="cc_ref">Photo</a> by Larsson <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.en" id="cc_ref">CC BYSA3.0</a></h6>
-            <div class="clear-float"></div>
 
 
 <div class="clearfix"></div>  

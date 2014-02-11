@@ -28,7 +28,7 @@
             <div class="col-md-6">
               <div class="caption">
                   <h4>Topic: <strong id="titles"><%= event.title %></strong></h4>
-                  
+                  <p>Share Event <%= social_share_button_tag(event.title) %></p>
                   <p id="titles">Description: <%= event.body %></p>      
                   
                   <p id="titles"><%= event.bio %></p>

@@ -5,12 +5,12 @@
           <div class="col-lg-6 col-md-6 col-sm-6 box">
             <h3 class="text-shadow" id="upcase">Please select up to 2 events that you would like to attend:</h3>
             <%= form_for @attendee do |f| %>
-              <div id="titles"><%= render "events/event_list_form" %></div>
-              <%= f.label :name, id: "category" %>
+              <div class="titles"><%= render "events/event_list_form" %></div>
+              <%= f.label :name, class: "category" %>
               <%= f.text_field :name,  class: "form-control" %>
-              <%= f.label :email, id: "category" %>
+              <%= f.label :email, class: "category" %>
               <%= f.text_field :email,  class: "form-control" %>
-              <%= f.label :company, id: "category" %>
+              <%= f.label :company, class: "category" %>
               <%= f.text_field :company,  class: "form-control" %>
               <br>
 
@@ -18,17 +18,17 @@
               <%#= f.input :email, input_html: {class: "attendee-form"} %>
               <%#= f.input :company, input_html: {class: "attendee-form"} %>
 
-              <p id="titles"><%= f.check_box :mail_list %>Check this box if you like us to keep you up to date on future news and events? </p>
-              <p id="titles">Tell us about future topics you would like to learn about:</p>
+              <p class="titles"><%= f.check_box :mail_list %>Check this box if you like us to keep you up to date on future news and events </p>
+              <p class="titles"> Please tell us about future topics you would like to learn about:</p>
                 <ul > 
                   <% Category.all.each do |category| %>
 
                     <li  class="col-lg-6 col-md-6 col-sm-6"><%= hidden_field_tag "@attendee[category_ids][]", nil %>
                       <%= check_box_tag "@attendee[category_ids][]", category.id, @attendee.categories.include?(category), id: dom_id(category) %>
-                      <%= label_tag dom_id(category), category.name, id: "category" %>
+                      <%= label_tag dom_id(category), category.name, class: "category" %>
                     </li>
                   <% end %>
-                  
+
                 </ul>
 
               <br>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140209081804) do
+ActiveRecord::Schema.define(version: 20140211004825) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -84,7 +84,7 @@ ActiveRecord::Schema.define(version: 20140209081804) do
     t.string   "linkedin"
     t.string   "facebook"
     t.string   "twitter"
-    t.integer  "seats"
+    t.integer  "seats",              default: 0
   end
 
   create_table "users", force: true do |t|

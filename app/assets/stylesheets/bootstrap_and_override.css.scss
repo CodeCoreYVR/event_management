@@ -11,7 +11,7 @@ color: #333; padding: 0px; margin: 0px auto; }
 .navbar { padding:0px; margin:0px;}
 .center { text-align: center; }
 .bold { font-weight: bold;}
-#titles {
+.titles {
   font-weight: 300;
   margin-right: 10px;
   color: white;
@@ -20,7 +20,7 @@ color: #333; padding: 0px; margin: 0px auto; }
   line-height: 1;
 }
 
-#category {
+.category {
   color: white;
   font-weight: normal;
 }
@@ -35,7 +35,7 @@ color: #333; padding: 0px; margin: 0px auto; }
   text-shadow: -1px 1px #444;
 }
 
-#titles a {color: white;}
+.titles a {color: white;}
 
 #upcase {
   font-weight: 300;
@@ -91,7 +91,7 @@ color: #333; padding: 0px; margin: 0px auto; }
 
 #parallax #header { background: #39f; color: #fff; }
 #parallax #about { background: url(../assets/backgrounds/dark_stripes.png) repeat; color: #fff; }
-#parallax #photo1 { color: #fff; background: url(http://upload.wikimedia.org/wikipedia/commons/b/ba/Downtown_Vancouver_Sunset.jpg)
+#parallax #photo1 { color: #fff; background: url(http://farm7.staticflickr.com/6073/6044910841_f8bda02f01_b.jpg )
 no-repeat center center fixed; 
 
 /*border-bottom:50px solid black;*/

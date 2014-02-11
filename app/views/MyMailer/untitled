@@ -1,2 +1,0 @@
-class MyMailer < ActionMailer::Base
-	def welcomes

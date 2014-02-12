@@ -5,5 +5,5 @@ ActionMailer::Base.smtp_settings = {
   user_name:              ENV['email_username'],
   password:               ENV['email_password'],
   authentication:         :login,
- domain: 'codecore-events.herokuapp.com'
+ domain: 'http://codecore-events.herokuapp.com/'
 }

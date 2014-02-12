@@ -1,4 +1,7 @@
 <div class="container">
+<p class='admin-titles'>EVENT FORM
+  <%= link_to 'ADMIN INDEX', admin_index_path, class: "btn btn-primary back-lit-btn pull-right" %>
+</p>
 <%= form_for [:admin, @event],:html => { :multipart => true } do |f| %>
   <% if @event.errors.any? %>
     <ul>
@@ -55,6 +58,8 @@
     <br>
     <%= f.url_field :twitter,  class: "form-control"   %>
   </div>
-  <%= f.submit "Save", class: "btn btn-primary" %>
+    <div class="center">
+      <%= f.submit "Save", class: "btn btn-primary" %>
+    </div>
 <% end %>
 </div>

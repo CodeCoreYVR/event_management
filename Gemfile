@@ -18,6 +18,9 @@ gem 'sass-rails', '~> 4.0.0'
 gem 'bootstrap-sass', '>= 3.0.0'
 gem 'bootstrap-datepicker-rails'
 gem 'formtastic'
+
+gem 'formtastic-bootstrap', git: 'https://github.com/mjbellantoni/formtastic-bootstrap.git', branch: :bootstrap3_and_rails4
+
 gem 'quiet_assets'
 
 gem "letter_opener", :group => :development

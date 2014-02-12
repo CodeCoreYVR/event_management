@@ -9,7 +9,7 @@ test:
   encoding: unicode
   database: event_management_test
   pool: 5
-  username: arashouji
+  username: don
   password: 
   timeout: 5000
 
@@ -18,7 +18,7 @@ development:
   encoding: unicode
   database: event_management_development
   pool: 5
-  username: arashouji
+  username: don
   password:  
   timeout: 5000
 
@@ -27,6 +27,6 @@ production:
   encoding: unicode
   database: event_management_production
   pool: 5
-  username: arashouji
+  username: don
   password: 
   timeout: 5000

@@ -29,7 +29,7 @@ $(function(){
   });
 });
 $(function(){
-  $("input[name='commit'][type='submit']").on('click',function(e){
+  $("#new_attendee input[type='submit']").on('click',function(e){
     var nameMissing=false;
     if($('#attendee_name').val()===''){
         e.preventDefault();

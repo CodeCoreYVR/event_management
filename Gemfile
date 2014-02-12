@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 
+gem 'aws-sdk'
+
 # Use for the mailer
 gem 'delayed_job_active_record'
 gem 'delayed_job_web'

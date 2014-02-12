@@ -1,7 +1,7 @@
       <table class="table">
         <% @events.each do |event| %>
         <tr class="link" data-id="#<%=event.id%>">
-          <td><a href="#<%=event.id%>"><p><%=formatted_date(event.date)%></p></a></td>
+          <td><a href="#<%=event.id%>"><p><%= formatted_date(event.date) %></p></a></td>
           <td><a href="#<%=event.id%>"><%=event.title%></a></td>
         </tr>
         <% end %>

@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/mjbellantoni/formtastic-bootstrap.git
+  revision: d185a2d646624fb4f910a80cfca9d42a959166fe
+  branch: bootstrap3_and_rails4
+  specs:
+    formtastic-bootstrap (3.0.0.rc.1)
+      formtastic (>= 2.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -177,6 +185,7 @@ DEPENDENCIES
   delayed_job_web
   devise
   formtastic
+  formtastic-bootstrap!
   jbuilder (~> 1.2)
   jquery-rails
   letter_opener

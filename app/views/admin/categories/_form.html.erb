@@ -1,4 +1,4 @@
 <%= semantic_form_for [:admin,@category] do |f| %>
-  <%= f.input  :name, input_html: {class: "attendee-form"} %>
-  <%= f.submit "Submit changes"%>
+  <%= f.input  :name, input_html: {class: "admin-form center"} %>
+  <p class="admin-form center"><%= f.submit "Submit changes", input_html: { class: "btn btn-default" }%></p>
 <% end %>

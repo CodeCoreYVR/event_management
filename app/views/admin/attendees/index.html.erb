@@ -1,8 +1,8 @@
 
 <div class = "container">
-<h2>THE REPOSITORY OF ATTENDEES
+<p class="admin-titles">THE REPOSITORY OF ATTENDEES
     <%= link_to 'ADMIN INDEX', admin_index_path, class: "btn btn-primary back-lit-btn pull-right" %>
-</h2>
+</p>
 
 <table class="table table-striped" width="900px"> 
   <tr>
@@ -28,7 +28,7 @@
       <% if attendee.events %>
       <td>
       <% attendee.events.each do |event|  %>
-          <%=link_to(event.id,admin_event_path(event)) + ',' %>
+          <%=link_to(event.title,admin_event_path(event)) + ',' %>
       <% end %>
       </td>
       <% else %>

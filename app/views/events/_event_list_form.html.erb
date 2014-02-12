@@ -1,10 +1,10 @@
 <div id ="eventslist2">
   <table class="table">
    <% @events.each do |event| %>
-  <tr>
-      <td colspan="2" class="titles"><%=event.date.strftime("%A, %B %C")%></td>
+  <tr id="<%=dom_id(event)%>" >
+      <td colspan="2" class="titles"><a href="#<%=dom_id(event)%>"><%=formatted_date(event.date)%><a/></td>
       <td class="titles"><%=event.title%></td>
-      <td class="titles"><%= check_box_tag "attendee[event_ids][]",event.id,false%></td>
+      <td class="titles"><%= check_box_tag "attendee[event_ids][]",event.id,false,id: dom_id(event)%></td>
   </tr>
     <% end %>
   </table>

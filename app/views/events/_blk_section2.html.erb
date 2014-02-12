@@ -1,6 +1,6 @@
-<section id="photo3">
+<section id="section3">
   <div class="schedule">
-    <div class="row text-shadow"><h2 id="upcase-blk">Event Details and Schedule:</h2></div>
+    <div class="row text-shadow"><h2 class="upcase-blk">Event Details and Schedule:</h2></div>
   </div>
   <div id="eventslist">
     <% @events.each do |event| %>
@@ -11,7 +11,7 @@
               <div class="center">
                 <div class="thumbnail">
                   <%= image_tag event.image(:medium), class: "post-thumb"%></div>
-                          <h3 id="upcase"><%= event.speaker %></h3>
+                          <h3 class="upcase"><%= event.speaker %></h3>
                           <% if (event.linkedin && event.linkedin!='') %>
                                     <a class="profile-links" href="<%=event.linkedin%>"><i class="fa fa-linkedin-square fa-2x linkedin-social profile-links"></i></a>          
                                 <% end %>          
@@ -20,13 +20,14 @@
                                     <a class="profile-links" href="<%=event.twitter%>"><i class="fa fa-twitter-square fa-2x twitter-social profile-links"></i></a>          
                                 <% end %>
 
-                          
-                         
+                <% if event.seats %>
+                  <h5 class="upcase"><%= event.seats - event.attendees.length %> Spots Remaining</h5>
+                <% end %>         
               </div>
             </div>
             <div class="col-md-6">
               <div class="caption">
-                  <h4>Topic: <strong class="titles"><%= event.title %></strong></h4>
+                  <h4><strong class="upcase"><%= event.title %></strong></h4>
                   <p>Share Event <%= social_share_button_tag(event.title) %></p>
                   <p class="titles">Description: <%= event.body %></p>      
                   
@@ -37,12 +38,12 @@
 
             <div class="col-md-3">
               <div class="center">
-                  <p id="upcase"><%= label_tag("attendee[event_ids][]", "I want to attend #{event.speaker}'s session:")%></p>
+                  <p class="upcase"><%= label_tag("attendee[event_ids][]", "I want to attend #{event.speaker}'s session:")%></p>
                   <br><br>
                   <%= check_box_tag "attendee[event_ids][]",event.id, false, data: { "class" => "custom_check" } %>
                   <br>
-                  <p class="titles"><%=event.date.strftime("%A, %B %C")%></p>
-                  <h5><%=event.date.strftime("%I:%M %p")%></h5>  
+                  <p class="titles"><%=formatted_date(event.date)%></p>
+                  <h5><%=formatted_time(event.date)%></h5>  
                   <div class="clearfix"></div>
               </div>  
             </div>                

@@ -4,6 +4,7 @@
 <% @events.each do |event| %>
   <p>Event: <%= event.title %> featuring <%= event.speaker %></p>
   <p>Date: <%= formatted_date(event.date)%> </p>
+  <p>Time: <%= formatted_time(event.date)%> </p>
   <br>  
 <% end %>
 <p>Thanks for signing up. Lunch and beverages will be provided of course!</p>

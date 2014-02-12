@@ -37,8 +37,8 @@ color: #333; padding: 0px; margin: 0px auto; }
 
 .titles a {color: white;}
 
-#upcase {
-  font-weight: 300;
+.upcase {
+  // font-weight: 300;
   margin-right: 10px;
   color: white;
   text-transform: uppercase;;
@@ -48,7 +48,7 @@ color: #333; padding: 0px; margin: 0px auto; }
 }
 
 .text-shadow {text-shadow: -1px 1px #444;}
-#upcase-blk {
+.upcase-blk {
   font-weight: 300;
   margin-right: 10px;
   color: black;
@@ -58,7 +58,7 @@ color: #333; padding: 0px; margin: 0px auto; }
   line-height: 1;
 }
 
-#upcase a {color: white;}
+.upcase a {color: white;}
 
 .home-button{
   -o-transition:.2s;
@@ -125,8 +125,8 @@ background-attachment: fixed;
 }
 
 #parallax #photo2 #titles {text-shadow: -1px 1px #444;}
-.post-thumb {}
-#parallax #photo3 { color: white; opacity:.9; background: url(https://dl.dropboxusercontent.com/u/525680/ruby_code.jpg)
+.post-thumb {border: none;}
+#parallax #section3 { color: white; opacity:.9; background: url(https://dl.dropboxusercontent.com/u/525680/ruby_code.jpg)
   no-repeat center center fixed; 
   /*background size*/
   -webkit-background-size: cover;
@@ -141,8 +141,8 @@ background-attachment: fixed;
 
 
 //this photo3 row puts a transparent box behind the events
-//#photo3 .row { background-color: rgba(0,0,0,0.5); padding:25px; border: 1px solid rgb(0,0,0)}
-#photo3 .hero-unit{ background-color: rgba(0,0,0,0.80); padding:25px; border: 1px solid rgb(0,0,0)}
+//#section3 .row { background-color: rgba(0,0,0,0.5); padding:25px; border: 1px solid rgb(0,0,0)}
+#section3 .hero-unit{ background-color: rgba(0,0,0,0.80); padding:25px; border: 1px solid rgb(0,0,0)}
 
 #parallax #contact { background: #fff; color: #39f; }
 #parallax #footer { background: #39f; color: #fff; }
@@ -156,13 +156,13 @@ background-attachment: fixed;
 
 //from kelly's code
 
-.thumbnail {width: 200px; height: 100%; border-radius: 0; padding: 0; margin-right: 10px; background: none;}
+.thumbnail {width: inherit; height: 100%; border-radius: 0; padding: 0; margin-right: 10px; background: none; border: none;}
 
 //Checkbox Code from Kelly
-#photo3 input[type='checkbox'] {
+#section3 input[type='checkbox'] {
     margin-top: -30px;
 }
-#photo3 input[type='checkbox'] {
+#section3 input[type='checkbox'] {
 
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeSpeed;
@@ -175,7 +175,7 @@ background-attachment: fixed;
     position: relative;
     cursor:pointer;
 }
-#photo3 input[type='checkbox']:after {
+#section3 input[type='checkbox']:after {
     content:"";
     vertical-align: middle;
     text-align: center;
@@ -195,18 +195,18 @@ background-attachment: fixed;
     background: #86090b;
 }
 
-#photo3 input[type='checkbox']:hover:after {
+#section3 input[type='checkbox']:hover:after {
     background: #86090b;
     
 
     color: #888;
 }
-#photo3 input[type='checkbox']:checked:hover:after {
+#section3 input[type='checkbox']:checked:hover:after {
     background: #CB0D0F;
     content:'\2714';
     color: #fff;
 }
-#photo3 input[type='checkbox']:checked:after {
+#section3 input[type='checkbox']:checked:after {
     background: #CB0D0F;
     content:'\2714';
     color: #fff;

@@ -18,3 +18,4 @@
 /public/system
 
 /config/initializers/email_vars.rb
+/config/initializers/s3.rb

@@ -3,7 +3,7 @@
         <div class="row span2">
 
           <div class="col-lg-6 col-md-6 col-sm-6 box">
-            <h3 class="text-shadow" id="upcase">Please select up to 2 events that you would like to attend:</h3>
+            <h3 class="text-shadow upcase">Please select up to 2 events that you would like to attend:</h3>
             <%= form_for @attendee do |f| %>
               <div class="titles"><%= render "events/event_list_form" %></div>
               <%= f.label :name, class: "category" %>
@@ -24,8 +24,8 @@
                   <% Category.all.each do |category| %>
 
                     <li  class="col-lg-6 col-md-6 col-sm-6"><%= hidden_field_tag "@attendee[category_ids][]", nil %>
-                      <%= check_box_tag "@attendee[category_ids][]", category.id, @attendee.categories.include?(category), id: dom_id(category) %>
-                      <%= label_tag dom_id(category), category.name, class: "category" %>
+                      <a href="#<%=dom_id(category)%>"><%= check_box_tag "@attendee[category_ids][]", category.id, @attendee.categories.include?(category), id: dom_id(category) %>
+                      <%= label_tag dom_id(category), category.name, class: "category" %></a>
                     </li>
                   <% end %>
 
@@ -42,17 +42,17 @@
           <div class="col-lg-6 col-md-6 col-sm-6">
             <div class="row">
                 <div class="map center">
-                          <h3 id="upcase">Venue @CodeCore's head office:</h3>
-                          <h5 id="upcase">88 West Pender Street
-                          <h5 id="upcase">Vancouver Canada
-                          <h5 id="upcase">V6B 6N9
+                          <h3 class="upcase">Venue @CodeCore's head office:</h3>
+                          <h5 class="upcase">88 West Pender Street
+                          <h5 class="upcase">Vancouver Canada
+                          <h5 class="upcase">V6B 6N9
                           
                 </div>
             </div>
             <div class="row">
                 <div class="map">
                     <iframe width='100%' height='400px' frameBorder='0' src='http://a.tiles.mapbox.com/v3/abrarmusa.h7khefgh/mm/zoompan,zoomwheel,geocoder,share.html'></iframe>
-                    <h5 id="upcase">Located on the second floor of International Village Mall (right on top of the Starbucks)</h5>
+                    <h5 class="upcase">Located on the second floor of International Village Mall (right on top of the Starbucks)</h5>
                 </div>
             </div>
               <div class="clearfix"><div>

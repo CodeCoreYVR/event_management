@@ -4,6 +4,7 @@ You've signed up to the following events at the CodeCore lunch and learns!
 <% @events.each do |event| %>
   Event: <%= event.title %> featuring <%= event.speaker %>
   Date: <%= formatted_date(event.date)%>   
+  Time: <%= formatted_time(event.date)%>
 <% end %>
 
 Thanks for signing up. Lunch and beverages will be provided of course!

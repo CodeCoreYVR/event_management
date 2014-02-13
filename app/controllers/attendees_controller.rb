@@ -2,13 +2,13 @@ class AttendeesController < ApplicationController
 
   def create
     @attendee = Attendee.new attendee_params
-    if event_number_check && @attendee.save
+    if @attendee.save
       AttendeeMailer.delay.notify_attendee(@attendee)
     else
       @events = Event.all
       @message ||= ''
       model_validation_messages
-      redirect_to root_path + '#photo2', alert: @message+@errs
+      redirect_to root_path + '#section-signup', alert: @message+@errs
     end
   end
 

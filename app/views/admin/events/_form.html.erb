@@ -27,10 +27,17 @@
     <%= f.datetime_local_field :date,  class: "form-control"  %>
   </div>
   <div>
+    <%= f.label "Duration (minutes)" %>
+    <br>
+
+    <%= f.number_field :duration,  class: "form-control"   %>
+
+  </div>
+  <div>
     <%= f.label "Total Seats" %>
     <br>
 
-    <%= f.text_field :seats,  class: "form-control"   %>
+    <%= f.number_field :seats,  class: "form-control"   %>
 
   </div>
   <div>

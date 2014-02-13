@@ -2,6 +2,8 @@
   <div class="schedule">
     <div class="row text-shadow"><h2 class="upcase-blk">Event Details and Schedule:</h2></div>
   </div>
+
+
   <div id="eventslist">
     <% @events.each do |event| %>
     <div class="hero-unit">
@@ -28,7 +30,7 @@
             <div class="col-md-6">
               <div class="caption">
                   <h4><strong class="upcase"><%= event.title %></strong></h4>
-                  <p>Share Event <%= social_share_button_tag(event.title) %></p>
+                  <p>Share Event <%= social_share_button_tag(event.title, :image => "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTdsjWnPtvccjwXi18Hbab91KDKChPoWSMCF0maMUBMjSuwAKQL", :'data-type' => 'photo') %></p>
                   <p class="titles">Description: <%= event.body %></p>      
                   
                   <p class="titles"><%= event.bio %></p>

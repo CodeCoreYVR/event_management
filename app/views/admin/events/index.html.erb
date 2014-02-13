@@ -12,6 +12,7 @@
       <th>Title</th>
       <th>Date</th>
       <th>Total Seats</th>
+      <th>Duration</th>
       <th>Seats Taken</th>
       <th>Seats Remaining</th>
 
@@ -31,6 +32,7 @@
         <td><%= event.title %></td>
         <td><%= event.date.to_formatted_s(:short)%></td>
         <td><%= event.seats %></td>
+        <td><%= event.duration %></td>
         <% if event.attendees && event.seats %>
         <td><%= event.attendees.length %></td>
         <td><%= event.seats - event.attendees.length%></td>

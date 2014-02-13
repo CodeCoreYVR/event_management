@@ -43,7 +43,7 @@
                   <%= check_box_tag "attendee[event_ids][]",event.id, false, data: { "class" => "custom_check" } %>
                   <br>
                   <p class="titles"><%=formatted_date(event.date)%></p>
-                  <h5><%=formatted_time(event.date)%></h5>  
+                  <h5><%=formatted_time(event.date)%> - <%=formatted_time(event.date+event.duration.minutes) %></h5>  
                   <div class="clearfix"></div>
               </div>  
             </div>                

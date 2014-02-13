@@ -90,7 +90,7 @@ color: #333; padding: 0px; margin: 0px auto; }
 
 #parallax #header { background: #39f; color: #fff; }
 #parallax #about { background: url(../assets/backgrounds/dark_stripes.png) repeat; color: #fff; }
-#parallax #photo1 { color: #fff; background: url(http://farm7.staticflickr.com/6073/6044910841_f8bda02f01_b.jpg )
+#parallax #section1 { color: #fff; background: url(http://farm7.staticflickr.com/6073/6044910841_f8bda02f01_b.jpg )
 no-repeat center center fixed; 
 
 /*border-bottom:50px solid black;*/
@@ -105,7 +105,7 @@ background-size: cover;
   -moz-box-shadow: 0 0 250px rgba(0,0,0,1.0);
   -o-box-shadow: 0 0 250px rgba(0,0,0,1.0);
 }
-#parallax #photo2 { 
+#parallax #section-signup { 
   // color: white; 
   background: url(https://dl.dropboxusercontent.com/u/525680/linen_texture_2.jpg);
   background-repeat: repeat;
@@ -123,7 +123,7 @@ background-attachment: fixed;
   -o-box-shadow: 0 0 250px rgba(0,0,0,1.0);
 }
 
-#parallax #photo2 #titles {text-shadow: -1px 1px #444;}
+#parallax #section-signup #titles {text-shadow: -1px 1px #444;}
 .post-thumb {border: none;}
 #parallax #section3 { color: white; opacity:.9; background: url(https://dl.dropboxusercontent.com/u/525680/ruby_code.jpg)
   no-repeat center center fixed; 
@@ -146,8 +146,8 @@ background-attachment: fixed;
 #parallax #contact { background: #fff; color: #39f; }
 #parallax #footer { background: #39f; color: #fff; }
 
-#photo1 .hero-unit{ background-color: rgba(0,0,0,0.5); padding:25px; border: 1px solid rgb(0,0,0)}
-#photo1 .box{ background-color: rgb(0,0,0); padding:25px; border: 1px solid rgb(0,0,0)}
+#section1 .hero-unit{ background-color: rgba(0,0,0,0.5); padding:25px; border: 1px solid rgb(0,0,0)}
+#section1 .box{ background-color: rgb(0,0,0); padding:25px; border: 1px solid rgb(0,0,0)}
 @media (min-width: 980px) {#wrapper {background: red;}}
 @media (min-width: 481px)  and (max-width: 767px) { #wrapper {background: yellow; }}
 @media (min-width: 480px) {#wrapper {background: blue; }}

@@ -23,8 +23,8 @@
                 <ul > 
                   <% Category.all.each do |category| %>
 
-                    <li  class="col-lg-6 col-md-6 col-sm-6"><%= hidden_field_tag "@attendee[category_ids][]", nil %>
-                      <a href="#<%=dom_id(category)%>"><%= check_box_tag "@attendee[category_ids][]", category.id, @attendee.categories.include?(category), id: dom_id(category) %>
+                    <li  class="col-lg-6 col-md-6 col-sm-6"><%= hidden_field_tag "attendee[category_ids][]", nil %>
+                      <a href="#<%=dom_id(category)%>"><%= check_box_tag "attendee[category_ids][]", category.id, @attendee.categories.include?(category), id: dom_id(category) %>
                       <%= label_tag dom_id(category), category.name, class: "category" %></a>
                     </li>
                   <% end %>

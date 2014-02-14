@@ -30,17 +30,12 @@ class AttendeesController < ApplicationController
   end
 
   def event_number_check
-    eventids
-    if (!@event_ids)# || @event_ids.length > 2)
+    if params[:attendee][:event_ids].present?
+      true
+    else
       @message = "You have to choose 1 or 2 events."
       false
-    else
-      true
     end
-  end
-
-  def eventids
-    @event_ids ||= params[:attendee][:event_ids]
   end
 
 end

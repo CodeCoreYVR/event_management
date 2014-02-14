@@ -13,8 +13,8 @@ class Event < ActiveRecord::Base
                         access_key_id: ENV["s3_id"],
                         secret_access_key: ENV["s3_access_key"]
                       },
-                     styles: { :medium => "100x100>", :thumb => "100x100>", display: "100000x79>", medium: "100000x79>", print: "100000x198>" },
-                     path: "/image/:id/:style/:filename",
+                     styles: { :medium => "200x200>", :thumb => "100x100>", display: "100000x79>", medium: "100000x79>", print: "100000x198>" },
+                       path: "/image/:id/:style/:filename",
                      :default_url => 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTdsjWnPtvccjwXi18Hbab91KDKChPoWSMCF0maMUBMjSuwAKQL'
 
   validates_attachment_size :image, less_than: 10.megabytes                     

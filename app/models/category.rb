@@ -1,4 +1,4 @@
 class Category < ActiveRecord::Base
-  belongs_to :categorization
-  has_many :attendees, through: :categorization
+  has_many :categorizations
+  has_many :attendees, through: :categorizations
 end

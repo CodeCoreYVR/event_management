@@ -2,7 +2,7 @@ class AttendeesController < ApplicationController
 
   def create
     @attendee = Attendee.new attendee_params
-    if @attendee.save
+    if event_number_check && @attendee.save
       AttendeeMailer.delay.notify_attendee(@attendee)
     else
       @events = Event.all
@@ -31,7 +31,7 @@ class AttendeesController < ApplicationController
 
   def event_number_check
     eventids
-    if (!@event_ids || @event_ids.length > 2)
+    if (!@event_ids)# || @event_ids.length > 2)
       @message = "You have to choose 1 or 2 events."
       false
     else

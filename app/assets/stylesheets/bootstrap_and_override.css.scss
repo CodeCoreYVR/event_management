@@ -8,6 +8,10 @@ color: #333; padding: 0px; margin: 0px auto; }
 
 //This navbar padding is here so that the background image of the paralax is flush with the header.
 .navbar { padding:0px; margin:0px;}
+.codecore-logo { padding:5px; }
+.map { padding: 10px; }
+.team-photo-padding { padding:10px; }
+
 .center { text-align: center; }
 .bold { font-weight: bold;}
 .titles {
@@ -124,7 +128,9 @@ background-attachment: fixed;
 }
 
 #parallax #section-signup #titles {text-shadow: -1px 1px #444;}
+
 .post-thumb {border: none;}
+
 #parallax #section3 { color: white; opacity:.9; background: url(https://dl.dropboxusercontent.com/u/525680/ruby_code.jpg)
   no-repeat center center fixed; 
   /*background size*/

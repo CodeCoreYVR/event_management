@@ -23,7 +23,7 @@
                                 <% end %>
 
                 <% if event.seats %>
-                  <h5 class="upcase"><%= event.seats - event.attendees.length %> Spots Remaining</h5>
+                  <h5 class="upcase"><%= event.seats - event.seat_ownerships.length %> Spots Remaining</h5>
                 <% end %>         
               </div>
             </div>

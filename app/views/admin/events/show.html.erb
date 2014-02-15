@@ -7,8 +7,8 @@
         <p><strong>Total Capacity: </strong><%= @event.seats %></p>
 
           <% if @event.attendees && @event.seats %>
-              <p><strong>Total Confirmed: </strong><%= @event.attendees.length %>
-              <p><strong>Total Seats Remaining: </strong><%= @event.seats - @event.attendees.length%>
+              <p><strong>Total Confirmed: </strong><%= @event.seat_ownerships.length %>
+              <p><strong>Total Seats Remaining: </strong><%= @event.seats - @event.seat_ownerships.length%>
             <% else %>
               <p><strong>&nbsp;</strong>
               <p><strong>&nbsp;</strong>
@@ -35,10 +35,10 @@
 <div class="well">
   <p class="admin-titles upcase"> List of Attendees for this Event </p>
   <div class="row center">
-    <p>  <% @event.attendees.each do |attendee| %></p>
+    <p>  <% @event.confirmed_attendees.each do |attendee| %></p>
     <p>| <%= attendee.name %> | <%= attendee.email %> |</p>
           <% end %>
-     <p class="admin-titles upcase">   Total:  <%=@event.attendees.count%> </p>
+     <p class="admin-titles upcase">   Total:  <%=@event.seat_ownerships.length%> </p>
   </div>
 
 

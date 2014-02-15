@@ -28,9 +28,9 @@
               </div>
             </div>
             <div class="col-md-6">
-              <div class="center">
+              <div class="">
                   <h4><strong class="upcase"><%= event.title %></strong></h4>
-                  <p>Share Event 
+                  <p class="social-share">Share Event:
                      <%= social_share_button_tag(event.title, 'data-source' => "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTdsjWnPtvccjwXi18Hbab91KDKChPoWSMCF0maMUBMjSuwAKQL", :'data-type' => 'photo') %>
                   </p>
                   <p class="titles">Description: <%= event.body %></p>      

@@ -4,10 +4,8 @@ class Attendance < ActiveRecord::Base
   validate :cap_check
 
   def cap_check
-    event=Event.find("#{event_id}")
-    event_seats_taken=Attendance.where("event_id=#{event_id}").length
+    event_seats_taken=event.attendances.length
     if (event.seats <= event_seats_taken)
-
       errors.add(:event_id," #{event.title} has been filled. Sorry!" )
     end
   end

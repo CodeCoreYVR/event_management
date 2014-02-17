@@ -8,7 +8,7 @@ class AttendeesController < ApplicationController
     rescue
     end
     if event_number_check && @attendee.save
-      AttendeeMailer.notify_attendee(@attendee).deliver
+      AttendeeMailer.delay.notify_attendee(@attendee)
     else
       @events = Event.all
       @message ||= ''
@@ -26,7 +26,7 @@ class AttendeesController < ApplicationController
       @errs = @attendee.errors.full_messages.join(" and ")
       @dependent_errs=''
       @dependent_errs += (@attendee.attendances.map{ |x| x.errors.full_messages.join(" and ") }).join(" and ")
-      @errs +=" and " unless @dependent_errs=='' || @errs.blank?
+      @errs +=" and " unless @dependent_errs.blank? || @errs.blank?
       @errs += @dependent_errs
     end
     @errs||= ''

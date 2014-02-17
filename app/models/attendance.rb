@@ -31,7 +31,7 @@ class Attendance < ActiveRecord::Base
   def change_waitlist_to_attending
     self.waitlisted=false
     self.save
-    AttendeeMailer.notify_waitlisted(self).deliver
+    AttendeeMailer.delay.notify_waitlisted(self)
   end
 
 

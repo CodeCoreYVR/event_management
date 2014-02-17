@@ -20,11 +20,7 @@ class Attendance < ActiveRecord::Base
   def waitlist_check
     event_seats_taken ||= self.event.seat_ownerships.length
     event_all_seats ||= self.event.seats
-    if (event_all_seats <= event_seats_taken)
-      self.waitlisted=true
-    else
-      self.waitlisted=false
-    end
+    self.waitlisted = (event_all_seats <= event_seats_taken)
     true
   end
 

@@ -1,7 +1,8 @@
 <p>Hello <%= @attendee.name%>,</p>
 <br>
 <p>You've signed up to the following events at the CodeCore lunch and learns!</p>
-<% if @has_seat_events[0]%>
+<% if @has_seat_events.any?%>
+  <p>You have seats for the following events:</p>
   <% @has_seat_events.each do |event| %>
     <p>Event: <%= event.title %> featuring <%= event.speaker %></p>
     <p>Date: <%= formatted_date(event.date)%> </p>
@@ -9,16 +10,18 @@
     <br>  
   <% end %>
 <% end %>
-<% if @waitlist_events[0]%>
+<% if @waitlist_events.any?%>
+  <p>You are waitlisted on the following events:</p>
   <% @waitlist_events.each do |event| %>
     <p>Event: <%= event.title %> featuring <%= event.speaker %></p>
     <p>Date: <%= formatted_date(event.date)%> </p>
     <p>Time: <%= formatted_time(event.date)%> </p>
     <br>  
   <% end %>
+  <p>You will be notified if a spot opens up in any of these events.</p>
 <% end %>
 <p>Thanks for signing up. Lunch and beverages will be provided of course!</p>
-<p>Any questions or concerns feel free to email us:</p>
+<p>Please feel free to email us if you have any questions or concerns:</p>
 <a href="mailto:aswin@codecore.ca?Subject=CodeCore%20Events" target="_top">aswin@codecore.ca</a>
 <br>
 <p><a href="http://www.codecore.ca">CodeCore.ca</a></p>

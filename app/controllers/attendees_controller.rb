@@ -8,7 +8,7 @@ class AttendeesController < ApplicationController
     rescue
     end
     if event_number_check && @attendee.save
-      AttendeeMailer.delay.notify_attendee(@attendee)
+      AttendeeMailer.notify_attendee(@attendee).deliver
     else
       @events = Event.all
       @message ||= ''

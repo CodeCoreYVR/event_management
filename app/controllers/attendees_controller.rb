@@ -1,7 +1,12 @@
 class AttendeesController < ApplicationController
 
   def create
-    @attendee = Attendee.new attendee_params
+    @attendee            = Attendee.find_by_email(attendee_params[:email]) || Attendee.new(attendee_params)
+    begin 
+      @attendee.categories += Category.find(attendee_params[:category_ids].delete_if{|x| x.empty?} )
+      @attendee.events     += Event.find(attendee_params[:event_ids])
+    rescue
+    end
     if event_number_check && @attendee.save
       AttendeeMailer.delay.notify_attendee(@attendee)
     else
@@ -19,8 +24,10 @@ class AttendeesController < ApplicationController
     if @attendee.errors.any?
       @attendee.errors.delete(:attendances)
       @errs = @attendee.errors.full_messages.join(" and ")
-      @errs+=" and " unless @errs.blank?
-      @errs += (@attendee.attendances.map{ |x| x.errors.full_messages.join(" and ") }).join(" and ")
+      @dependent_errs=''
+      @dependent_errs += (@attendee.attendances.map{ |x| x.errors.full_messages.join(" and ") }).join(" and ")
+      @errs +=" and " unless @dependent_errs.blank? || @errs.blank?
+      @errs += @dependent_errs
     end
     @errs||= ''
   end
@@ -33,7 +40,7 @@ class AttendeesController < ApplicationController
     if params[:attendee][:event_ids].present?
       true
     else
-      @message = "You have to choose 1 or 2 events."
+      @message = "You have to choose some events."
       false
     end
   end

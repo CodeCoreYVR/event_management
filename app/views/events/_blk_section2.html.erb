@@ -23,14 +23,16 @@
                                 <% end %>
 
                 <% if event.seats %>
-                  <h5 class="upcase"><%= event.seats - event.attendees.length %> Spots Remaining</h5>
+                  <h5 class="upcase"><%= event.seats - event.seat_ownerships.length %> Spots Remaining</h5>
                 <% end %>         
               </div>
             </div>
             <div class="col-md-6">
-              <div class="caption">
+              <div class="">
                   <h4><strong class="upcase"><%= event.title %></strong></h4>
-                  <p>Share Event <%= social_share_button_tag(event.title, 'data-source' => "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTdsjWnPtvccjwXi18Hbab91KDKChPoWSMCF0maMUBMjSuwAKQL", :'data-type' => 'photo') %></p>
+                  <p class="social-share">Share Event:
+                     <%= social_share_button_tag(event.title, 'data-source' => "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTdsjWnPtvccjwXi18Hbab91KDKChPoWSMCF0maMUBMjSuwAKQL", :'data-type' => 'photo') %>
+                  </p>
                   <p class="titles">Description: <%= event.body %></p>      
                   
                   <p class="titles"><%= event.bio %></p>

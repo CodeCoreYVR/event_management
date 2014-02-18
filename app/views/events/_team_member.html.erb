@@ -1,6 +1,6 @@
-<div class="col-lg-2 col-md-2 col-sm-2 well center-block">
+<div class="col-lg-2 col-md-2 col-sm-5 well center-block">
   
-  <p><%= member_hash["name"] %></p>
+  <p class="center bold"><%= member_hash["name"] %></p>
   <% if member_hash["image"] %>
   <img src="<%= member_hash["image"] %>" class="center-block img-circle img-responsive">
   <% else %>
@@ -10,7 +10,11 @@
   <p class="profile-links center">
     <a href="<%= member_hash["linkedin"] %>" target="_blank"><i class="fa fa-linkedin-square fa-2x linkedin-social"></i></a> 
     <a href="<%= member_hash["github"] %>" target="_blank"><i class="fa fa-github-square fa-2x github-social"></i></a> 
+     
+    <% if member_hash["twitter"].present? %>
     <a href="<%= member_hash["twitter"] %>" target="_blank"><i class="fa fa-twitter-square fa-2x twitter-social"></i></a>
+    <%else%>
+    <%end%>
   </p>
 </div>
 <div class="col-lg-1 col-md-1 col-sm-1">

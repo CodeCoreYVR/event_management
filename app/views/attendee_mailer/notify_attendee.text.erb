@@ -1,0 +1,28 @@
+Hello <%= @attendee.name%>,
+
+You've signed up to the following events at the CodeCore lunch and learns!
+<% if @has_seat_events.any?%>
+You have seats for the following events:
+  <% @has_seat_events.each do |event| %>
+    Event: <%= event.title %> featuring <%= event.speaker %>
+    Date: <%= formatted_date(event.date)%> 
+    Time: <%= formatted_time(event.date)%> 
+  <% end %>
+<% end %>
+<% if @waitlist_events.any?%>
+You are waitlisted on the following events:
+  <% @waitlist_events.each do |event| %>
+    Event: <%= event.title %> featuring <%= event.speaker %>
+    Date: <%= formatted_date(event.date)%> 
+    Time: <%= formatted_time(event.date)%> 
+  <% end %>
+  You will be notified if a spot opens up in any of these events.
+<% end %>
+
+Thanks for signing up. Lunch and beverages will be provided of course!
+Please feel free to email us if you have any questions or concerns:
+aswin@codecore.ca
+www.CodeCore.ca
+
+Best regards,
+inaugural CodeCore students!

@@ -15,7 +15,7 @@
       <th>Duration</th>
       <th>Seats Taken</th>
       <th>Seats Remaining</th>
-
+      <th>Wait listed</th>
       <th>Speaker</th>
 
       <th>Linkedin</th>
@@ -33,14 +33,9 @@
         <td><%= event.date.to_formatted_s(:short)%></td>
         <td><%= event.seats %></td>
         <td><%= event.duration %></td>
-        <% if event.attendees && event.seats %>
-        <td><%= event.attendees.length %></td>
-        <td><%= event.seats - event.attendees.length%></td>
-        <% else %>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <% end %>
-
+        <td><%= event.seat_ownerships.length%></td>
+        <td><%= event.seats - event.seat_ownerships.length%></td>
+        <td><%=event.wait_listed.length%></td>
         <td><%= event.speaker %></td>
 
 

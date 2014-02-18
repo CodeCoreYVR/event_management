@@ -4,7 +4,8 @@ class Attendance < ActiveRecord::Base
   validates_uniqueness_of :attendee_id, :scope => :event_id
 
   before_create :waitlist_check
-
+  after_destroy :update_event_waitlist
+  
   #validate :cap_check
   # def cap_check
   #   event_seats_taken=event.attendances.length
@@ -30,5 +31,8 @@ class Attendance < ActiveRecord::Base
     AttendeeMailer.delay.notify_waitlisted(self)
   end
 
+  def update_event_waitlist
+    self.event.update_waitlist
+  end
 
 end

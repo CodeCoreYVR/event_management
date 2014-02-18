@@ -1,7 +1,12 @@
 class AttendeesController < ApplicationController
 
   def create
-    @attendee = Attendee.new attendee_params
+    @attendee            = Attendee.find_by_email(attendee_params[:email]) || Attendee.new(attendee_params)
+    begin 
+      @attendee.categories += Category.find(attendee_params[:category_ids].delete_if{|x| x.empty?} )
+      @attendee.events     += Event.find(attendee_params[:event_ids])
+    rescue
+    end
     if event_number_check && @attendee.save
       AttendeeMailer.delay.notify_attendee(@attendee)
     else

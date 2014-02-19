@@ -7,25 +7,42 @@ $ ->
     # timeZoneOffset = (new Date().getTimezoneOffset())*60000
     curTime = new Date().getTime() #- timeZoneOffset
     $dates.each ->
-      console.log("FEFE")
       eventTime = Date.parse($(@).data('date'))
-      remaining = eventTime - curTime
-      unit = "seconds"
-      remaining /=(1000)
-      if (remaining<0)
+      if eventTime!=eventTime
+        eventTime = Date.parse($(@).data('secdate'))
+      timeRemaining = eventTime - curTime
+      firUnit = "seconds"
+      timeRemaining /=(1000)
+      firRemaining = timeRemaining
+      secRemaining = 0
+      secUnit= ""
+      if (firRemaining<0)
         $(this).text("Past Event")
       else
-        if (remaining > 86400)
-          remaining /= 86400
-          unit= "Days"
-        else if (86400 > remaining >= 3600)
-          remaining /= 3600
-          unit = "Hours"
-        else if (3600 > remaining  >= 60)
-          remaining /= 60
-          unit = "Minutes"
-        remaining= parseInt(remaining)
-        $(this).text("In "+remaining+" "+unit)
+        if (timeRemaining > 86400)
+          firRemaining /= 86400
+          firUnit = "Days"
+          secRemaining = (timeRemaining%86400)/3600
+          if secRemaining >= 1
+            secUnit = "Hours"
+        else if (86400 > timeRemaining >= 3600)
+          firRemaining /= 3600
+          firUnit = "Hours"
+          secRemaining = (timeRemaining%3600)/60
+          if secRemaining >= 1
+            secUnit = "Minutes"
+        else if (3600 > timeRemaining  >= 60)
+          firRemaining /= 60
+          firUnit = "Minutes"
+          secRemaining = (timeRemaining%60)
+          if secRemaining >= 1
+            secUnit = "Seconds"
+        firRemaining= parseInt(firRemaining)
+        secRemaining= parseInt(secRemaining)
+        secPart= ''
+        if secRemaining>0
+          secPart= " and "+secRemaining+" "+secUnit
+        $(this).text("In "+firRemaining+" "+firUnit+secPart)
   $dates = $(".jquery-dates")
   countdown()
   setInterval countdown,1000

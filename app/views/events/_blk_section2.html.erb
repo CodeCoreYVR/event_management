@@ -8,7 +8,6 @@
     <% @events.each do |event| %>
     <div class="hero-unit">
           <div class="row" id="<%=event.id%>" >
-            
             <div class="col-md-3">
               <div class="center">
                 <div class="thumbnail">
@@ -25,6 +24,7 @@
                 <% if event.seats %>
                   <h5 class="upcase"><%=pluralize(event.seats - event.seat_ownerships.length,"Spot")%> Remaining</h5>
                 <% end %>         
+                  <h5 class="upcase jquery-dates" id="date:<%=event.id%>" data-date="<%=event.date%>"></h5>
               </div>
             </div>
             <div class="col-md-6">

@@ -8,7 +8,6 @@
     <% @events.each do |event| %>
     <div class="hero-unit">
           <div class="row" id="<%=event.id%>" >
-            
             <div class="col-md-3">
               <div class="center">
                 <div class="thumbnail">
@@ -21,10 +20,10 @@
                               <% if (event.twitter && event.twitter!='') %>
                                     <a class="profile-links" href="<%=event.twitter%>"><i class="fa fa-twitter-square fa-2x twitter-social profile-links"></i></a>          
                                 <% end %>
-
                 <% if event.seats %>
                   <h5 class="upcase"><%=pluralize(event.seats - event.seat_ownerships.length,"Spot")%> Remaining</h5>
                 <% end %>         
+                  <h5 class="upcase jquery-dates" id="date:<%=event.id%>" data-date="<%=event.date%>" data-secdate="<%= event.date.strftime("%a, %d %b %Y %H:%M:%S %Z")%>" ></h5>
               </div>
             </div>
             <div class="col-md-6">

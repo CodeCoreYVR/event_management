@@ -42,7 +42,8 @@ $ ->
         secPart= ''
         if secRemaining>0
           secPart= " and "+secRemaining+" "+secUnit
-        $(this).text("In "+firRemaining+" "+firUnit+secPart)
+        if (firRemaining===firRemaining)
+          $(this).text("In "+firRemaining+" "+firUnit+secPart)
   $dates = $(".jquery-dates")
   countdown()
   setInterval countdown,1000

@@ -7,9 +7,9 @@ body { height:100%; /* Required for min-height 100% in section This made the bac
 color: #333; padding: 0px; margin: 0px auto; }
 
 //This navbar padding is here so that the background image of the paralax is flush with the header.
-.navbar { padding:0px; margin:0px;}
+.navbar { padding:0px; margin:0px; border-radius: 0px; background-color: black; border-bottom: white 1px solid;}
 .codecore-logo { padding:5px; }
-.map { padding: 10px; }
+.map { padding: 10px; line-height: 1.5;}
 .team-photo-padding { padding:10px; }
 .social-share {display: inline-block; float: left; margin-right: 10px}
 
@@ -43,7 +43,7 @@ color: #333; padding: 0px; margin: 0px auto; }
 
 .upcase {
   // font-weight: 300;
-  margin-right: 10px;
+  
   color: white;
   text-transform: uppercase;;
   letter-spacing: 2px;
@@ -91,7 +91,7 @@ color: #333; padding: 0px; margin: 0px auto; }
 #parallax { color: #333; margin:0px auto;}
 #parallax h1 { font-size: 2em; line-height:1; margin-bottom: 1em; }
 #parallax p { line-height: 1.5; margin-bottom:1em;}
-#parallax section { border-bottom: 4px solid #fff; padding: 50px 75px; min-height: 100%; width: 100%; border:none;/*parent height needs to be 100% */ }
+#parallax section { border-bottom: 4px solid #fff; padding: 5% 5%; min-height: 100%; width: 100%; border:none;/*parent height needs to be 100% */ }
 
 #parallax #header { background: #39f; color: #fff; }
 #parallax #about { background: url(../assets/backgrounds/dark_stripes.png) repeat; color: #fff; }
@@ -148,18 +148,17 @@ background-attachment: fixed;
 
 //this photo3 row puts a transparent box behind the events
 //#section3 .row { background-color: rgba(0,0,0,0.5); padding:25px; border: 1px solid rgb(0,0,0)}
-#section3 .hero-unit{ background-color: rgba(0,0,0,0.80); padding:25px; border: 1px solid rgb(0,0,0)}
+#section3 .hero-unit{ background-color: rgba(0,0,0,0.80); padding:25px;  border-top: white 1px solid;  border-collapse: collapse;}
 
 #parallax #contact { background: #fff; color: #39f; }
 #parallax #footer { background: #39f; color: #fff; }
 
-#section1 .hero-unit{ background-color: rgba(0,0,0,0.5); padding:25px; border: 1px solid rgb(0,0,0)}
+#section1 .hero-unit{ background-color: rgba(0,0,0,0.5); border: 1px solid rgb(0,0,0)}
 #section1 .box{ background-color: rgb(0,0,0); padding:25px; border: 1px solid rgb(0,0,0)}
-@media (min-width: 980px) {#wrapper {background: red;}}
-@media (min-width: 481px)  and (max-width: 767px) { #wrapper {background: yellow; }}
-@media (min-width: 480px) {#wrapper {background: blue; }}
 
+a:hover {text-decoration: none;}
 
+tr.link { border-bottom: white 1px solid;  border-collapse: collapse;}
 //from kelly's code
 
 .thumbnail {width: inherit; height: 100%; border-radius: 0; padding: 0; margin-right: 10px; background: none; border: none;}
@@ -311,3 +310,36 @@ footer {
 
  /* end styles for team_photos partial */
 
+
+@media (max-width: 480px) {
+#parallax {  background: none; }
+#parallax #section1 {  background: black;margin: 0px; padding: 0px; }
+#parallax #section2 {  background: black;margin: 0px; padding: 0px; }
+#parallax #section3 {  background: black;margin: 0px; padding: 0px; }
+.titles {display:none;}
+#parallax section {background: red; margin: 0px; padding: 0px;}
+ 
+#parallax .hero-unit { padding: 0px; margin: 0px;}
+
+#parallax .hero-unit{ background-color: rgba(0,0,0,1); }
+ 
+#parallax table.table, #parallax div.row, #parallax col-lg-8, #parallax col-md-8, #parallax col-sm-8, #parallax .box, #parallax tr.link {background: rgba(0,0,0,0.5); margin: 0px; padding: 0px;}
+
+
+.event-details {font-size: 2em; line-height: 1.25; text-transform: capitalize; }
+
+#parallax tr.link a {text-decoration: none; }
+#parallax tr.link a:hover {text-decoration: none; color: #fff;}
+
+#parallax tr.link {color: green;} 
+#parallax tr.link:hover {background: #cb0d0f; margin: 0px; padding: 0px;}
+ 
+ #parallax header.navbar .navbar-inner div {padding: 1em ;}
+ .day, .month, .date, .year {display: block; padding: 0.3em 0.6em;}
+ 
+ .day { background: #ccc; font-size: 2em; padding: 0px;}
+ .month {background: #ddd; font-size: 3.5em; font-weight: normal; margin: 0px; padding: 0.2em 0.4em;}
+ .date {background: #ddd; font-size: 6em; margin: 0px; padding:0px; line-height: 1;}
+ .year {background: #aaa; font-size: 2.5em; font-weight: normal; margin: 0px; padding: 0.2em 0.4em; }
+ 
+  }

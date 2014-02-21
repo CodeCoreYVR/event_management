@@ -18,7 +18,7 @@
               <%#= f.input :email, input_html: {class: "attendee-form"} %>
               <%#= f.input :company, input_html: {class: "attendee-form"} %>
 
-              <p class="titles"><%= f.check_box :mail_list %>Check this box if you like us to keep you up to date on future news and events </p>
+              <p class="titles"><%= f.check_box :mail_list %> Check this box if you like us to keep you up to date on future news and events </p>
               <p class="titles"> Please tell us about future topics you would like to learn about:</p>
                 <ul > 
                   <% Category.all.each do |category| %>

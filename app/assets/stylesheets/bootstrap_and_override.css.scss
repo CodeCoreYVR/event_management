@@ -9,7 +9,13 @@ color: #333; padding: 0px; margin: 0px auto; }
 //This navbar padding is here so that the background image of the paralax is flush with the header.
 .navbar { padding:0px; margin:0px; border-radius: 0px; background-color: black; border-bottom: white 1px solid;}
 .codecore-logo { padding:5px; }
-.third-logo { padding:10px 5px; float: right;}
+.third-logo {
+  padding-top:10px;
+  float: right;
+}
+.third-logo a {
+  padding-right:30px;
+}
 .sponsors {padding-right: 10px;font-weight: 300;color:white;}
 .map { padding: 10px; line-height: 1.5;}
 .team-photo-padding { padding:10px; }

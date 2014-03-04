@@ -20,6 +20,7 @@ class Event < ActiveRecord::Base
   validates_attachment_size :image, less_than: 10.megabytes   
   
   scope :future_events, -> {where("date > ?",Time.now)}
+  scope :past_events, -> {where("date <= ?",Time.now)}
 
   after_update :update_waitlist
 

@@ -3,7 +3,11 @@
         <div class="row span2">
 
           <div class="col-lg-6 col-md-6 col-sm-6 box">
+            <% if @events.any? %>
             <h3 class="text-shadow upcase">Please select the events you would like to attend:</h3>
+            <% else %>
+            <h3 class="text-shadow upcase">I would like to be notified about future events:</h3>
+            <% end %>
             <%= form_for @attendee do |f| %>
               <div class="titles"><%= render "events/event_list_form" %></div>
               <%= f.label :name, class: "category" %>

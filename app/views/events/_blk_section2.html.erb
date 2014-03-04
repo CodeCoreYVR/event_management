@@ -1,60 +1,116 @@
 <section id="section3">
-  <div class="schedule">
-    <div class="row text-shadow"><h2 class="upcase-blk">Event Details and Schedule:</h2></div>
-  </div>
 
 
-  <div id="eventslist">
-    <% @events.each do |event| %>
-    <div class="hero-unit">
-          <div class="row" id="<%=event.id%>" >
-            <div class="col-md-3">
-              <div class="center">
-                <div class="thumbnail">
-                  <%= image_tag event.image(:medium), class: "post-thumb"%></div>
-                          <h3 class="upcase"><%= event.speaker %></h3>
-                          <% if (event.linkedin && event.linkedin!='') %>
-                                    <a class="profile-links" href="<%=event.linkedin%>"><i class="fa fa-linkedin-square fa-2x linkedin-social profile-links"></i></a>          
-                                <% end %>          
-                       
-                              <% if (event.twitter && event.twitter!='') %>
-                                    <a class="profile-links" href="<%=event.twitter%>"><i class="fa fa-twitter-square fa-2x twitter-social profile-links"></i></a>          
-                                <% end %>
-                <% if event.seats %>
-                  <h5 class="upcase"><%=pluralize(event.seats - event.seat_ownerships.length,"Spot")%> Remaining</h5>
-                <% end %>         
-                  <h5 class="upcase jquery-dates" id="date:<%=event.id%>" data-date="<%=event.date%>" data-secdate="<%= event.date.strftime("%a, %d %b %Y %H:%M:%S %Z")%>" ></h5>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="">
-                  <h4><strong class="upcase"><%= event.title %></strong></h4>
-                  <p class="social-share">Share Event:
-                     <%= social_share_button_tag(event.title, 'data-source' => "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTdsjWnPtvccjwXi18Hbab91KDKChPoWSMCF0maMUBMjSuwAKQL", :'data-type' => 'photo') %>
-                  </p>
-                  <p class="titles">Description: <%= event.body %></p>      
-                  
-                  <p class="titles"><%= event.bio.html_safe %></p>
-                  
-              </div>
-            </div>
-
-            <div class="col-md-3">
-              <div class="center">
-                  <p class="upcase"><%= label_tag("attendee[event_ids][]", "I want to attend #{event.speaker}'s session:")%></p>
-                  <br><br>
-                  <%= check_box_tag "attendee[event_ids][]",event.id, false, data: { "class" => "custom_check" } %>
-                  <br>
-                  <p class="titles"><%=formatted_date(event.date)%></p>
-                  <h5><%=formatted_time(event.date)%> - <%=formatted_time(event.date+event.duration.minutes) %></h5>  
-                  <div class="clearfix"></div>
-              </div>  
-            </div>                
-        </div>
+  <% if @events.any? %>
+    <div class="schedule">
+      <div class="row text-shadow"><h2 class="upcase-blk">Event Details and Schedule:</h2></div>
     </div>
-    <div class="row">&nbsp;</div><!--  This row is to put a default distance between events -->
-    <% end %>
-  </div>
+    <div id="eventslist">
+      <% @events.each do |event| %>
+        <div class="hero-unit">
+              <div class="row" id="<%=event.id%>" >
+                <div class="col-md-3">
+                  <div class="center">
+                    <div class="thumbnail">
+                      <%= image_tag event.image(:medium), class: "post-thumb"%></div>
+                              <h3 class="upcase"><%= event.speaker %></h3>
+                              <% if (event.linkedin && event.linkedin!='') %>
+                                        <a class="profile-links" href="<%=event.linkedin%>"><i class="fa fa-linkedin-square fa-2x linkedin-social profile-links"></i></a>          
+                                    <% end %>          
+                           
+                                  <% if (event.twitter && event.twitter!='') %>
+                                        <a class="profile-links" href="<%=event.twitter%>"><i class="fa fa-twitter-square fa-2x twitter-social profile-links"></i></a>          
+                                    <% end %>
+                    <% if event.seats %>
+                      <h5 class="upcase"><%=pluralize(event.seats - event.seat_ownerships.length,"Spot")%> Remaining</h5>
+                    <% end %>         
+                      <h5 class="upcase jquery-dates" id="date:<%=event.id%>" data-date="<%=event.date%>" data-secdate="<%= event.date.strftime("%a, %d %b %Y %H:%M:%S %Z")%>" ></h5>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="">
+                      <h4><strong class="upcase"><%= event.title %></strong></h4>
+                      <p class="social-share">Share Event:
+                         <%= social_share_button_tag(event.title, 'data-source' => "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTdsjWnPtvccjwXi18Hbab91KDKChPoWSMCF0maMUBMjSuwAKQL", :'data-type' => 'photo') %>
+                      </p>
+                      <p class="titles">Description: <%= event.body %></p>      
+                      
+                      <p class="titles"><%= event.bio.html_safe %></p>
+                      
+                  </div>
+                </div>
+
+                <div class="col-md-3">
+                  <div class="center">
+                      <p class="upcase"><%= label_tag("attendee[event_ids][]", "I want to attend #{event.speaker}'s session:")%></p>
+                      <br><br>
+                      <%= check_box_tag "attendee[event_ids][]",event.id, false, data: { "class" => "custom_check" } %>
+                      <br>
+                      <p class="titles"><%=formatted_date(event.date)%></p>
+                      <h5><%=formatted_time(event.date)%> - <%=formatted_time(event.date+event.duration.minutes) %></h5>  
+                      <div class="clearfix"></div>
+                  </div>  
+                </div>                
+            </div>
+        </div>
+        <div class="row">&nbsp;</div><!--  This row is to put a default distance between events -->
+      <% end %>
+    </div>
+  <% end %>
+
+  <% if @past_events.any? %>
+    <div class="schedule">
+      <div class="row text-shadow"><h2 class="upcase-blk">Past Events:</h2></div>
+    </div>
+    <div id="eventslist">
+       <% @past_events.each do |event| %>
+      <div class="hero-unit">
+              <div class="row" id="<%=event.id%>" >
+                <div class="col-md-3">
+                  <div class="center">
+                    <div class="thumbnail">
+                      <%= image_tag event.image(:medium), class: "post-thumb"%></div>
+                              <h3 class="upcase"><%= event.speaker %></h3>
+                              <% if (event.linkedin && event.linkedin!='') %>
+                                        <a class="profile-links" href="<%=event.linkedin%>"><i class="fa fa-linkedin-square fa-2x linkedin-social profile-links"></i></a>          
+                                    <% end %>          
+                           
+                                  <% if (event.twitter && event.twitter!='') %>
+                                    <a class="profile-links" href="<%=event.twitter%>"><i class="fa fa-twitter-square fa-2x twitter-social profile-links"></i></a>          
+                                  <% end %>     
+                      <h5 class="upcase jquery-dates"> Past Event</h5>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="">
+                      <h4><strong class="upcase"><%= event.title %></strong></h4>
+                      <p class="social-share">Share Event:
+                         <%= social_share_button_tag(event.title, 'data-source' => "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTdsjWnPtvccjwXi18Hbab91KDKChPoWSMCF0maMUBMjSuwAKQL", :'data-type' => 'photo') %>
+                      </p>
+                      <p class="titles">Description: <%= event.body %></p>      
+                      
+                      <p class="titles"><%= event.bio.html_safe %></p>
+                      
+                  </div>
+                </div>
+
+                <div class="col-md-3 vertical-center-row">
+                  <div class="center">
+                      <br><br>
+                      <br>
+                      <br>
+                      <br>
+                      <p class="titles"><%=formatted_date(event.date)%></p>
+                      <h5><%=formatted_time(event.date)%> - <%=formatted_time(event.date+event.duration.minutes) %></h5>  
+                      <div class="clearfix"></div>
+                  </div>  
+                </div>                
+            </div>
+        </div>
+        <div class="row">&nbsp;</div><!--  This row is to put a default distance between events -->
+      <% end %>
+    </div>
+  <% end %>
 
 
 <div class="clearfix"></div>  

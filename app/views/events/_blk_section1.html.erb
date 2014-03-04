@@ -9,7 +9,13 @@
           </div>
 
           <div class="col-lg-8 col-md-8 col-sm-8 box">
-            <div class="upcase"><%= render "events/event_list" %></div>
+            <div class="upcase center">
+              <% if @events.any? %>
+              <%= render "events/event_list" %>
+              <%  else %>
+              There are currently no upcoming events. Register to be informed about future events!
+              <% end %>
+            </div>
           </div>
           
           <div class="col-lg-2 col-md-2 col-sm-2">

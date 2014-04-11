@@ -8,10 +8,12 @@ EventManagement::Application.routes.draw do
     resources :attendees, only:[:index,:edit,:update,:destroy]
     resources :categories
   end
- 
+
+ get 'events/cohort_one' => 'events#prior_events'
   resources :attendees, only: [:create]
   resources :admin, only: [:index]
   resources :events, only: [:create]
+
  
 
 

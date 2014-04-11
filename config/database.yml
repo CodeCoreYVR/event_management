@@ -18,7 +18,7 @@ development:
   encoding: unicode
   database: event_management_development
   pool: 5
-  username: 
+  username:
   password:  
   timeout: 5000   
 

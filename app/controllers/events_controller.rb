@@ -6,4 +6,8 @@ class EventsController < ApplicationController
     @attendee = Attendee.new
   end
 
+  def prior_events
+    render 'events/cohort_one'
+  end
+
 end

@@ -4,14 +4,29 @@
         <a href="http://www.codecore.ca" target="_blank">
           <img src="http://imgur.com/9OcrveD.jpg" width= "240px">
         </a>
-        <div class="third-logo">
-          <a href="http://www.axiomzen.co/" target="_blank">
+<!--           <a href="http://www.axiomzen.co/" target="_blank">
             <img src="https://s3.amazonaws.com/codecore-website-data/images/logotype-axiomzen-v3-final-hires-light.png" height= "55px"></a>
           <a href="http://unbounce.com/" target="_blank">
             <img src="http://downloads.unbounce.com/brand-assets/logo/Unbounce-Logo-DarkBackground-Digital.png" height= "45px">
-          </a>
+          </a> -->
         </div>
+        <ul class="nav navbar-nav navbar-right">
+          <div class="dropdown">
+            <a id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="/page.html">
+              Past Events <span class="caret"></span>
+            </a>
 
+
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+              <li>
+                <%= link_to "Cohort 1", events_cohort_one_path %>
+              </li>
+            </ul>
+          </ul>
+        </div>
       </div> <!-- /codecore-logo -->
   </div> <!-- /navbar-inner -->
 </header>
+
+
+

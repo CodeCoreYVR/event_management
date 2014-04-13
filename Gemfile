@@ -7,6 +7,8 @@ gem 'rails', '4.0.2'
 gem 'delayed_job_active_record'
 gem 'delayed_job_web'
 
+
+gem "haml-rails"
 # Use sqlite3 as the database for Active Record
 gem 'aws-sdk'
 gem 'pg'

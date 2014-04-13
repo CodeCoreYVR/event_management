@@ -1,0 +1,94 @@
+%section#section3
+  - if @events.any?
+    .schedule
+      .row.text-shadow
+        %h2.upcase-blk Event Details and Schedule:
+    #eventslist
+      - @events.each do |event|
+        .hero-unit
+          .row{id: event.id}
+            .col-md-3
+              .center
+                .thumbnail
+                  = image_tag event.image(:medium), class: "post-thumb"
+                %h3.upcase= event.speaker
+                - if (event.linkedin && event.linkedin!='')
+                  %a.profile-links{href: event.linkedin}
+                    %i.fa.fa-linkedin-square.fa-2x.linkedin-social.profile-links
+                - if (event.twitter && event.twitter!='')
+                  %a.profile-links{href: event.twitter}
+                    %i.fa.fa-twitter-square.fa-2x.twitter-social.profile-links
+                - if event.seats
+                  %h5.upcase
+                    = pluralize(event.seats - event.seat_ownerships.length,"Spot")
+                    Remaining
+                %h5.upcase.jquery-dates{"data-date" => event.date, "data-secdate" => event.date.strftime("%a, %d %b %Y %H:%M:%S %Z"), id: "date:#{event.id}"}
+            .col-md-6
+              %div
+                %h4
+                  %strong.upcase= event.title
+                %p.social-share
+                  Share Event:
+                  \#{social_share_button_tag(event.title, 'data-source' => "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTdsjWnPtvccjwXi18Hbab91KDKChPoWSMCF0maMUBMjSuwAKQL", :'data-type' => 'photo')}
+                %p.titles
+                  Description: #{event.body}
+                %p.titles= event.bio.html_safe
+            .col-md-3
+              .center
+                %p.upcase= label_tag("attendee[event_ids][]", "I want to attend #{event.speaker}'s session:")
+                %br/
+                %br/
+                = check_box_tag "attendee[event_ids][]",event.id, false, data: { "class" => "custom_check" }
+                %br/
+                %p.titles= formatted_date(event.date)
+                %h5
+                  = formatted_time(event.date)
+                  \- #{formatted_time(event.date+event.duration.minutes)}
+                .clearfix
+        .row  
+        / This row is to put a default distance between events
+  - if @past_events.any?
+    .schedule
+      .row.text-shadow
+        %h2.upcase-blk Past Events:
+    #eventslist
+      - @past_events.each do |event|
+        .hero-unit
+          .row{id: event.id}
+            .col-md-3
+              .center
+                .thumbnail
+                  = image_tag event.image(:medium), class: "post-thumb"
+                %h3.upcase= event.speaker
+                - if (event.linkedin && event.linkedin!='')
+                  %a.profile-links{href: event.linkedin}
+                    %i.fa.fa-linkedin-square.fa-2x.linkedin-social.profile-links
+                - if (event.twitter && event.twitter!='')
+                  %a.profile-links{href: event.twitter}
+                    %i.fa.fa-twitter-square.fa-2x.twitter-social.profile-links
+                %h5.upcase.jquery-dates Past Event
+            .col-md-6
+              %div
+                %h4
+                  %strong.upcase= event.title
+                %p.social-share
+                  Share Event:
+                  \#{social_share_button_tag(event.title, 'data-source' => "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTdsjWnPtvccjwXi18Hbab91KDKChPoWSMCF0maMUBMjSuwAKQL", :'data-type' => 'photo')}
+                %p.titles
+                  Description: #{event.body}
+                %p.titles= event.bio.html_safe
+            .col-md-3.vertical-center-row
+              .center
+                %br/
+                %br/
+                %br/
+                %br/
+                %br/
+                %p.titles= formatted_date(event.date)
+                %h5
+                  = formatted_time(event.date)
+                  \- #{formatted_time(event.date+event.duration.minutes)}
+                .clearfix
+        .row  
+        / This row is to put a default distance between events
+  .clearfix

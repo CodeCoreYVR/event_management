@@ -1,3 +1,5 @@
+// require bootstrap
+
 $(function(){
   $('.link').click(function(){
     $('html, body').animate({

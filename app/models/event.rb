@@ -20,9 +20,12 @@ class Event < ActiveRecord::Base
   validates_attachment_size :image, less_than: 10.megabytes   
   
   scope :future_events, -> {where("date > ?",Time.now)}
-  scope :past_events, -> {where("date <= ?",Time.now)}
 
   after_update :update_waitlist
+
+  def self.past_events
+    where(date: (Time.now - 2.weeks)..Time.now).order("date DESC")
+  end
 
   def confirmed_attendees
     Attendee.joins(:attendances).where("attendances.id in (?)", seat_ownerships.ids)

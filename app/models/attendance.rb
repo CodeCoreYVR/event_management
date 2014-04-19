@@ -17,6 +17,7 @@ class Attendance < ActiveRecord::Base
   scope :with_seats, -> {where("NOT waitlisted or waitlisted is NULL")}
 
   scope :waiting, -> {where("waitlisted").order('created_at ASC')}
+  scope :future_attendances, -> { where("event_id in (?)", Event.future_events.pluck(:id)) }
 
   def waitlist_check
     event_seats_taken ||= self.event.seat_ownerships.length

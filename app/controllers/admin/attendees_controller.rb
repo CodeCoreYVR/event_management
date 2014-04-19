@@ -5,7 +5,8 @@ class Admin::AttendeesController < ApplicationController
   end
 
   def index
-    @attendees=Attendee.all
+    # @attendees = Attendee.future_attendees.includes(:events, :categories)
+    @attendees = Attendee.includes(:events, :categories)
   end
 
   def update

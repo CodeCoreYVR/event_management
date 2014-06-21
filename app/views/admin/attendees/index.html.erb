@@ -4,7 +4,7 @@
     <%= link_to 'ADMIN INDEX', admin_index_path, class: "btn btn-primary back-lit-btn pull-right" %>
 </p>
 
-<table class="table table-striped" width="900px"> 
+<table class="table table-striped" width="900px">
   <tr>
     <th>Row</th>
     <th>Name</th>
@@ -35,16 +35,20 @@
       <td>&nbsp;</td>
       <% end %>
       <% if attendee.categories %>
-      <td>
-      <%= attendee.categories.pluck('name').join(", ") %>
-      </td>
+        <% cats = [] %>
+        <% attendee.categories.each do |category| %>
+          <% cats << category.name %>
+        <% end %>
+        <td>
+          <%= cats.join(',') %>
+        </td>
       <% else %>
       <td>&nbsp;</td>
       <% end %>
-    
+
       <td><%= link_to "Modify Attendee", edit_admin_attendee_path(attendee) %></td>
       <td><%= button_to("Delete Attendee",admin_attendee_path(attendee),method: :delete, data: {confirm: "Are you sure you want to delete this attendee?"})%></td>
-      
+
     </tr>
   </div>
   <% end %>

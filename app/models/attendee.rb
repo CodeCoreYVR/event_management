@@ -3,11 +3,12 @@ class Attendee < ActiveRecord::Base
   has_many :attendances, dependent: :destroy
   has_many :events, through: :attendances
   has_many :categories, through: :categorizations
-  
-  validates :name, presence: true 
+
+  validates :name, presence: true
   validates :email, presence: true
   validates :email, uniqueness: true
- 
+
+  scope :future_attendees, -> { where('id in (?)', Attendance.future_attendances.pluck(:attendee_id)) }
 
   def confirmed_events
     Event.joins(:attendances).where("attendances.id in (?)", seat_ownerships.ids)

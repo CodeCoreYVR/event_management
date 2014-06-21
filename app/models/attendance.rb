@@ -5,7 +5,7 @@ class Attendance < ActiveRecord::Base
 
   before_create :waitlist_check
   after_destroy :update_event_waitlist
-  
+
   #validate :cap_check
   # def cap_check
   #   event_seats_taken=event.attendances.length
@@ -17,6 +17,7 @@ class Attendance < ActiveRecord::Base
   scope :with_seats, -> {where("NOT waitlisted or waitlisted is NULL")}
 
   scope :waiting, -> {where("waitlisted").order('created_at ASC')}
+  scope :future_attendances, -> { joins(:event).merge(Event.future_events) }
 
   def waitlist_check
     event_seats_taken ||= self.event.seat_ownerships.length

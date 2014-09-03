@@ -16,18 +16,17 @@
           </a>
         </div>
         <ul class="nav navbar-nav navbar-right">
-          <div class="dropdown">
-            <a id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="/page.html">
-              Past Events <span class="caret"></span>
-            </a>
-            
-
-            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-              <li>
-                <%= link_to "Cohort 1", events_cohort_one_path %>
-              </li>
-            </ul>
-          </ul>
+          <div class="btn-group">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                  Past Events
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a href="events/cohort_one">February 2014</a></li>
+                  <% # need to add a view to pull info from database %>
+                  <!-- <li><a href="#">April 2014</a></li> -->
+                </ul>
+              </div>
         </div>
       </div> <!-- /codecore-logo -->
   </div> <!-- /navbar-inner -->

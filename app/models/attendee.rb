@@ -11,7 +11,7 @@ class Attendee < ActiveRecord::Base
   scope :future_attendees, -> { where('id in (?)', Attendance.future_attendances.pluck(:attendee_id)) }
 
   def confirmed_events
-    Event.joins(:attendances).where("attendances.id in (?)", seat_ownerships.ids)
+    Event.joins(:attendances).where("attendances.id in (?) AND events.created_at > ?", seat_ownerships.ids, (Time.now - 1.month))
   end
 
   def waitlisted_events

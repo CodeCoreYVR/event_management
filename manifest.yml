@@ -1,0 +1,7 @@
+name: event
+buildpack: https://github.com/heroku/heroku-buildpack-ruby.git
+mem: 512
+instances: 1
+services:
+  ${name}-db:
+    type: postgresql

@@ -9,8 +9,8 @@ test:
   encoding: unicode
   database: event_management_test
   pool: 5
-  username: 
-  password: 
+  username: drewmac
+  password: lisalove
   timeout: 5000
 
 development:
@@ -18,8 +18,8 @@ development:
   encoding: unicode
   database: event_management_development
   pool: 5
-  username: 
-  password: 
+  username: drewmac
+  password: lisalove
   timeout: 5000   
 
 production:

@@ -1,6 +1,24 @@
 class Admin::AttendeesController < ApplicationController
   before_action :find_attendee, except: :index
   before_action :authenticate_user!
+
+  # Convert lowerCamelCase params to snake_case automatically
+  before_filter :deep_snake_case_params!
+  def deep_snake_case_params!(val = params)
+    case val
+    when Array
+      val.map {|v| deep_snake_case_params! v }
+    when Hash
+      val.keys.each do |k, v = val[k]|
+        val.delete k
+        val[k.underscore] = deep_snake_case_params!(v)
+      end
+      val
+    else
+      val
+    end
+  end
+
   def edit
   end
 
@@ -28,7 +46,8 @@ class Admin::AttendeesController < ApplicationController
     end
   end
 
-private
+  private
+
   def find_attendee
     @attendee = Attendee.find params[:id]
   end
@@ -41,5 +60,10 @@ private
     removed_events.each do |removed|
         removed.update_waitlist
     end
+  end
+
+  # Disable the root node, eg: {projects: [{..}, {..}]}
+  def default_serializer_options
+    {root: false}
   end
 end

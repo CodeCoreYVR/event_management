@@ -3,6 +3,11 @@ EventManagement::Application.routes.draw do
   devise_for :users
   root "events#index"
 
+  namespace :api do
+    resources :events, only: [:index] do
+    end
+  end
+
   namespace :admin do
     resources :events
     resources :attendees, only:[:index,:edit,:update,:destroy]

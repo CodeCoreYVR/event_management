@@ -10,12 +10,13 @@ class Api::EventsController < Api::ApplicationController
     @attendee = Attendee.find_by_email(attendee_params[:email]) ||
                 Attendee.new(attendee_params)
 
-    @attendee.event_ids ||= []
-    @attendee.event_ids << params[:event_id]
+    @event = Event.find(params[:event_id]);
+    @attendee.events ||= []
+    @attendee.events << @event
 
     if @attendee.save
       AttendeeMailer.delay.notify_attendee(@attendee)
-      render json: {success: true}
+      render json: EventSerializer.new(@event, root: false), root: false
     else
       render json: {success: false}
     end

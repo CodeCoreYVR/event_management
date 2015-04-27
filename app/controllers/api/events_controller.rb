@@ -7,16 +7,24 @@ class Api::EventsController < Api::ApplicationController
   end
 
   def register
-    @attendee = Attendee.find_by_email(attendee_params[:email]) ||
-                Attendee.new(attendee_params)
+    @attendee = Attendee.where(email: attendee_params[:email]).first
 
-    @event = Event.find(params[:event_id]);
-    @attendee.events ||= []
-    @attendee.events << @event
+    if @attendee.nil?
+      @attendee = Attendee.new(attendee_params)
+    end
+
+    @event = Event.find(params[:event_id])
+
+    unless @attendee.events.include?(@event)
+      @attendee.events << @event
+    end
 
     if @attendee.save
       AttendeeMailer.delay.notify_attendee(@attendee)
-      render json: EventSerializer.new(@event, root: false), root: false
+      @events = Event.future_events.order("date ASC")
+      @events.map { |e| EventSerializer.new(e) }
+
+      render json: @events, root: false, email: @attendee.email
     else
       render json: {success: false}
     end

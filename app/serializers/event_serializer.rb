@@ -21,7 +21,7 @@ class EventSerializer < ActiveModel::Serializer
   end
 
   def description
-    object.body
+    object.long_description
   end
 
   def presenter_image_url
@@ -29,6 +29,7 @@ class EventSerializer < ActiveModel::Serializer
   end
 
   def splash_image_url
+    object.splash_image_url
   end
 
   def bio

@@ -1,6 +1,7 @@
 class EventSerializer < ActiveModel::Serializer
   attributes :id, :title, :remaining, :presenter, :presenter_image_url,
-    :splash_image_url, :bio, :description, :date, :time, :is_registered
+    :splash_image_url, :bio, :description, :date, :time, :is_registered,
+    :twitter, :facebook, :linkedin
 
   def is_registered
     if (email = serialization_options[:email])

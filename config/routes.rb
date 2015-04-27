@@ -5,6 +5,9 @@ EventManagement::Application.routes.draw do
 
   namespace :api do
     resources :events, only: [:index] do
+      member do
+        post :register
+      end
     end
   end
 

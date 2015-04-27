@@ -1,6 +1,12 @@
 class EventSerializer < ActiveModel::Serializer
   attributes :id, :title, :remaining, :presenter, :presenter_image_url,
-    :splash_image_url, :bio, :description, :date, :time
+    :splash_image_url, :bio, :description, :date, :time, :is_registered
+
+  def is_registered
+    if (email = serialization_options[:email])
+      object.confirmed_attendees.where(email: email).count > 0
+    end
+  end
 
   def title
     object.title

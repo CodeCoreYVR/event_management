@@ -43,7 +43,7 @@ gem 'jquery-rails'
 gem 'devise'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
-gem 'active_model_serializers'
+gem 'active_model_serializers', '~> 0.9.3'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'

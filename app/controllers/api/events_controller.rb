@@ -16,6 +16,7 @@ class Api::EventsController < Api::ApplicationController
 
     if @attendee.nil?
       @attendee = Attendee.new(attendee_params)
+      @attendee.save
     end
 
     @event = Event.find(params[:event_id])
@@ -26,7 +27,13 @@ class Api::EventsController < Api::ApplicationController
 
     if @attendee.save
       AttendeeMailer.delay.notify_attendee(@attendee)
-      @events = Event.future_events.order("date ASC")
+
+      if params[:sample].present?
+        @events = Event.sample_events.order("date ASC")
+      else
+        @events = Event.future_events.order("date ASC")
+      end
+
       @events.map { |e| EventSerializer.new(e) }
 
       render json: @events, root: false, email: @attendee.email

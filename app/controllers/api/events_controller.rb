@@ -1,7 +1,12 @@
 class Api::EventsController < Api::ApplicationController
 
   def index
-    @events = Event.future_events.order("date ASC")
+    if params[:sample].present?
+      @events = Event.sample_events.order("date ASC")
+    else
+      @events = Event.future_events.order("date ASC")
+    end
+
     @events.map { |e| EventSerializer.new(e) }
     render json: @events, root: false, email: params[:email]
   end
